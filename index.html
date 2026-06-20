@@ -3,23 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Phóng Viên Thể Thao - Nguyễn Quang Huy</title>
+    <title>Nguyễn Quang Huy - Phóng Viên Thể Thao</title>
+    <meta name="description" content="Portfolio của Nguyễn Quang Huy - Phóng viên thể thao chuyên nghiệp với hơn 10 năm kinh nghiệm phân tích chiến thuật, longform và phỏng vấn.">
+    <meta property="og:title" content="Nguyễn Quang Huy - Phóng Viên Thể Thao">
+    <meta property="og:description" content="Phóng viên thể thao chuyên nghiệp — phân tích chiến thuật, longform, báo chí dữ liệu.">
+    <meta property="og:image" content="https://huynguyenquang91.github.io/profile.jpg">
+    <meta property="og:url" content="https://huynguyenquang91.github.io/">
+    <meta property="og:type" content="website">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        .section-title {
-            border-left: 4px solid #1D4ED8; /* blue-700 */
-            padding-left: 1rem;
-        }
-        .card-image {
-            height: 200px;
-            object-fit: cover;
-        }
+        body { font-family: 'Inter', sans-serif; }
+        .section-title { border-left: 4px solid #1D4ED8; padding-left: 1rem; }
+        .card-image { height: 200px; object-fit: cover; }
+        .hero-gradient { background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 60%, #3b82f6 100%); }
+        #mobile-nav { display: none; }
+        #mobile-nav.open { display: flex; }
+        .line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -27,78 +29,152 @@
     <!-- Header -->
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <h1 class="text-2xl font-bold text-gray-900">Nguyễn Quang Huy</h1>
+            <h1 class="text-xl font-bold text-gray-900">Nguyễn Quang Huy</h1>
             <nav class="hidden md:flex space-x-6">
-                <a href="#about" class="text-gray-600 hover:text-blue-700 transition duration-300">Giới Thiệu</a>
-                <a href="#portfolio" class="text-gray-600 hover:text-blue-700 transition duration-300">Tác Phẩm</a>
-                <a href="#contact" class="text-gray-600 hover:text-blue-700 transition duration-300">Liên Hệ</a>
+                <a href="#about" class="text-gray-600 hover:text-blue-700 font-medium transition duration-300">Giới Thiệu</a>
+                <a href="#portfolio" class="text-gray-600 hover:text-blue-700 font-medium transition duration-300">Tác Phẩm</a>
+                <a href="#contact" class="text-gray-600 hover:text-blue-700 font-medium transition duration-300">Liên Hệ</a>
             </nav>
+            <button id="menu-btn" class="md:hidden flex flex-col justify-center items-center w-8 h-8 gap-1.5" aria-label="Mở menu">
+                <span class="block w-6 h-0.5 bg-gray-700"></span>
+                <span class="block w-6 h-0.5 bg-gray-700"></span>
+                <span class="block w-6 h-0.5 bg-gray-700"></span>
+            </button>
+        </div>
+        <div id="mobile-nav" class="flex-col md:hidden bg-white border-t border-gray-100 px-6 py-4 space-y-4">
+            <a href="#about" class="block text-gray-700 hover:text-blue-700 font-medium transition">Giới Thiệu</a>
+            <a href="#portfolio" class="block text-gray-700 hover:text-blue-700 font-medium transition">Tác Phẩm</a>
+            <a href="#contact" class="block text-gray-700 hover:text-blue-700 font-medium transition">Liên Hệ</a>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="container mx-auto px-6 py-12">
-
-        <!-- Hero Section -->
-        <section id="about" class="text-center mb-20">
-            <div class="w-24 h-24 rounded-full mx-auto mb-4 bg-gray-300 overflow-hidden shadow-lg">
+    <!-- Hero -->
+    <section id="about" class="hero-gradient text-white py-24 px-6">
+        <div class="container mx-auto text-center">
+            <div class="w-36 h-36 rounded-full mx-auto mb-6 overflow-hidden shadow-2xl border-4 border-white/30">
                 <img src="profile.jpg" alt="Ảnh chân dung Nguyễn Quang Huy" class="w-full h-full object-cover">
             </div>
-            <h2 class="text-4xl font-bold text-gray-900 mb-2">Phóng Viên Thể Thao Chuyên Nghiệp</h2>
-            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                Với hơn 10 năm kinh nghiệm, tôi chuyên sâu vào việc phân tích chiến thuật, kể những câu chuyện nhân vật đầy cảm hứng và mang đến góc nhìn đa chiều về thế giới thể thao trong nước và quốc tế.
+            <p class="text-blue-200 font-semibold uppercase tracking-widest text-sm mb-3">Phóng Viên Thể Thao Chuyên Nghiệp</p>
+            <h2 class="text-4xl md:text-5xl font-bold mb-5">Nguyễn Quang Huy</h2>
+            <p class="text-blue-100 text-lg max-w-2xl mx-auto leading-relaxed mb-8">
+                Hơn 10 năm kinh nghiệm phân tích chiến thuật, kể chuyện nhân vật đầy cảm hứng và mang đến góc nhìn đa chiều về thế giới thể thao trong nước và quốc tế.
             </p>
-        </section>
+            <div class="flex justify-center gap-4 flex-wrap">
+                <a href="#portfolio" class="bg-white text-blue-700 font-semibold py-3 px-7 rounded-lg hover:bg-blue-50 transition duration-300">Xem Tác Phẩm</a>
+                <a href="#contact" class="border-2 border-white/60 text-white font-semibold py-3 px-7 rounded-lg hover:bg-white/10 transition duration-300">Liên Hệ</a>
+            </div>
+            <div class="mt-12 animate-bounce">
+                <svg class="w-6 h-6 mx-auto text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+            </div>
+        </div>
+    </section>
 
-        <!-- Portfolio Section -->
+    <!-- Stats Bar -->
+    <div class="bg-white border-b border-gray-100">
+        <div class="container mx-auto px-6 py-6 grid grid-cols-3 gap-4 text-center">
+            <div>
+                <p class="text-3xl font-bold text-blue-700">10+</p>
+                <p class="text-sm text-gray-500 mt-1">Năm kinh nghiệm</p>
+            </div>
+            <div>
+                <p class="text-3xl font-bold text-blue-700">22</p>
+                <p class="text-sm text-gray-500 mt-1">Tác phẩm tiêu biểu</p>
+            </div>
+            <div>
+                <p class="text-3xl font-bold text-blue-700">7</p>
+                <p class="text-sm text-gray-500 mt-1">Môn thể thao</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12">
         <section id="portfolio">
             <h3 class="text-3xl font-bold mb-6 section-title">Các Tác Phẩm Tiêu Biểu</h3>
-            
-            <!-- Filter Controls -->
-            <div id="filters" class="bg-white p-4 rounded-lg shadow-sm mb-8 flex flex-col md:flex-row gap-4 items-center">
+
+            <!-- Filters -->
+            <div class="bg-white p-4 rounded-lg shadow-sm mb-4 flex flex-col md:flex-row gap-4 items-end">
+                <div class="w-full md:w-1/3">
+                    <label for="filter-search" class="block text-sm font-medium text-gray-700 mb-1">Tìm kiếm</label>
+                    <input id="filter-search" type="text" placeholder="Tìm theo tiêu đề hoặc nội dung..."
+                           class="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500">
+                </div>
                 <div class="w-full md:w-1/3">
                     <label for="filter-chuyen-muc" class="block text-sm font-medium text-gray-700 mb-1">Chuyên mục</label>
-                    <select id="filter-chuyen-muc" class="w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                    <select id="filter-chuyen-muc" class="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500">
                         <option value="all">Tất cả chuyên mục</option>
                     </select>
                 </div>
                 <div class="w-full md:w-1/3">
                     <label for="filter-mon-the-thao" class="block text-sm font-medium text-gray-700 mb-1">Môn thể thao</label>
-                    <select id="filter-mon-the-thao" class="w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                    <select id="filter-mon-the-thao" class="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500">
                         <option value="all">Tất cả môn thể thao</option>
                     </select>
                 </div>
             </div>
 
-            <!-- Articles Grid -->
-            <div id="articles-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Dữ liệu sẽ được chèn vào đây bởi JavaScript -->
-            </div>
-            <p id="no-results" class="text-center text-gray-500 text-lg hidden col-span-full mt-8">Không tìm thấy bài viết nào phù hợp.</p>
-
+            <p id="result-count" class="text-sm text-gray-500 mb-6"></p>
+            <div id="articles-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            <p id="no-results" class="text-center text-gray-500 text-lg hidden mt-8">Không tìm thấy bài viết nào phù hợp.</p>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer id="contact" class="bg-gray-800 text-white">
-        <div class="container mx-auto px-6 py-10 text-center">
-            <h3 class="text-3xl font-bold mb-4">Liên Hệ Hợp Tác</h3>
-            <p class="text-gray-300 mb-6">Tôi luôn sẵn sàng cho những cơ hội và dự án mới.</p>
-            <div class="flex justify-center items-center space-x-6">
-                <a href="mailto:huynguyendl2110@gmail.com" class="text-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300">
-                    Gửi Email
-                </a>
-                <a href="https://www.linkedin.com/in/huy-nguyen-386829272/" target="_blank" class="text-gray-400 hover:text-white transition duration-300">
-                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"></path></svg>
-                </a>
+    <footer id="contact" class="bg-gray-900 text-white">
+        <div class="container mx-auto px-6 py-16">
+            <div class="max-w-xl mx-auto text-center">
+                <h3 class="text-3xl font-bold mb-3">Liên Hệ Hợp Tác</h3>
+                <p class="text-gray-400 mb-8">Luôn sẵn sàng cho cơ hội và dự án mới.</p>
+                <div class="flex justify-center items-center gap-4 flex-wrap">
+                    <a href="mailto:huynguyendl2110@gmail.com"
+                       class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                        Gửi Email
+                    </a>
+                    <a href="https://www.linkedin.com/in/huy-nguyen-386829272/" target="_blank" rel="noopener noreferrer"
+                       class="inline-flex items-center gap-2 border border-gray-600 hover:border-white text-gray-300 hover:text-white font-semibold py-3 px-6 rounded-lg transition duration-300">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/>
+                        </svg>
+                        LinkedIn
+                    </a>
+                </div>
             </div>
+        </div>
+        <div class="border-t border-gray-800 py-4 text-center text-gray-600 text-sm">
+            © 2025 Nguyễn Quang Huy
         </div>
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            
-            // --- DỮ LIỆU ĐÃ ĐƯỢC CẬP NHẬT ---
+        // Mobile nav
+        document.getElementById('menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-nav').classList.toggle('open');
+        });
+        document.querySelectorAll('#mobile-nav a').forEach(link => {
+            link.addEventListener('click', () => document.getElementById('mobile-nav').classList.remove('open'));
+        });
+
+        function esc(str) {
+            return String(str ?? '')
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;');
+        }
+
+        function safeUrl(url) {
+            try {
+                const u = new URL(url);
+                return (u.protocol === 'https:' || u.protocol === 'http:') ? url : '#';
+            } catch { return '#'; }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
             const allArticles = [
               { "URL": "https://vnexpress.net/olympic-thay-doi-the-nao-khi-khong-co-nga-4780611.html", "Chuyên mục": "Báo chí dữ liệu", "Môn thể thao": "Olympic", "title": "Olympic thay đổi thế nào khi không có Nga", "lead": "Khi Nga vắng mặt tại Paris 2024, một số quốc gia khác đã vươn lên trên bảng tổng sắp huy chương.", "imageUrl": "https://i1-thethao.vnecdn.net/2024/08/13/01b4f55c-92a8-450d-9112-13e4b6-7105-8689-1723483021.jpg?w=0&h=0&q=100&dpr=2&fit=crop&s=USO6cfX90_VpNqgz3DiMsQ" },
               { "URL": "https://vnexpress.net/argentina-croatia-van-co-cua-messi-4547581.html", "Chuyên mục": "Nhận định", "Môn thể thao": "Bóng đá", "title": "Argentina - Croatia: Ván cờ của Messi", "lead": "Cùng Argentina, Lionel Messi bước vào trận bán kết World Cup 2022 đấu Croatia trong tâm thế của một kỳ thủ khi ván cờ vào tàn cuộc.", "imageUrl": "https://i1-thethao.vnecdn.net/2022/12/13/Untitled-6062-1670909515.jpg?w=680&h=0&q=100&dpr=1&fit=crop&s=ZeqzTUiNYOy4En-90shDCw" },
@@ -128,85 +204,78 @@
 
             const articlesGrid = document.getElementById('articles-grid');
             const noResultsMsg = document.getElementById('no-results');
+            const resultCount = document.getElementById('result-count');
             const filterChuyenMuc = document.getElementById('filter-chuyen-muc');
             const filterMonTheThao = document.getElementById('filter-mon-the-thao');
+            const filterSearch = document.getElementById('filter-search');
 
-            function initialize() {
-                populateFilters(allArticles);
-                renderArticles(allArticles);
-            }
-
-            function populateFilters(data) {
+            function populateFilters() {
                 const chuyenMucSet = new Set();
                 const monTheThaoSet = new Set();
-
-                data.forEach(item => {
+                allArticles.forEach(item => {
                     if (item['Chuyên mục']) chuyenMucSet.add(item['Chuyên mục']);
                     if (item['Môn thể thao']) monTheThaoSet.add(item['Môn thể thao']);
                 });
-
-                chuyenMucSet.forEach(value => {
-                    const option = document.createElement('option');
-                    option.value = value;
-                    option.textContent = value;
-                    filterChuyenMuc.appendChild(option);
+                chuyenMucSet.forEach(v => {
+                    filterChuyenMuc.insertAdjacentHTML('beforeend', `<option value="${esc(v)}">${esc(v)}</option>`);
                 });
-
-                monTheThaoSet.forEach(value => {
-                    const option = document.createElement('option');
-                    option.value = value;
-                    option.textContent = value;
-                    filterMonTheThao.appendChild(option);
+                monTheThaoSet.forEach(v => {
+                    filterMonTheThao.insertAdjacentHTML('beforeend', `<option value="${esc(v)}">${esc(v)}</option>`);
                 });
             }
-            
-            function renderArticles(data) {
-                articlesGrid.innerHTML = '';
-                if (data.length === 0) {
-                    noResultsMsg.classList.remove('hidden');
-                } else {
-                    noResultsMsg.classList.add('hidden');
-                }
 
-                data.forEach(item => {
-                    const imageUrl = item['imageUrl'] || item['Thumb']; 
-                    const articleHtml = `
-                        <a href="${item['URL']}" target="_blank" rel="noopener noreferrer" class="block bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-                            <img src="${imageUrl}" alt="${item['title']}" class="w-full card-image" onerror="this.onerror=null;this.src='https://placehold.co/600x400/EFEFEF/333333?text=Image+Not+Found';">
-                            <div class="p-6">
-                                <div class="flex flex-wrap gap-2 mb-2">
-                                    <span class="text-xs bg-blue-100 text-blue-800 py-1 px-2 rounded-full font-medium">${item['Chuyên mục']}</span>
-                                    <span class="text-xs bg-green-100 text-green-800 py-1 px-2 rounded-full font-medium">${item['Môn thể thao']}</span>
-                                </div>
-                                <h4 class="font-bold text-xl mb-2 text-gray-900">${item['title']}</h4>
-                                <p class="text-gray-600 text-base">${item['lead']}</p>
+            function renderArticles(data) {
+                if (data.length === 0) {
+                    articlesGrid.innerHTML = '';
+                    noResultsMsg.classList.remove('hidden');
+                    resultCount.textContent = '';
+                    return;
+                }
+                noResultsMsg.classList.add('hidden');
+                resultCount.textContent = `Hiển thị ${data.length} / ${allArticles.length} tác phẩm`;
+
+                const fallback = 'https://placehold.co/600x400/EFEFEF/333333?text=Image+Not+Found';
+                articlesGrid.innerHTML = data.map(item => {
+                    const imgUrl = esc(item.imageUrl || item['Thumb'] || '');
+                    return `
+                        <a href="${safeUrl(item.URL)}" target="_blank" rel="noopener noreferrer"
+                           class="group block bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
+                            <div class="overflow-hidden">
+                                <img src="${imgUrl}" alt="${esc(item.title)}" loading="lazy"
+                                     class="w-full card-image group-hover:scale-105 transition-transform duration-500"
+                                     onerror="this.onerror=null;this.src='${fallback}'">
                             </div>
-                        </a>
-                    `;
-                    articlesGrid.innerHTML += articleHtml;
-                });
+                            <div class="p-5">
+                                <div class="flex flex-wrap gap-2 mb-3">
+                                    <span class="text-xs bg-blue-100 text-blue-800 py-1 px-2 rounded-full font-medium">${esc(item['Chuyên mục'])}</span>
+                                    <span class="text-xs bg-green-100 text-green-800 py-1 px-2 rounded-full font-medium">${esc(item['Môn thể thao'])}</span>
+                                </div>
+                                <h4 class="font-bold text-lg mb-2 text-gray-900 group-hover:text-blue-700 transition-colors">${esc(item.title)}</h4>
+                                <p class="text-gray-500 text-sm leading-relaxed line-clamp-3">${esc(item.lead)}</p>
+                            </div>
+                        </a>`;
+                }).join('');
             }
 
             function applyFilters() {
-                const selectedChuyenMuc = filterChuyenMuc.value;
-                const selectedMonTheThao = filterMonTheThao.value;
-
-                const filteredArticles = allArticles.filter(item => {
-                    const chuyenMucMatch = selectedChuyenMuc === 'all' || item['Chuyên mục'] === selectedChuyenMuc;
-                    const monTheThaoMatch = selectedMonTheThao === 'all' || item['Môn thể thao'] === selectedMonTheThao;
-                    return chuyenMucMatch && monTheThaoMatch;
-                });
-
-                renderArticles(filteredArticles);
+                const cm = filterChuyenMuc.value;
+                const mt = filterMonTheThao.value;
+                const q = filterSearch.value.toLowerCase().trim();
+                const filtered = allArticles.filter(item =>
+                    (cm === 'all' || item['Chuyên mục'] === cm) &&
+                    (mt === 'all' || item['Môn thể thao'] === mt) &&
+                    (!q || item.title.toLowerCase().includes(q) || item.lead.toLowerCase().includes(q))
+                );
+                renderArticles(filtered);
             }
 
             filterChuyenMuc.addEventListener('change', applyFilters);
             filterMonTheThao.addEventListener('change', applyFilters);
+            filterSearch.addEventListener('input', applyFilters);
 
-            initialize();
+            populateFilters();
+            renderArticles(allArticles);
         });
     </script>
-
 </body>
 </html>
-
