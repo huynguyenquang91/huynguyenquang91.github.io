@@ -898,11 +898,11 @@
                 period: '2014 — 2015',
                 accent: '#3b82f6',
                 title: 'Marketing Executive',
-                company: 'MP & Silva · Singapore',
+                company: 'MP & Silva · Hanoi',
                 sections: [
                     { heading: 'How it started', body: 'I joined MP&Silva fresh from university after winning the Play For Change "19 by 19" scholarship — one of 19 young sports media professionals selected across Vietnam. The role was a crash course in the commercial architecture of global sport.' },
                     { heading: 'What I learned', body: 'How broadcast deals for the Premier League and World Cup are structured, negotiated, and sold to broadcasters across Southeast Asia. Sport isn\'t just played — it\'s packaged, priced, and distributed. Understanding this gave me a framework for everything that followed.' },
-                    { heading: 'Context', body: 'MP&Silva was at its peak, handling rights valued at billions of dollars globally. (It collapsed in 2018.) Working alongside international colleagues in Singapore\'s financial district at 21 was an education no classroom could replicate.' },
+                    { heading: 'Context', body: 'It started with a 2-month internship in MP&Silva\'s Singapore office in 2013. Back in Hanoi from 2014, I worked directly with Vietnam\'s biggest TV broadcasters — VTV for the 2014 World Cup, K+ for Premier League rights. MP&Silva was at its peak globally. (It collapsed in 2018.)' },
                     { heading: 'Why I left', body: 'The commercial side was fascinating — but I kept wanting to know the stories behind the numbers. One year in, I walked into a newsroom.' }
                 ],
                 quote: '"One year in, I realized I didn\'t want to sell the stories. I wanted to tell them."'
