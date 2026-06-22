@@ -112,7 +112,7 @@
                 <a href="#contact" class="text-sm font-semibold text-slate-600 hover:text-blue-600 transition duration-300">Contact me</a>
             </nav>
         </div>
-        <div id="mobile-nav" class="flex-col md:hidden bg-white border-t border-slate-100 px-6 py-4 space-y-4 shadow-lg">
+        <div id="mobile-nav" class="flex-col md:hidden bg-white border-t border-slate-100 px-6 py-4 space-y-4 shadow-lg absolute w-full">
             <a href="#about" class="block text-slate-700 hover:text-blue-600 font-semibold transition">About me</a>
             <a href="#marathon" class="block text-slate-700 hover:text-blue-600 font-semibold transition">Event campaigns</a>
             <a href="#portfolio" class="block text-slate-700 hover:text-blue-600 font-semibold transition">Journalism work</a>
@@ -136,7 +136,7 @@
                     My <span class="bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-500 bg-clip-text text-transparent">12-Year</span> Journey <br class="hidden md:block" />in Sports Media
                 </h2>
 
-                <p class="text-slate-400 text-base md:text-lg leading-relaxed font-light animate-fade-up delay-200 mt-4 italic max-w-3xl mx-auto">
+                <p class="text-slate-300 text-lg md:text-xl leading-relaxed font-light animate-fade-up delay-200 mt-4 italic max-w-3xl mx-auto">
                     "I started with the broadcast rights for the World Cup and Premier League. Then spent a decade writing about the raw human stories of sports. Now, I design the strategy for 132,000 marathon runners — and still pick up the pen when a story demands it."
                 </p>
             </div>
@@ -179,16 +179,26 @@
                 </div>
 
                 <!-- Era 3: VnExpress Marathon -->
-                <div class="bg-slate-800/40 backdrop-blur-md border border-slate-700/50 rounded-2xl p-5 hover:bg-slate-800/80 transition-all duration-300 group animate-fade-up delay-500 flex flex-col">
+                <div class="bg-slate-800/60 backdrop-blur-md border border-blue-500/30 rounded-2xl p-5 hover:bg-slate-800/90 transition-all duration-300 group animate-fade-up delay-500 flex flex-col relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-cyan-400"></div>
                     <div class="w-full h-48 rounded-xl bg-slate-900 mb-5 overflow-hidden relative">
                         <img src="images/vm-hcm-midnight-2023.jpg" alt="Interviewing Kenyan runner at VM Ho Chi Minh City Midnight 2023" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700" onerror="this.src='https://placehold.co/600x400/1e293b/a855f7?text=VnExpress+Marathon'">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
                     </div>
-                    <p class="text-purple-400 font-bold text-sm tracking-widest uppercase mb-1">2025 — Present</p>
+                    <div class="flex items-center gap-2 mb-1">
+                        <p class="text-cyan-400 font-bold text-sm tracking-widest uppercase">2025 — Present</p>
+                        <span class="flex h-2 w-2 relative">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
+                        </span>
+                    </div>
                     <h3 class="text-xl font-bold text-white mb-1">Head of Communications</h3>
                     <p class="text-slate-300 font-medium mb-3">VnExpress Marathon</p>
                     <p class="text-slate-400 text-sm leading-relaxed flex-1">
                         Leading strategic communications for Vietnam's largest running series across 11 cities. Orchestrating public relations, high-stakes crisis response, and creative content production for a community of 132k+ athletes.
+                    </p>
+                    <p class="text-cyan-300/70 text-xs italic mt-4 pt-4 border-t border-slate-700/50">
+                        "From reporting on other people's milestones to building the starting lines where thousands more run their own." →
                     </p>
                 </div>
 
