@@ -80,25 +80,25 @@
 
     <!-- Header -->
     <header class="glass-nav sticky top-0 z-50 transition-all duration-300">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <h1 class="text-2xl font-extrabold text-slate-900 tracking-tight">Huy Nguyen</h1>
-            <nav class="hidden md:flex space-x-8">
-                <a href="#about" class="text-sm font-semibold text-slate-600 hover:text-blue-600 transition duration-300">Về tôi</a>
-                <a href="#marathon" class="text-sm font-semibold text-slate-600 hover:text-blue-600 transition duration-300">Truyền thông sự kiện</a>
-                <a href="#portfolio" class="text-sm font-semibold text-slate-600 hover:text-blue-600 transition duration-300">Tác phẩm báo chí</a>
-                <a href="#contact" class="text-sm font-semibold text-slate-600 hover:text-blue-600 transition duration-300">Liên hệ</a>
-            </nav>
-            <button id="menu-btn" class="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 rounded-full hover:bg-slate-100 transition" aria-label="Mở menu">
+        <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <button id="menu-btn" class="order-1 md:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 rounded-full hover:bg-slate-100 transition" aria-label="Open menu">
                 <span class="block w-5 h-0.5 bg-slate-800 rounded-full"></span>
                 <span class="block w-5 h-0.5 bg-slate-800 rounded-full"></span>
                 <span class="block w-3 h-0.5 bg-slate-800 rounded-full self-start ml-2.5"></span>
             </button>
+            <h1 class="order-2 md:order-1 text-2xl font-extrabold text-slate-900 tracking-tight">Huy Nguyen</h1>
+            <nav class="hidden md:flex order-3 space-x-8">
+                <a href="#about" class="text-sm font-semibold text-slate-600 hover:text-blue-600 transition duration-300">About me</a>
+                <a href="#marathon" class="text-sm font-semibold text-slate-600 hover:text-blue-600 transition duration-300">Event campaigns</a>
+                <a href="#portfolio" class="text-sm font-semibold text-slate-600 hover:text-blue-600 transition duration-300">Journalism work</a>
+                <a href="#contact" class="text-sm font-semibold text-slate-600 hover:text-blue-600 transition duration-300">Contact me</a>
+            </nav>
         </div>
         <div id="mobile-nav" class="flex-col md:hidden bg-white border-t border-slate-100 px-6 py-4 space-y-4 shadow-lg">
-            <a href="#about" class="block text-slate-700 hover:text-blue-600 font-semibold transition">Về tôi</a>
-            <a href="#marathon" class="block text-slate-700 hover:text-blue-600 font-semibold transition">Truyền thông sự kiện</a>
-            <a href="#portfolio" class="block text-slate-700 hover:text-blue-600 font-semibold transition">Tác phẩm báo chí</a>
-            <a href="#contact" class="block text-slate-700 hover:text-blue-600 font-semibold transition">Liên hệ</a>
+            <a href="#about" class="block text-slate-700 hover:text-blue-600 font-semibold transition">About me</a>
+            <a href="#marathon" class="block text-slate-700 hover:text-blue-600 font-semibold transition">Event campaigns</a>
+            <a href="#portfolio" class="block text-slate-700 hover:text-blue-600 font-semibold transition">Journalism work</a>
+            <a href="#contact" class="block text-slate-700 hover:text-blue-600 font-semibold transition">Contact me</a>
         </div>
     </header>
 
@@ -114,8 +114,8 @@
                     Nguyễn Quang Huy · Sports Media
                 </div>
 
-                <h2 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-slate-400 animate-fade-up delay-100 leading-tight pb-2">
-                    My 12-Year Journey <br class="hidden md:block" />in Sports Media
+                <h2 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight text-white animate-fade-up delay-100 leading-tight pb-2">
+                    My <span class="bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-500 bg-clip-text text-transparent">12-Year</span> Journey <br class="hidden md:block" />in Sports Media
                 </h2>
 
                 <p class="text-slate-400 text-base md:text-lg leading-relaxed font-light animate-fade-up delay-200 mt-4 italic max-w-3xl mx-auto">
