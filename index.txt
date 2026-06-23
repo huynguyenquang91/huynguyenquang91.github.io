@@ -378,11 +378,11 @@
                             <span class="text-xs font-bold uppercase tracking-wider bg-blue-50 text-blue-700 border border-blue-100 px-2.5 py-1 rounded-md">9.44 tỷ Media Value</span>
                         </div>
                         <h5 class="text-xl font-bold text-slate-900 mb-1">VM Volvo All-Star 2025</h5>
-                        <p class="text-xs text-slate-500 mb-4 font-medium pb-4 border-b border-slate-100">Lần đầu áp dụng chuẩn đầu vào · T4/2025</p>
+                        <p class="text-xs text-slate-500 mb-4 font-medium pb-4 border-b border-slate-100">Giải marathon áp chuẩn đầu vào đầu tiên Việt Nam · T4/2025</p>
                         <ul class="space-y-3 text-sm text-slate-600 flex-1">
                             <li class="flex items-start gap-2">
                                 <svg class="w-4 h-4 text-emerald-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                                Top article "Runner Kenya đổi đời" viral lan ra ngoài cộng đồng chạy bộ, giữ bounce rate ở mức cực thấp (2.1%).
+                                Tuyến bài về VĐV Kenya mưu sinh nhờ chạy bộ ở Việt Nam đạt <strong>148k views</strong>. Riêng bài "Runner Kenya đổi đời..." đạt <strong>91k views</strong>, bounce rate <strong>2.1%</strong> — viral lan rộng ra ngoài cộng đồng chạy bộ.
                             </li>
                             <li class="flex items-start gap-2">
                                 <svg class="w-4 h-4 text-emerald-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
