@@ -446,7 +446,7 @@
                                 <p><span class="font-semibold text-slate-800">Thực trạng:</span> Một khán giả trẻ mở livestream marathon lên, rồi tắt sau 3 phút. Camera cố định. Bình luận viên đọc kết quả. Tất cả đọng lại chỉ là hình ảnh của 8–10 runner thành tích cao.</p>
                                 <p><span class="font-semibold text-slate-800">Số liệu:</span> Nhóm 18–34 tuổi của VM tăng gấp đôi trong 2 năm — chiếm 32% khán giả. Đây là nhóm tăng trưởng nhanh nhất, và cũng là nhóm ít kiên nhẫn nhất với nội dung nhàm.</p>
                                 <p><span class="font-semibold text-slate-800">Bài toán:</span> Làm sao giữ họ ở lại màn hình — không phải vì kết quả, mà vì câu chuyện đang diễn ra ngay lúc đó? Và làm thế nào để nội dung livestream tiếp tục được chia sẻ trên mạng xã hội thay vì dừng lại sau cuộc đua?</p>
-                                <p><span class="font-semibold text-indigo-700">Giải pháp:</span> Không làm thể thao ít đi — mà thêm người vào giữa màn hình. Livestream Hybrid đặt drone cạnh GoPro, bình luận viên phong cách reality cạnh góc nhìn chuyên môn, và theo sát cảm xúc VĐV theo thời gian thực. Một ekíp bằng nửa truyền hình thông thường — sản phẩm phủ đồng thời VnExpress, VnE Go, Facebook và TikTok.</p>
+                                <p><span class="font-semibold text-indigo-700">Giải pháp:</span> Livestream Hybrid đặt góc máy direct cạnh góc máy tracking, bình luận viên chuyên môn cạnh host hiện trường — giúp người xem tiếp nhận cuộc đua toàn cảnh hơn, với nhịp độ nhanh hơn. Một ekíp bằng nửa truyền hình thông thường — sản phẩm phủ đồng thời VnExpress, VnE Go, Facebook và TikTok.</p>
                             </div>
                         </div>
 
