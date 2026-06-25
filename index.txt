@@ -283,7 +283,7 @@
                     <img src="images/vm libera nha trang 2025.webp" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent flex flex-col justify-end p-4">
                         <p class="text-white font-bold text-base leading-tight mb-1">VM Libera Nha Trang 2025</p>
-                        <p class="text-cyan-400 text-xs font-semibold">Tối ưu Keyword cho NTT</p>
+                        <p class="text-cyan-400 text-xs font-semibold">Tối ưu Keyword cho đối tác</p>
                     </div>
                 </div>
 
@@ -333,10 +333,10 @@
                         <div class="flex flex-wrap gap-2 mb-4">
                             <span class="text-xs font-bold tracking-wide uppercase bg-emerald-100 text-emerald-800 px-2.5 py-1 rounded-md">3.17M views</span>
                             <span class="text-xs font-bold tracking-wide uppercase bg-emerald-100 text-emerald-800 px-2.5 py-1 rounded-md">223.5% KPI</span>
-                            <span class="text-xs font-bold tracking-wide uppercase border border-amber-300 text-amber-700 px-2.5 py-1 rounded-md">★ Thúc đẩy doanh số bán hàng cho NTT</span>
+                            <span class="text-xs font-bold tracking-wide uppercase border border-amber-300 text-amber-700 px-2.5 py-1 rounded-md">★ Thúc đẩy doanh số bán hàng cho đối tác</span>
                         </div>
                         <h5 class="text-2xl font-extrabold text-slate-900 mb-2">VM Green Paradise Cần Giờ 2026</h5>
-                        <p class="text-sm text-slate-500 mb-5 font-medium">NTT: Vinhomes · 5,000 BIB Sold out trong 10 ngày · T5/2026</p>
+                        <p class="text-sm text-slate-500 mb-5 font-medium">Đối tác: Vinhomes · 5,000 BIB Sold out trong 10 ngày · T5/2026</p>
                         <div class="bg-slate-50 rounded-xl p-5 mb-5 border border-slate-100">
                             <h6 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Chiến lược triển khai</h6>
                             <ul class="space-y-2.5 text-sm text-slate-700">
