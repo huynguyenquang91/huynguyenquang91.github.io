@@ -451,17 +451,21 @@
                                 </div>
                             </div>
                             <div class="md:w-72 shrink-0 flex flex-col gap-3">
-                                <div class="relative rounded-xl overflow-hidden h-36 bg-slate-900">
-                                    <img src="images/host-Hue 2026.gif" class="w-full h-full object-cover object-top" alt="Host dẫn VM Huế 2026">
-                                    <span class="absolute bottom-2 left-2 text-xs font-bold text-white bg-black/50 px-2 py-0.5 rounded backdrop-blur-sm">VM Huế 2026</span>
+                                <!-- 2 portrait 9:16 side by side -->
+                                <div class="flex gap-3">
+                                    <div class="relative rounded-xl overflow-hidden flex-1 bg-slate-900" style="aspect-ratio:9/16">
+                                        <img src="images/host-Hue 2026.gif" class="w-full h-full object-cover object-top" alt="Host dẫn VM Huế 2026">
+                                        <span class="absolute bottom-2 left-2 text-xs font-bold text-white bg-black/50 px-2 py-0.5 rounded backdrop-blur-sm">VM Huế 2026</span>
+                                    </div>
+                                    <div class="relative rounded-xl overflow-hidden flex-1 bg-slate-900" style="aspect-ratio:9/16">
+                                        <img src="images/do hoa duong- can tho 2025.gif" class="w-full h-full object-cover object-top" alt="Đồ hoạ đường VM Cần Thơ">
+                                        <span class="absolute bottom-2 left-2 text-xs font-bold text-white bg-black/50 px-2 py-0.5 rounded backdrop-blur-sm">VM Cần Thơ 2026</span>
+                                    </div>
                                 </div>
-                                <div class="relative rounded-xl overflow-hidden h-36 bg-slate-900">
+                                <!-- 1 landscape 16:9 -->
+                                <div class="relative rounded-xl overflow-hidden aspect-video bg-slate-900">
                                     <img src="images/phong van MC - HCM 2026.gif" class="w-full h-full object-cover" alt="Phỏng vấn MC VM HCM 2026">
                                     <span class="absolute bottom-2 left-2 text-xs font-bold text-white bg-black/50 px-2 py-0.5 rounded backdrop-blur-sm">VM HCM Midnight 2026</span>
-                                </div>
-                                <div class="relative rounded-xl overflow-hidden h-36 bg-slate-900">
-                                    <img src="images/do hoa duong- can tho 2025.gif" class="w-full h-full object-cover" alt="Đồ hoạ đường VM Cần Thơ">
-                                    <span class="absolute bottom-2 left-2 text-xs font-bold text-white bg-black/50 px-2 py-0.5 rounded backdrop-blur-sm">VM Cần Thơ 2026</span>
                                 </div>
                             </div>
                         </div>
