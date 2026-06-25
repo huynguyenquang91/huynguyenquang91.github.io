@@ -423,8 +423,8 @@
                                 Bốn tầng nội dung — từ thông tin đối tác đến văn hoá đêm Hà Nội, từ kỹ năng chạy bộ đến những con người truyền cảm hứng — để không bao giờ chỉ nói về một giải đua.
                             </li>
                         </ul>
-                        <div class="mt-4 relative rounded-xl overflow-hidden bg-slate-100">
-                            <img src="images/hop giay puma -vm hanoi 2025.jpg" class="w-full object-contain" alt="PUMA Go Wild VM Hanoi Midnight 2025">
+                        <div class="mt-4 relative rounded-xl overflow-hidden h-36">
+                            <img src="images/hop giay puma -vm hanoi 2025.jpg" class="w-full h-full object-cover object-center" alt="PUMA Go Wild VM Hanoi Midnight 2025">
                             <span class="absolute bottom-2 left-2 text-xs font-bold text-white bg-black/50 px-2 py-0.5 rounded backdrop-blur-sm">Thông điệp "chạy vì niềm vui"</span>
                         </div>
                     </div>
