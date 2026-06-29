@@ -92,6 +92,25 @@
         .delay-300 { animation-delay: 300ms; }
         .delay-400 { animation-delay: 400ms; }
         .delay-500 { animation-delay: 500ms; }
+        body::before, body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            width: 3px;
+            height: 100vh;
+            background: linear-gradient(180deg,
+                transparent 0%,
+                rgba(37,99,235,0.5) 15%,
+                rgba(99,102,241,0.7) 40%,
+                rgba(139,92,246,0.6) 60%,
+                rgba(37,99,235,0.4) 85%,
+                transparent 100%
+            );
+            z-index: 9999;
+            pointer-events: none;
+        }
+        body::before { left: 0; }
+        body::after  { right: 0; }
     </style>
 </head>
 <body class="text-slate-800 antialiased selection:bg-blue-200 selection:text-blue-900">
