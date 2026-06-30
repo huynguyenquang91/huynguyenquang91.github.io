@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
+        body { font-family: 'Inter', sans-serif; background-color: #0f172a; }
         h1, h2, h3, h4, h5 { letter-spacing: -0.025em; }
         .section-title {
             position: relative;
@@ -55,10 +55,10 @@
             pointer-events: none;
         }
         .glass-nav {
-            background: rgba(255,255,255,0.85);
+            background: rgba(15, 23, 42, 0.90);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
         }
         #mobile-nav { display: none; }
         #mobile-nav.open { display: flex; }
@@ -92,31 +92,50 @@
         .delay-300 { animation-delay: 300ms; }
         .delay-400 { animation-delay: 400ms; }
         .delay-500 { animation-delay: 500ms; }
+        body::before, body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            width: 3px;
+            height: 100vh;
+            background: linear-gradient(180deg,
+                transparent 0%,
+                rgba(37,99,235,0.5) 15%,
+                rgba(99,102,241,0.7) 40%,
+                rgba(139,92,246,0.6) 60%,
+                rgba(37,99,235,0.4) 85%,
+                transparent 100%
+            );
+            z-index: 9999;
+            pointer-events: none;
+        }
+        body::before { left: 0; }
+        body::after  { right: 0; }
     </style>
 </head>
-<body class="text-slate-800 antialiased selection:bg-blue-200 selection:text-blue-900">
+<body class="text-slate-100 antialiased selection:bg-blue-700 selection:text-blue-100">
 
     <!-- Header -->
     <header class="glass-nav sticky top-0 z-50 transition-all duration-300">
         <div class="container mx-auto px-6 py-4 flex items-center justify-between">
-            <button id="menu-btn" class="order-1 md:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 rounded-full hover:bg-slate-100 transition" aria-label="Open menu">
+            <button id="menu-btn" class="order-1 md:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 rounded-full hover:bg-slate-700/60 transition" aria-label="Open menu">
                 <span class="block w-5 h-0.5 bg-slate-800 rounded-full"></span>
                 <span class="block w-5 h-0.5 bg-slate-800 rounded-full"></span>
                 <span class="block w-3 h-0.5 bg-slate-800 rounded-full self-start ml-2.5"></span>
             </button>
-            <h1 class="order-2 md:order-1 text-2xl font-extrabold text-slate-900 tracking-tight">Huy Nguyen</h1>
+            <h1 class="order-2 md:order-1 text-2xl font-extrabold text-slate-50 tracking-tight">Huy Nguyen</h1>
             <nav class="hidden md:flex order-3 space-x-8">
-                <a href="#about" class="text-sm font-semibold text-slate-600 hover:text-blue-600 transition duration-300">About me</a>
-                <a href="#marathon" class="text-sm font-semibold text-slate-600 hover:text-blue-600 transition duration-300">Event campaigns</a>
-                <a href="#portfolio" class="text-sm font-semibold text-slate-600 hover:text-blue-600 transition duration-300">Journalism work</a>
-                <a href="#contact" class="text-sm font-semibold text-slate-600 hover:text-blue-600 transition duration-300">Contact me</a>
+                <a href="#about" class="text-sm font-semibold text-slate-300 hover:text-blue-400 transition duration-300">About me</a>
+                <a href="#marathon" class="text-sm font-semibold text-slate-300 hover:text-blue-400 transition duration-300">Event campaigns</a>
+                <a href="#portfolio" class="text-sm font-semibold text-slate-300 hover:text-blue-400 transition duration-300">Journalism work</a>
+                <a href="#contact" class="text-sm font-semibold text-slate-300 hover:text-blue-400 transition duration-300">Contact me</a>
             </nav>
         </div>
-        <div id="mobile-nav" class="flex-col md:hidden bg-white border-t border-slate-100 px-6 py-4 space-y-4 shadow-lg absolute w-full">
-            <a href="#about" class="block text-slate-700 hover:text-blue-600 font-semibold transition">About me</a>
-            <a href="#marathon" class="block text-slate-700 hover:text-blue-600 font-semibold transition">Event campaigns</a>
-            <a href="#portfolio" class="block text-slate-700 hover:text-blue-600 font-semibold transition">Journalism work</a>
-            <a href="#contact" class="block text-slate-700 hover:text-blue-600 font-semibold transition">Contact me</a>
+        <div id="mobile-nav" class="flex-col md:hidden bg-slate-900 border-t border-slate-700/50 px-6 py-4 space-y-4 shadow-lg absolute w-full">
+            <a href="#about" class="block text-slate-300 hover:text-blue-400 font-semibold transition">About me</a>
+            <a href="#marathon" class="block text-slate-300 hover:text-blue-400 font-semibold transition">Event campaigns</a>
+            <a href="#portfolio" class="block text-slate-300 hover:text-blue-400 font-semibold transition">Journalism work</a>
+            <a href="#contact" class="block text-slate-300 hover:text-blue-400 font-semibold transition">Contact me</a>
         </div>
     </header>
 
@@ -233,29 +252,29 @@
         <section id="marathon" class="mb-24">
             <!-- Section header + stats -->
             <div class="mb-12">
-                <h3 class="text-4xl font-extrabold text-slate-900 section-title tracking-tight">Marathon Events Communications</h3>
-                <p class="text-slate-500 text-lg leading-relaxed mt-4 mb-8">Four people. Eleven cities. Two years of turning race days into stories that travel far beyond the finish line.</p>
+                <h3 class="text-4xl font-extrabold text-slate-50 section-title tracking-tight">Marathon Events Communications</h3>
+                <p class="text-slate-400 text-lg leading-relaxed mt-4 mb-8">Four people. Eleven cities. Two years of turning race days into stories that travel far beyond the finish line.</p>
                 <!-- Stats integrated here -->
                 <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
-                    <div class="bg-white rounded-2xl border border-slate-200 p-5 text-center shadow-sm">
+                    <div class="bg-slate-800/60 rounded-2xl border border-slate-700 p-5 text-center shadow-sm">
                         <p class="text-3xl font-extrabold text-blue-600 mb-1">18</p>
-                        <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Events</p>
+                        <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Events</p>
                     </div>
-                    <div class="bg-white rounded-2xl border border-slate-200 p-5 text-center shadow-sm">
-                        <p class="text-3xl font-extrabold text-slate-800 mb-1">11</p>
-                        <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Cities</p>
+                    <div class="bg-slate-800/60 rounded-2xl border border-slate-700 p-5 text-center shadow-sm">
+                        <p class="text-3xl font-extrabold text-slate-50 mb-1">11</p>
+                        <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Cities</p>
                     </div>
-                    <div class="bg-white rounded-2xl border border-slate-200 p-5 text-center shadow-sm">
-                        <p class="text-3xl font-extrabold text-slate-800 mb-1">132k<span class="text-slate-400">+</span></p>
-                        <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Athletes</p>
+                    <div class="bg-slate-800/60 rounded-2xl border border-slate-700 p-5 text-center shadow-sm">
+                        <p class="text-3xl font-extrabold text-slate-50 mb-1">132k<span class="text-slate-400">+</span></p>
+                        <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Athletes</p>
                     </div>
-                    <div class="bg-white rounded-2xl border border-slate-200 p-5 text-center shadow-sm">
-                        <p class="text-3xl font-extrabold text-slate-800 mb-1">880<span class="text-slate-400">+</span></p>
-                        <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Articles</p>
+                    <div class="bg-slate-800/60 rounded-2xl border border-slate-700 p-5 text-center shadow-sm">
+                        <p class="text-3xl font-extrabold text-slate-50 mb-1">880<span class="text-slate-400">+</span></p>
+                        <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Articles</p>
                     </div>
-                    <div class="bg-white rounded-2xl border border-slate-200 p-5 text-center shadow-sm">
+                    <div class="bg-slate-800/60 rounded-2xl border border-slate-700 p-5 text-center shadow-sm">
                         <p class="text-3xl font-extrabold text-blue-600 mb-1">10M<span class="text-slate-400">+</span></p>
-                        <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Content Views</p>
+                        <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Content Views</p>
                     </div>
                 </div>
             </div>
@@ -263,7 +282,7 @@
             <!-- Events overview grid -->
             <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-16">
 
-                <div class="relative rounded-2xl overflow-hidden h-48 group cursor-default shadow-sm border border-slate-200">
+                <div class="relative rounded-2xl overflow-hidden h-48 group cursor-default shadow-sm border border-slate-700">
                     <img src="images/VM Volvo All-star 2025.jpg" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent flex flex-col justify-end p-4">
                         <p class="text-white font-bold text-base leading-tight mb-1">VM Volvo All-Star 2025</p>
@@ -271,7 +290,7 @@
                     </div>
                 </div>
 
-                <div class="relative rounded-2xl overflow-hidden h-48 group cursor-default shadow-sm border border-slate-200">
+                <div class="relative rounded-2xl overflow-hidden h-48 group cursor-default shadow-sm border border-slate-700">
                     <img src="images/nghe-an-2025.webp" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-700 ease-in-out">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent flex flex-col justify-end p-4">
                         <p class="text-white font-bold text-base leading-tight mb-1">VM Nghệ An 2025</p>
@@ -279,7 +298,7 @@
                     </div>
                 </div>
 
-                <div class="relative rounded-2xl overflow-hidden h-48 group cursor-default shadow-sm border border-slate-200">
+                <div class="relative rounded-2xl overflow-hidden h-48 group cursor-default shadow-sm border border-slate-700">
                     <img src="images/vm libera nha trang 2025.webp" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent flex flex-col justify-end p-4">
                         <p class="text-white font-bold text-base leading-tight mb-1">VM Libera Nha Trang 2025</p>
@@ -287,7 +306,7 @@
                     </div>
                 </div>
 
-                <div class="relative rounded-2xl overflow-hidden h-48 group cursor-default shadow-sm border border-slate-200">
+                <div class="relative rounded-2xl overflow-hidden h-48 group cursor-default shadow-sm border border-slate-700">
                     <img src="images/hanoi-midnight-2025.jpg" loading="lazy" class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700 ease-in-out">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent flex flex-col justify-end p-4">
                         <p class="text-white font-bold text-base leading-tight mb-1">VM Hanoi Midnight 2025</p>
@@ -295,7 +314,7 @@
                     </div>
                 </div>
 
-                <div class="relative rounded-2xl overflow-hidden h-48 group cursor-default shadow-sm border border-slate-200">
+                <div class="relative rounded-2xl overflow-hidden h-48 group cursor-default shadow-sm border border-slate-700">
                     <img src="images/hue-2026.jpg" loading="lazy" class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700 ease-in-out">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent flex flex-col justify-end p-4">
                         <p class="text-white font-bold text-base leading-tight mb-1">VM Huế 2026</p>
@@ -303,7 +322,7 @@
                     </div>
                 </div>
 
-                <div class="relative rounded-2xl overflow-hidden h-48 group cursor-default shadow-sm border border-slate-200">
+                <div class="relative rounded-2xl overflow-hidden h-48 group cursor-default shadow-sm border border-slate-700">
                     <img src="images/vm can gio 1.webp" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent flex flex-col justify-end p-4">
                         <p class="text-white font-bold text-base leading-tight mb-1">VM Cần Giờ 2026</p>
@@ -315,15 +334,15 @@
 
             <!-- Featured Case Studies -->
             <div class="flex items-center gap-4 mb-8">
-                <div class="h-px bg-slate-200 flex-1"></div>
-                <h4 class="text-sm font-bold text-slate-800 uppercase tracking-widest">Case Studies Nổi Bật</h4>
-                <div class="h-px bg-slate-200 flex-1"></div>
+                <div class="h-px bg-slate-700 flex-1"></div>
+                <h4 class="text-sm font-bold text-slate-200 uppercase tracking-widest">Case Studies Nổi Bật</h4>
+                <div class="h-px bg-slate-700 flex-1"></div>
             </div>
 
             <div class="space-y-8 mb-16">
 
                 <!-- Featured 1: Can Gio -->
-                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden md:flex hover-card-lift">
+                <div class="bg-slate-800/60 rounded-2xl shadow-sm border border-slate-700 overflow-hidden md:flex hover-card-lift">
                     <div class="w-full md:w-1/3 h-56 md:h-auto relative shrink-0">
                         <img src="images/vm can gio 2.jpg" loading="lazy"
                              class="absolute inset-0 w-full h-full object-cover">
@@ -331,15 +350,15 @@
                     </div>
                     <div class="p-8 flex-1">
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="text-xs font-bold tracking-wide uppercase bg-emerald-100 text-emerald-800 px-2.5 py-1 rounded-md">3.17M views</span>
-                            <span class="text-xs font-bold tracking-wide uppercase bg-emerald-100 text-emerald-800 px-2.5 py-1 rounded-md">223.5% KPI</span>
+                            <span class="text-xs font-bold tracking-wide uppercase bg-emerald-500/20 text-emerald-300 px-2.5 py-1 rounded-md">3.17M views</span>
+                            <span class="text-xs font-bold tracking-wide uppercase bg-emerald-500/20 text-emerald-300 px-2.5 py-1 rounded-md">223.5% KPI</span>
                             <span class="text-xs font-bold tracking-wide uppercase border border-amber-300 text-amber-700 px-2.5 py-1 rounded-md">★ Thúc đẩy doanh số bán hàng cho đối tác</span>
                         </div>
-                        <h5 class="text-2xl font-extrabold text-slate-900 mb-2">VM Green Paradise Cần Giờ 2026</h5>
+                        <h5 class="text-2xl font-extrabold text-slate-50 mb-2">VM Green Paradise Cần Giờ 2026</h5>
                         <p class="text-sm text-slate-500 mb-5 font-medium">Đối tác: Vinhomes · 5,000 BIB Sold out trong 10 ngày · T5/2026</p>
-                        <div class="bg-slate-50 rounded-xl p-5 mb-5 border border-slate-100">
+                        <div class="bg-slate-50 rounded-xl p-5 mb-5 border border-slate-700/50">
                             <h6 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Chiến lược triển khai</h6>
-                            <ul class="space-y-2.5 text-sm text-slate-700">
+                            <ul class="space-y-2.5 text-sm text-slate-300">
                                 <li class="flex gap-3"><span class="text-blue-500 font-bold shrink-0">01.</span>Xây dựng hành trình nội dung 5 chặng — từ tạo FOMO trước ngày mở bán đến khai thác cảm xúc sau giải — đủ để 5,000 BIB biến mất trong 10 ngày.</li>
                                 <li class="flex gap-3"><span class="text-blue-500 font-bold shrink-0">02.</span>Giữa cơn khủng hoảng thiếu phòng, không giải thích — kể một câu chuyện khác: video "Runner cắm trại" biến điểm yếu thành trải nghiệm người ta muốn thử.</li>
                                 <li class="flex gap-3"><span class="text-blue-500 font-bold shrink-0">03.</span>Cần Giờ không chỉ là địa điểm. "Xuyên rừng — chạm biển" là tuyên ngôn định vị — và nó làm cho giải này trở thành độc nhất trong toàn hệ thống VM.</li>
@@ -349,19 +368,19 @@
                             <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Sản phẩm đầu ra</p>
                             <div class="flex gap-4 flex-wrap">
                                 <a href="https://vnexpress.net/dan-elite-chay-thu-cung-duong-vm-green-paradise-can-gio-5064762.html" target="_blank" rel="noopener noreferrer"
-                                   class="flex items-center gap-3 group border border-slate-200 rounded-lg pr-4 p-1.5 hover:border-blue-400 transition-colors">
+                                   class="flex items-center gap-3 group border border-slate-700 rounded-lg pr-4 p-1.5 hover:border-blue-400 transition-colors">
                                     <img src="images/vm can gio 3.webp" class="w-12 h-12 object-cover rounded-md">
-                                    <div><p class="text-sm font-semibold text-slate-800 group-hover:text-blue-600 transition-colors">Phóng sự ảnh</p><span class="text-xs bg-blue-100 text-blue-700 px-1.5 rounded">★ Visual Language</span></div>
+                                    <div><p class="text-sm font-semibold text-slate-100 group-hover:text-blue-400 transition-colors">Phóng sự ảnh</p><span class="text-xs bg-blue-100 text-blue-700 px-1.5 rounded">★ Visual Language</span></div>
                                 </a>
                                 <a href="https://vnexpress.net/can-gio-xanh-muot-trong-video-vnexpress-marathon-5064678.html" target="_blank" rel="noopener noreferrer"
-                                   class="flex items-center gap-3 group border border-slate-200 rounded-lg pr-4 p-1.5 hover:border-blue-400 transition-colors">
+                                   class="flex items-center gap-3 group border border-slate-700 rounded-lg pr-4 p-1.5 hover:border-blue-400 transition-colors">
                                     <img src="images/vm can gio gif 1.gif" class="w-12 h-12 object-cover rounded-md">
-                                    <div><p class="text-sm font-semibold text-slate-800 group-hover:text-blue-600 transition-colors">Trailer Drone</p><span class="text-xs text-slate-400">20/4/2026</span></div>
+                                    <div><p class="text-sm font-semibold text-slate-100 group-hover:text-blue-400 transition-colors">Trailer Drone</p><span class="text-xs text-slate-400">20/4/2026</span></div>
                                 </a>
                                 <a href="https://vnexpress.net/chay-thu-cung-duong-vm-green-paradise-can-gio-5067395.html" target="_blank" rel="noopener noreferrer"
-                                   class="flex items-center gap-3 group border border-slate-200 rounded-lg pr-4 p-1.5 hover:border-blue-400 transition-colors">
+                                   class="flex items-center gap-3 group border border-slate-700 rounded-lg pr-4 p-1.5 hover:border-blue-400 transition-colors">
                                     <img src="images/vm can gio gif 2.gif" class="w-12 h-12 object-cover rounded-md">
-                                    <div><p class="text-sm font-semibold text-slate-800 group-hover:text-blue-600 transition-colors">Video thử đường</p><span class="text-xs text-slate-400">26/4/2026</span></div>
+                                    <div><p class="text-sm font-semibold text-slate-100 group-hover:text-blue-400 transition-colors">Video thử đường</p><span class="text-xs text-slate-400">26/4/2026</span></div>
                                 </a>
                             </div>
                         </div>
@@ -372,14 +391,14 @@
                 <div class="grid md:grid-cols-2 gap-8">
 
                     <!-- All-Star 2025 -->
-                    <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 flex flex-col hover-card-lift">
+                    <div class="bg-slate-800/60 rounded-2xl shadow-sm border border-slate-700 p-6 flex flex-col hover-card-lift">
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="text-xs font-bold uppercase tracking-wider bg-slate-100 text-slate-600 px-2.5 py-1 rounded-md">ER 27.6%</span>
-                            <span class="text-xs font-bold uppercase tracking-wider bg-blue-50 text-blue-700 border border-blue-100 px-2.5 py-1 rounded-md">9.44 tỷ Media Value</span>
+                            <span class="text-xs font-bold uppercase tracking-wider bg-slate-700 text-slate-300 px-2.5 py-1 rounded-md">ER 27.6%</span>
+                            <span class="text-xs font-bold uppercase tracking-wider bg-blue-500/20 text-blue-300 border border-blue-500/20 px-2.5 py-1 rounded-md">9.44 tỷ Media Value</span>
                         </div>
-                        <h5 class="text-xl font-bold text-slate-900 mb-1">VM Volvo All-Star 2025</h5>
-                        <p class="text-xs text-slate-500 mb-4 font-medium pb-4 border-b border-slate-100">Giải marathon áp chuẩn đầu vào đầu tiên Việt Nam · T4/2025</p>
-                        <ul class="space-y-3 text-sm text-slate-600 flex-1">
+                        <h5 class="text-xl font-bold text-slate-50 mb-1">VM Volvo All-Star 2025</h5>
+                        <p class="text-xs text-slate-500 mb-4 font-medium pb-4 border-b border-slate-700/50">Giải marathon áp chuẩn đầu vào đầu tiên Việt Nam · T4/2025</p>
+                        <ul class="space-y-3 text-sm text-slate-400 flex-1">
                             <li class="flex items-start gap-2">
                                 <svg class="w-4 h-4 text-emerald-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                                 <span>Vượt khỏi khuôn khổ thể thao, đây là câu chuyện về những con người đặt cược tất cả vào một giải đua ở đất khách. Tuyến bài VĐV Kenya mưu sinh tại Việt Nam chạm 148k views.</span>
@@ -388,44 +407,55 @@
                                 <svg class="w-4 h-4 text-emerald-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                                 Người đọc thấy câu chuyện về VĐV và chiếc xe đưa họ đến vạch xuất phát. Không ai cảm thấy đang đọc quảng cáo — nhưng Volvo vẫn xuất hiện đúng lúc, đúng chỗ.
                             </li>
+                            <li class="flex items-start gap-2">
+                                <svg class="w-4 h-4 text-emerald-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                Volvo trở thành Breakout topic #1 trên Google Trends khi tìm "VnExpress Marathon" — 5 tháng sau sự kiện.
+                            </li>
                         </ul>
-                        <div class="mt-4 pt-4 border-t border-slate-100">
+                        <div class="mt-4 pt-4 border-t border-slate-700/50">
                             <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Sản phẩm đầu ra</p>
                             <div class="flex flex-wrap gap-3">
                                 <a href="https://vnexpress.net/runner-kenya-doi-doi-nho-tien-thuong-tu-chay-bo-o-viet-nam-4873616.html" target="_blank" rel="noopener noreferrer"
-                                   class="flex items-center gap-3 group border border-slate-200 rounded-lg pr-4 p-1.5 hover:border-blue-400 transition-colors min-w-0">
+                                   class="flex items-center gap-3 group border border-slate-700 rounded-lg pr-4 p-1.5 hover:border-blue-400 transition-colors min-w-0">
                                     <img src="images/runner kenya doi doi.webp" class="w-12 h-12 object-cover rounded-md shrink-0">
-                                    <div class="min-w-0"><p class="text-sm font-semibold text-slate-800 group-hover:text-blue-600 transition-colors">Runner Kenya đổi đời</p><span class="text-xs bg-amber-100 text-amber-700 px-1.5 rounded">91k views · 2.1% bounce</span></div>
+                                    <div class="min-w-0"><p class="text-sm font-semibold text-slate-100 group-hover:text-blue-400 transition-colors">Runner Kenya đổi đời</p><span class="text-xs bg-amber-500/20 text-amber-300 px-1.5 rounded">91k views · 2.1% bounce</span></div>
                                 </a>
-                                <div class="flex items-center gap-3 border border-slate-200 rounded-lg pr-4 p-1.5 min-w-0">
+                                <div class="flex items-center gap-3 border border-slate-700 rounded-lg pr-4 p-1.5 min-w-0">
                                     <img src="images/xe volvo dua don vdv gif.gif" class="w-12 h-12 object-cover rounded-md shrink-0">
-                                    <div class="min-w-0"><p class="text-sm font-semibold text-slate-800">Soft PR Volvo</p><span class="text-xs text-slate-400">Xe đưa đón VĐV</span></div>
+                                    <div class="min-w-0"><p class="text-sm font-semibold text-slate-200">Soft PR Volvo</p><span class="text-xs text-slate-400">Xe đưa đón VĐV</span></div>
+                                </div>
+                                <div class="flex items-center gap-3 border border-slate-700 rounded-lg pr-4 p-1.5 min-w-0">
+                                    <img src="images/volvo google trend.jpg" class="w-12 h-12 object-cover rounded-md shrink-0">
+                                    <div class="min-w-0"><p class="text-sm font-semibold text-slate-200">Google Trends</p><span class="text-xs bg-emerald-100 text-emerald-700 px-1.5 rounded">Volvo · Breakout #1</span></div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Hanoi Midnight -->
-                    <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 flex flex-col hover-card-lift">
+                    <div class="bg-slate-800/60 rounded-2xl shadow-sm border border-slate-700 p-6 flex flex-col hover-card-lift">
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="text-xs font-bold uppercase tracking-wider bg-indigo-50 text-indigo-700 border border-indigo-100 px-2.5 py-1 rounded-md">3M+ Reach</span>
-                            <span class="text-xs font-bold uppercase tracking-wider bg-slate-100 text-slate-600 px-2.5 py-1 rounded-md">100 Bài viết</span>
+                            <span class="text-xs font-bold uppercase tracking-wider bg-indigo-500/20 text-indigo-300 border border-indigo-100 px-2.5 py-1 rounded-md">3M+ Reach</span>
+                            <span class="text-xs font-bold uppercase tracking-wider bg-slate-700 text-slate-300 px-2.5 py-1 rounded-md">100 Bài viết</span>
                         </div>
-                        <h5 class="text-xl font-bold text-slate-900 mb-1">VM Hanoi Midnight 2025 by PUMA</h5>
-                        <p class="text-xs text-slate-500 mb-4 font-medium pb-4 border-b border-slate-100">Chiến dịch PUMA "Go Wild" · T11/2025</p>
-                        <ul class="space-y-3 text-sm text-slate-600 flex-1">
+                        <h5 class="text-xl font-bold text-slate-50 mb-1">VM Hanoi Midnight 2025 by PUMA</h5>
+                        <p class="text-xs text-slate-500 mb-4 font-medium pb-4 border-b border-slate-700/50">Chiến dịch PUMA "Go Wild" · T11/2025</p>
+                        <ul class="space-y-3 text-sm text-slate-400 flex-1">
                             <li class="flex items-start gap-2">
                                 <svg class="w-4 h-4 text-indigo-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                                <span><span class="font-semibold text-slate-800">★ Sáng kiến: Mở tác nghiệp cho media tự do</span> — fanpage, photographer, content creator độc lập. Tạo ra 2.5M reach từ 5 đơn vị. Riêng VNRUN đạt 2M views/3 ngày (tương đương 100–150tr VND booking truyền thống).</span>
+                                <span><span class="font-semibold text-slate-200">★ Sáng kiến: Mở tác nghiệp cho media tự do</span> — fanpage, photographer, content creator độc lập. Tạo ra 2.5M reach từ 5 đơn vị. Riêng VNRUN đạt 2M views/3 ngày (tương đương 100–150tr VND booking truyền thống).</span>
                             </li>
                             <li class="flex items-start gap-2">
                                 <svg class="w-4 h-4 text-indigo-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                                 Bốn tầng nội dung — từ thông tin đối tác đến văn hoá đêm Hà Nội, từ kỹ năng chạy bộ đến những con người truyền cảm hứng — để không bao giờ chỉ nói về một giải đua.
                             </li>
+                            <li class="flex items-start gap-2">
+                                <svg class="w-4 h-4 text-indigo-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                Truyền tải thông điệp 'Chạy vì niềm vui' — song hành slogan "Go Wild Hanoi" của PUMA đến cộng đồng runner.
+                            </li>
                         </ul>
                         <div class="mt-4 relative rounded-xl overflow-hidden h-36">
-                            <img src="images/hop giay puma -vm hanoi 2025.jpg" class="w-full h-full object-cover object-center" alt="PUMA Go Wild VM Hanoi Midnight 2025">
-                            <span class="absolute bottom-2 left-2 text-xs font-bold text-white bg-black/50 px-2 py-0.5 rounded backdrop-blur-sm">Thông điệp "chạy vì niềm vui"</span>
+                            <img src="images/VM hanoi puma2025.jpg" class="w-full h-full object-cover object-center" alt="PUMA Go Wild VM Hanoi Midnight 2025">
                         </div>
                     </div>
                 </div>
@@ -433,24 +463,24 @@
 
             <!-- Hybrid Livestream Innovation -->
             <div class="mt-8 mb-16">
-                <h4 class="text-2xl font-bold text-slate-800 tracking-tight flex items-center gap-3 mb-8">
+                <h4 class="text-2xl font-bold text-slate-200 tracking-tight flex items-center gap-3 mb-8">
                     <div class="p-2 bg-indigo-100 rounded-lg">
                         <svg class="w-6 h-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
                     </div>
                     Sáng kiến Livestream Hybrid
                 </h4>
 
-                <div class="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden relative">
+                <div class="bg-slate-800/60 rounded-3xl shadow-sm border border-slate-700 overflow-hidden relative">
                     <div class="absolute top-0 right-0 -mt-20 -mr-20 w-64 h-64 bg-indigo-50 rounded-full blur-3xl opacity-50 pointer-events-none"></div>
                     <div class="p-8 md:p-10">
                         <div class="flex flex-col md:flex-row gap-8 mb-8">
                             <div class="flex-1">
-                                <span class="inline-block px-3 py-1 bg-indigo-100 text-indigo-800 text-xs font-bold uppercase tracking-widest rounded-md mb-4">Innovation</span>
-                                <h5 class="text-2xl font-extrabold text-slate-900 mb-4">Kết hợp Thể thao chuyên nghiệp & Truyền hình Thực tế</h5>
-                                <div class="space-y-3 text-base text-slate-600 leading-relaxed">
-                                    <p><span class="font-semibold text-slate-800">Thực trạng:</span> Một khán giả trẻ mở livestream marathon lên, rồi tắt sau 3 phút. Camera cố định. Bình luận viên đọc kết quả. Tất cả đọng lại chỉ là hình ảnh của 8–10 runner thành tích cao.</p>
-                                    <p><span class="font-semibold text-slate-800">Số liệu:</span> Nhóm 18–34 tuổi của VM tăng gấp đôi trong 2 năm — chiếm 32% khán giả. Đây là nhóm tăng trưởng nhanh nhất, và cũng là nhóm ít kiên nhẫn nhất với nội dung nhàm.</p>
-                                    <p><span class="font-semibold text-slate-800">Bài toán:</span> Làm sao giữ họ ở lại màn hình — không phải vì kết quả, mà vì câu chuyện đang diễn ra ngay lúc đó? Và làm thế nào để nội dung livestream tiếp tục được chia sẻ trên mạng xã hội thay vì dừng lại sau cuộc đua?</p>
+                                <span class="inline-block px-3 py-1 bg-indigo-500/20 text-indigo-300 text-xs font-bold uppercase tracking-widest rounded-md mb-4">Innovation</span>
+                                <h5 class="text-2xl font-extrabold text-slate-50 mb-4">Kết hợp Thể thao chuyên nghiệp & Truyền hình Thực tế</h5>
+                                <div class="space-y-3 text-base text-slate-400 leading-relaxed">
+                                    <p><span class="font-semibold text-slate-200">Thực trạng:</span> Một khán giả trẻ mở livestream marathon lên, rồi tắt sau 3 phút. Camera cố định. Bình luận viên đọc kết quả. Tất cả đọng lại chỉ là hình ảnh của 8–10 runner thành tích cao.</p>
+                                    <p><span class="font-semibold text-slate-200">Số liệu:</span> Nhóm 18–34 tuổi của VM tăng gấp đôi trong 2 năm — chiếm 32% khán giả. Đây là nhóm tăng trưởng nhanh nhất, và cũng là nhóm ít kiên nhẫn nhất với nội dung nhàm.</p>
+                                    <p><span class="font-semibold text-slate-200">Bài toán:</span> Làm sao giữ họ ở lại màn hình — không phải vì kết quả, mà vì câu chuyện đang diễn ra ngay lúc đó? Và làm thế nào để nội dung livestream tiếp tục được chia sẻ trên mạng xã hội thay vì dừng lại sau cuộc đua?</p>
                                     <p><span class="font-semibold text-indigo-700">Giải pháp:</span> Livestream Hybrid đặt góc máy direct cạnh góc máy tracking, bình luận viên chuyên môn cạnh host hiện trường — giúp người xem tiếp nhận cuộc đua toàn cảnh hơn, với nhịp độ nhanh hơn. Một ekíp bằng nửa truyền hình thông thường — sản phẩm phủ đồng thời VnExpress, VnE Go, Facebook và TikTok.</p>
                                 </div>
                             </div>
@@ -477,17 +507,17 @@
                         <div class="grid md:grid-cols-2 gap-6">
 
                             <!-- HCM Midnight -->
-                            <div class="bg-slate-50 border border-slate-100 rounded-2xl p-6 relative overflow-hidden group">
+                            <div class="bg-slate-800/30 border border-slate-700/50 rounded-2xl p-6 relative overflow-hidden group">
                                 <div class="absolute right-0 top-0 w-24 h-24 bg-gradient-to-br from-indigo-100 to-transparent opacity-50 rounded-bl-full transition-transform group-hover:scale-110"></div>
-                                <p class="text-sm font-bold text-slate-800 mb-1">VM HCM Midnight 2026</p>
+                                <p class="text-sm font-bold text-slate-200 mb-1">VM HCM Midnight 2026</p>
                                 <p class="text-xs text-slate-500 mb-6 font-medium">Bản thử nghiệm đầu tiên</p>
                                 <div class="space-y-4 mb-6 relative z-10">
                                     <div>
                                         <div class="flex justify-between text-xs text-slate-500 mb-1.5">
                                             <span>Format cũ</span>
-                                            <span class="font-semibold text-slate-700">52k views</span>
+                                            <span class="font-semibold text-slate-300">52k views</span>
                                         </div>
-                                        <div class="bg-slate-200 rounded-full h-1.5">
+                                        <div class="bg-slate-700 rounded-full h-1.5">
                                             <div class="bg-slate-400 h-1.5 rounded-full" style="width:27%"></div>
                                         </div>
                                     </div>
@@ -503,24 +533,24 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="inline-flex items-center gap-2 bg-white px-3 py-1.5 rounded-lg border border-slate-100 shadow-sm relative z-10 text-emerald-600 text-sm font-bold">
+                                <div class="inline-flex items-center gap-2 bg-slate-700 px-3 py-1.5 rounded-lg border border-slate-600/50 shadow-sm relative z-10 text-emerald-600 text-sm font-bold">
                                     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
                                     +265% Growth
                                 </div>
                             </div>
 
                             <!-- Hue -->
-                            <div class="bg-slate-50 border border-slate-100 rounded-2xl p-6 relative overflow-hidden group">
+                            <div class="bg-slate-800/30 border border-slate-700/50 rounded-2xl p-6 relative overflow-hidden group">
                                 <div class="absolute right-0 top-0 w-24 h-24 bg-gradient-to-br from-purple-100 to-transparent opacity-50 rounded-bl-full transition-transform group-hover:scale-110"></div>
-                                <p class="text-sm font-bold text-slate-800 mb-1">VM Huế 2026</p>
+                                <p class="text-sm font-bold text-slate-200 mb-1">VM Huế 2026</p>
                                 <p class="text-xs text-slate-500 mb-6 font-medium">Bản áp dụng tiêu chuẩn</p>
                                 <div class="space-y-4 mb-6 relative z-10">
                                     <div>
                                         <div class="flex justify-between text-xs text-slate-500 mb-1.5">
                                             <span>Format cũ</span>
-                                            <span class="font-semibold text-slate-700">46k views</span>
+                                            <span class="font-semibold text-slate-300">46k views</span>
                                         </div>
-                                        <div class="bg-slate-200 rounded-full h-1.5">
+                                        <div class="bg-slate-700 rounded-full h-1.5">
                                             <div class="bg-slate-400 h-1.5 rounded-full" style="width:30%"></div>
                                         </div>
                                     </div>
@@ -536,7 +566,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="inline-flex items-center gap-2 bg-white px-3 py-1.5 rounded-lg border border-slate-100 shadow-sm relative z-10 text-emerald-600 text-sm font-bold">
+                                <div class="inline-flex items-center gap-2 bg-slate-700 px-3 py-1.5 rounded-lg border border-slate-600/50 shadow-sm relative z-10 text-emerald-600 text-sm font-bold">
                                     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
                                     +236% Growth
                                 </div>
@@ -549,7 +579,7 @@
 
             <!-- Crisis Management -->
             <div class="mt-8">
-                <h4 class="text-2xl font-bold text-slate-800 tracking-tight flex items-center gap-3 mb-8">
+                <h4 class="text-2xl font-bold text-slate-200 tracking-tight flex items-center gap-3 mb-8">
                     <div class="p-2 bg-red-100 rounded-lg">
                         <svg class="w-6 h-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
                     </div>
@@ -559,7 +589,7 @@
                 <div class="grid md:grid-cols-2 gap-8">
 
                     <!-- Crisis 1: Da Nang -->
-                    <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden flex flex-col">
+                    <div class="bg-slate-800/60 rounded-2xl shadow-sm border border-slate-700 overflow-hidden flex flex-col">
                         <div class="bg-slate-900 p-6">
                             <div class="flex items-center justify-between mb-3">
                                 <span class="px-2.5 py-1 bg-white/10 text-white/80 text-[10px] font-bold uppercase tracking-widest rounded-sm border border-white/20">Đà Nẵng · T7/2025</span>
@@ -574,26 +604,29 @@
                             <div class="absolute left-10 top-6 bottom-6 w-px bg-slate-200"></div>
                             <div class="space-y-6 relative">
                                 <div class="flex gap-4">
-                                    <div class="w-8 h-8 rounded-full bg-white border-2 border-slate-300 flex items-center justify-center shrink-0 shadow-sm z-10"><span class="w-2.5 h-2.5 rounded-full bg-slate-400"></span></div>
+                                    <div class="w-8 h-8 rounded-full bg-slate-700 border-2 border-slate-500 flex items-center justify-center shrink-0 shadow-sm z-10"><span class="w-2.5 h-2.5 rounded-full bg-slate-400"></span></div>
                                     <div>
                                         <p class="text-xs font-bold text-slate-400 uppercase mb-1">Sự cố</p>
-                                        <p class="text-sm text-slate-700">VĐV Yến Thư gục ngã cách đích 50m. Video lan truyền, cộng đồng mạng tạo sức ép yêu cầu BTC xóa clip để "bảo vệ hình ảnh môn thể thao".</p>
+                                        <p class="text-sm text-slate-300">VĐV Yến Thư gục ngã cách đích 50m. Video lan truyền, cộng đồng mạng tạo sức ép yêu cầu BTC xóa clip để "bảo vệ hình ảnh môn thể thao".</p>
                                     </div>
                                 </div>
                                 <div class="flex gap-4">
-                                    <div class="w-8 h-8 rounded-full bg-white border-2 border-blue-500 flex items-center justify-center shrink-0 shadow-sm z-10"><span class="w-2.5 h-2.5 rounded-full bg-blue-500"></span></div>
+                                    <div class="w-8 h-8 rounded-full bg-blue-900/40 border-2 border-blue-500 flex items-center justify-center shrink-0 shadow-sm z-10"><span class="w-2.5 h-2.5 rounded-full bg-blue-500"></span></div>
                                     <div>
                                         <p class="text-xs font-bold text-blue-500 uppercase mb-1">Quyết định báo chí</p>
-                                        <p class="text-sm text-slate-700 font-medium">Bảo vệ quan điểm giữ lại video trên trang chủ. Lập luận: Đây không phải tiêu cực — mà là minh chứng cho tinh thần thi đấu quả cảm. Xóa clip là chối bỏ sự thật.</p>
+                                        <p class="text-sm text-slate-300 font-medium">Bảo vệ quan điểm giữ lại video trên trang chủ. Lập luận: Đây không phải tiêu cực — mà là minh chứng cho tinh thần thi đấu quả cảm. Xóa clip là chối bỏ sự thật.</p>
                                     </div>
                                 </div>
                                 <div class="flex gap-4">
-                                    <div class="w-8 h-8 rounded-full bg-white border-2 border-emerald-500 flex items-center justify-center shrink-0 shadow-sm z-10">
+                                    <div class="w-8 h-8 rounded-full bg-emerald-900/40 border-2 border-emerald-500 flex items-center justify-center shrink-0 shadow-sm z-10">
                                         <svg class="w-4 h-4 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                                     </div>
                                     <div>
                                         <p class="text-xs font-bold text-emerald-500 uppercase mb-1">Kết quả: Đóng vòng câu chuyện</p>
-                                        <p class="text-sm text-slate-700">Chỉ đạo theo sát nhân vật. 2 tháng sau, lên bài "Yến Thư tái xuất vô địch 21km Hội An". Biến khủng hoảng tiềm tàng thành câu chuyện truyền cảm hứng trọn vẹn.</p>
+                                        <p class="text-sm text-slate-300">Chỉ đạo theo sát nhân vật, phỏng vấn ngay sau khi ra viện. 2 tháng sau, lên bài "Yến Thư tái xuất vô địch 21km ở Hội An". Biến khủng hoảng tiềm tàng thành câu chuyện truyền cảm hứng trọn vẹn.</p>
+                                        <div class="mt-3 rounded-xl overflow-hidden">
+                                            <img src="images/yen thu benh vien.jpg" class="w-full rounded-xl" style="aspect-ratio:720/431">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -601,7 +634,7 @@
                     </div>
 
                     <!-- Crisis 2: Hong Le -->
-                    <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden flex flex-col">
+                    <div class="bg-slate-800/60 rounded-2xl shadow-sm border border-slate-700 overflow-hidden flex flex-col">
                         <div class="bg-slate-900 p-6">
                             <div class="flex items-center justify-between mb-3">
                                 <span class="px-2.5 py-1 bg-white/10 text-white/80 text-[10px] font-bold uppercase tracking-widest rounded-sm border border-white/20">All-Star · T2/2026</span>
@@ -610,34 +643,63 @@
                                     <span class="relative inline-flex rounded-full h-3 w-3 bg-amber-500"></span>
                                 </span>
                             </div>
-                            <h4 class="text-lg font-bold text-white leading-snug">Fake news: Bảo vệ uy tín giải đấu trước báo chí đối thủ</h4>
+                            <h4 class="text-lg font-bold text-white leading-snug">Fake news: Bảo vệ uy tín giải đấu trên mặt báo</h4>
                         </div>
                         <div class="p-6 flex-1 bg-slate-50 relative">
                             <div class="absolute left-10 top-6 bottom-6 w-px bg-slate-200"></div>
                             <div class="space-y-6 relative">
                                 <div class="flex gap-4">
-                                    <div class="w-8 h-8 rounded-full bg-white border-2 border-slate-300 flex items-center justify-center shrink-0 shadow-sm z-10"><span class="w-2.5 h-2.5 rounded-full bg-slate-400"></span></div>
+                                    <div class="w-8 h-8 rounded-full bg-slate-700 border-2 border-slate-500 flex items-center justify-center shrink-0 shadow-sm z-10"><span class="w-2.5 h-2.5 rounded-full bg-slate-400"></span></div>
                                     <div>
                                         <p class="text-xs font-bold text-slate-400 uppercase mb-1">Sự cố Kỷ lục</p>
-                                        <p class="text-sm text-slate-700">Hồng Lệ phá kỷ lục Quốc gia nhưng không được công nhận do sự kiện thiếu giám sát trực tiếp từ Liên đoàn Điền kinh (dù đã có chứng nhận đường chạy).</p>
+                                        <p class="text-sm text-slate-300">Hồng Lệ phá kỷ lục Quốc gia nhưng không được công nhận do sự kiện thiếu giám sát trực tiếp từ Liên đoàn Điền kinh (dù đã có chứng nhận đường chạy).</p>
                                     </div>
                                 </div>
                                 <div class="flex gap-4">
-                                    <div class="w-8 h-8 rounded-full bg-white border-2 border-amber-500 flex items-center justify-center shrink-0 shadow-sm z-10"><span class="text-amber-500 font-bold text-lg leading-none mt-[-2px]">!</span></div>
+                                    <div class="w-8 h-8 rounded-full bg-amber-900/40 border-2 border-amber-500 flex items-center justify-center shrink-0 shadow-sm z-10"><span class="text-amber-500 font-bold text-lg leading-none mt-[-2px]">!</span></div>
                                     <div>
                                         <p class="text-xs font-bold text-amber-600 uppercase mb-1">Tin giả xuất hiện</p>
-                                        <p class="text-sm text-slate-700">Báo Lao Động đánh đồng việc thiếu giám sát bằng "Đường chạy VM chưa được đo đạc/chứng nhận" — trực tiếp tấn công uy tín kỹ thuật của giải đấu.</p>
+                                        <p class="text-sm text-slate-300">Một số tờ báo lớn đánh đồng việc thiếu giám sát bằng "Đường chạy VM chưa được đo đạc/chứng nhận" — trực tiếp tấn công uy tín kỹ thuật của giải đấu.</p>
                                     </div>
                                 </div>
                                 <div class="flex gap-4">
-                                    <div class="w-8 h-8 rounded-full bg-white border-2 border-blue-500 flex items-center justify-center shrink-0 shadow-sm z-10">
+                                    <div class="w-8 h-8 rounded-full bg-blue-900/40 border-2 border-blue-500 flex items-center justify-center shrink-0 shadow-sm z-10">
                                         <svg class="w-4 h-4 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"/></svg>
                                     </div>
                                     <div>
                                         <p class="text-xs font-bold text-blue-500 uppercase mb-1">Xử lý cứng rắn</p>
-                                        <p class="text-sm text-slate-700 font-medium">Làm việc trực tiếp ở cấp Tòa soạn, tung bằng chứng "Giấy chứng nhận đường chạy AIMS/Liên đoàn". Buộc cơ quan đối thủ phải đính chính ngay lập tức, ngăn khủng hoảng lan rộng.</p>
+                                        <p class="text-sm text-slate-300 font-medium">Làm việc trực tiếp ở cấp Tòa soạn, tung bằng chứng "Giấy chứng nhận đường chạy AIMS/Liên đoàn". Buộc cơ quan báo chí khác phải đính chính ngay lập tức, ngăn khủng hoảng lan rộng.</p>
                                     </div>
                                 </div>
+                                <div class="flex gap-4">
+                                    <div class="w-8 h-8 rounded-full bg-emerald-900/40 border-2 border-emerald-500 flex items-center justify-center shrink-0 shadow-sm z-10">
+                                        <svg class="w-4 h-4 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs font-bold text-emerald-500 uppercase mb-1">Ghi nhận nỗ lực VĐV</p>
+                                        <p class="text-sm text-slate-300">Tiếp tục đưa tin về thành tích của Hồng Lệ — không né tránh, không tranh cãi. Dùng ngôn ngữ "tạo mốc mới", "vượt kỷ lục quốc gia" để ghi nhận nỗ lực VĐV mà không kéo lại tranh cãi về công nhận chính thức.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="px-6 pb-6 pt-2 bg-slate-50">
+                            <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Bài viết</p>
+                            <div class="flex flex-col gap-2">
+                                <a href="https://vnexpress.net/ket-qua-vnexpress-marathon-all-star-2026-5015458-tong-thuat.html" target="_blank" rel="noopener noreferrer"
+                                   class="flex items-center gap-3 group border border-slate-700 rounded-lg p-1.5 pr-3 hover:border-blue-400 bg-slate-700/60 transition-colors">
+                                    <img src="images/hong le tao moc moi.webp" class="w-14 h-14 object-cover rounded-md shrink-0">
+                                    <span class="text-sm font-semibold text-slate-100 group-hover:text-blue-400 transition-colors leading-snug">Nguyên Thanh, Hồng Lệ tạo mốc mới cho marathon Việt Nam tại All-Star</span>
+                                </a>
+                                <a href="https://vnexpress.net/dan-sao-noi-ap-dao-runner-quoc-te-tai-vnexpress-marathon-all-star-2026-5015621.html" target="_blank" rel="noopener noreferrer"
+                                   class="flex items-center gap-3 group border border-slate-700 rounded-lg p-1.5 pr-3 hover:border-blue-400 bg-slate-700/60 transition-colors">
+                                    <img src="images/dan sao noi all star.webp" class="w-14 h-14 object-cover rounded-md shrink-0">
+                                    <span class="text-sm font-semibold text-slate-100 group-hover:text-blue-400 transition-colors leading-snug">Dàn sao nội áp đảo runner quốc tế tại VnExpress Marathon All-Star 2026</span>
+                                </a>
+                                <a href="https://vnexpress.net/hong-le-vuot-ky-luc-quoc-gia-marathon-nu-5014251.html" target="_blank" rel="noopener noreferrer"
+                                   class="flex items-center gap-3 group border border-slate-700 rounded-lg p-1.5 pr-3 hover:border-blue-400 bg-slate-700/60 transition-colors">
+                                    <img src="images/hong le mat ma canh tay.webp" class="w-14 h-14 object-cover rounded-md shrink-0">
+                                    <span class="text-sm font-semibold text-slate-100 group-hover:text-blue-400 transition-colors leading-snug">Hồng Lệ vượt kỷ lục quốc gia nhờ 'mật mã' trên cánh tay</span>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -649,33 +711,37 @@
         <!-- Portfolio Section -->
         <section id="portfolio" class="mb-10 mt-32">
             <div class="max-w-2xl mb-10">
-                <h3 class="text-4xl font-extrabold text-slate-900 section-title tracking-tight">Journalism Work</h3>
-                <p class="text-slate-600 text-lg leading-relaxed">A decade of longform features, data journalism, and tactical analysis at VnExpress — Vietnam's largest news site.</p>
+                <h3 class="text-4xl font-extrabold text-slate-50 section-title tracking-tight">Journalism Work</h3>
+                <p class="text-slate-400 text-lg leading-relaxed">A decade of longform features, data journalism, and tactical analysis at VnExpress — Vietnam's largest news site.</p>
             </div>
 
             <!-- Featured Articles -->
             <div class="mb-14">
-                <p class="text-xs font-bold text-blue-600 uppercase tracking-widest mb-6">Signature Works</p>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-                    <!-- Card 1: Olympic/Nga — hero, spans 2 cols -->
-                    <a href="https://vnexpress.net/olympic-thay-doi-the-nao-khi-khong-co-nga-4780611.html" target="_blank" rel="noopener noreferrer"
-                       class="group lg:col-span-2 flex flex-col rounded-2xl overflow-hidden border border-slate-200 hover:border-blue-300 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-white">
-                        <div class="relative overflow-hidden h-56 lg:h-64">
-                            <img src="https://i1-thethao.vnecdn.net/2024/08/13/01b4f55c-92a8-450d-9112-13e4b6-7105-8689-1723483021.jpg?w=0&h=0&q=100&dpr=2&fit=crop&s=USO6cfX90_VpNqgz3DiMsQ"
-                                 alt="Olympic thay đổi thế nào khi không có Nga" loading="lazy"
-                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                            <span class="absolute top-3 left-3 px-2.5 py-1 bg-blue-600 text-white text-xs font-bold uppercase tracking-wider rounded-full">Báo chí dữ liệu</span>
+                <p class="text-xs font-bold text-blue-400 uppercase tracking-widest mb-6">Signature Works</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                    <!-- Card 1: Al Jazeera — full-width hero -->
+                    <a href="https://www.aljazeera.com/news/2025/4/19/african-athletes-find-their-feet-in-vietnams-marathon-running-boom" target="_blank" rel="noopener noreferrer"
+                       class="group md:col-span-3 flex flex-col md:flex-row rounded-2xl overflow-hidden border border-slate-700 hover:border-red-300 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-slate-800/60">
+                        <div class="relative overflow-hidden md:w-2/5 h-56 md:h-auto shrink-0">
+                            <img src="https://www.aljazeera.com/wp-content/uploads/2025/03/2022-05-19T014807Z_1690558849_UP1EI5J05056U_RTRMADP_3_GAMES-SEA-1743066119.jpg?resize=770%2C513&quality=80"
+                                 alt="African athletes in Vietnam marathon" loading="lazy"
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                 onerror="this.src='https://placehold.co/770x513/1e293b/ef4444?text=Al+Jazeera'">
+                            <div class="absolute inset-0 bg-gradient-to-r from-transparent to-black/10 md:bg-none"></div>
                         </div>
-                        <div class="p-5 flex flex-col flex-1">
-                            <h4 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors leading-snug">Olympic thay đổi thế nào khi không có Nga</h4>
-                            <p class="text-slate-500 text-sm leading-relaxed mb-3 flex-1">Khi Nga vắng mặt tại Paris 2024, một số quốc gia khác đã vươn lên trên bảng tổng sắp huy chương.</p>
-                            <p class="text-blue-500 text-xs italic border-t border-slate-100 pt-3">Data analysis on how Russia's absence reshuffled the medal table at Paris 2024.</p>
+                        <div class="p-6 md:p-8 flex flex-col justify-center flex-1">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="px-2.5 py-1 bg-red-600 text-white text-xs font-bold uppercase tracking-wider rounded-full">Al Jazeera</span>
+                                <span class="px-2.5 py-1 bg-slate-700 text-slate-300 text-xs font-bold uppercase tracking-wider rounded-full">International</span>
+                            </div>
+                            <h4 class="text-xl font-bold text-slate-50 mb-3 group-hover:text-red-400 transition-colors leading-snug">African Athletes Find Their Feet in Vietnam's Marathon Running Boom</h4>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-4">How East African runners are reshaping Vietnam's marathon circuit — chasing prize money across visa barriers, unpredictable race conditions, and a sport transforming from pastime to livelihood.</p>
+                            <p class="text-red-400 text-xs font-semibold">Published April 2025 · Al Jazeera English →</p>
                         </div>
                     </a>
                     <!-- Card 2: Faker -->
                     <a href="https://vnexpress.net/giai-ma-thanh-cong-cua-huyen-thoai-esports-faker-4532236.html" target="_blank" rel="noopener noreferrer"
-                       class="group flex flex-col rounded-2xl overflow-hidden border border-slate-200 hover:border-blue-300 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-white">
+                       class="group flex flex-col rounded-2xl overflow-hidden border border-slate-700 hover:border-blue-300 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-slate-800/60">
                         <div class="relative overflow-hidden h-48">
                             <img src="https://vcdn1-thethao.vnecdn.net/2022/11/05/screenshot20221105at095915-166-5246-4094-1667617234.png?w=1200&h=0&q=100&dpr=1&fit=crop&s=ebZ2YfResKzactwGIyXeHw"
                                  alt="Faker" loading="lazy"
@@ -683,44 +749,29 @@
                             <span class="absolute top-3 left-3 px-2.5 py-1 bg-purple-600 text-white text-xs font-bold uppercase tracking-wider rounded-full">Longform</span>
                         </div>
                         <div class="p-5 flex flex-col flex-1">
-                            <h4 class="text-base font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors leading-snug">Giải mã thành công của huyền thoại Esports Faker</h4>
-                            <p class="text-slate-500 text-sm leading-relaxed mb-3 flex-1">Nếu có một dẫn chứng hoàn hảo nhất để kêu gọi thay đổi định kiến với Esports, đó chính là sự nghiệp của Faker.</p>
-                            <p class="text-blue-500 text-xs italic border-t border-slate-100 pt-3">A career portrait of esports' greatest player — and the case for taking the genre seriously.</p>
+                            <h4 class="text-base font-bold text-slate-50 mb-2 group-hover:text-blue-400 transition-colors leading-snug">Giải mã thành công của huyền thoại Esports Faker</h4>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-3 flex-1">Nếu có một dẫn chứng hoàn hảo nhất để kêu gọi thay đổi định kiến với Esports, đó chính là sự nghiệp của Faker.</p>
+                            <p class="text-blue-500 text-xs italic border-t border-slate-700/50 pt-3">A career portrait of esports' greatest player — and the case for taking the genre seriously.</p>
                         </div>
                     </a>
-                    <!-- Card 3: Phong trào chạy bộ -->
-                    <a href="https://vnexpress.net/phong-trao-chay-bo-cu-huych-cho-marathon-viet-4692301.html" target="_blank" rel="noopener noreferrer"
-                       class="group flex flex-col rounded-2xl overflow-hidden border border-slate-200 hover:border-blue-300 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-white">
+                    <!-- Card 3: Olympic/Nga -->
+                    <a href="https://vnexpress.net/olympic-thay-doi-the-nao-khi-khong-co-nga-4780611.html" target="_blank" rel="noopener noreferrer"
+                       class="group flex flex-col rounded-2xl overflow-hidden border border-slate-700 hover:border-blue-300 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-slate-800/60">
                         <div class="relative overflow-hidden h-48">
-                            <img src="https://i1-thethao.vnecdn.net/2023/12/22/z4999836878064-76bc99f326ed8e0-6194-4171-1703258670.jpg?w=0&h=0&q=100&dpr=1&fit=crop&s=t2mrgLJuKp_bcX5jcDxshg"
-                                 alt="Phong trào chạy bộ" loading="lazy"
+                            <img src="https://i1-thethao.vnecdn.net/2024/08/13/01b4f55c-92a8-450d-9112-13e4b6-7105-8689-1723483021.jpg?w=0&h=0&q=100&dpr=2&fit=crop&s=USO6cfX90_VpNqgz3DiMsQ"
+                                 alt="Olympic thay đổi thế nào khi không có Nga" loading="lazy"
                                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                             <span class="absolute top-3 left-3 px-2.5 py-1 bg-blue-600 text-white text-xs font-bold uppercase tracking-wider rounded-full">Báo chí dữ liệu</span>
                         </div>
                         <div class="p-5 flex flex-col flex-1">
-                            <h4 class="text-base font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors leading-snug">Phong trào chạy bộ - cú huých cho marathon Việt</h4>
-                            <p class="text-slate-500 text-sm leading-relaxed mb-3 flex-1">Số lượng cũng như thành tích trong các nội dung về chạy bộ tăng vọt trong năm 2023.</p>
-                            <p class="text-blue-500 text-xs italic border-t border-slate-100 pt-3">How Vietnam's running boom became an economic and social phenomenon.</p>
+                            <h4 class="text-base font-bold text-slate-50 mb-2 group-hover:text-blue-400 transition-colors leading-snug">Olympic thay đổi thế nào khi không có Nga</h4>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-3 flex-1">Khi Nga vắng mặt tại Paris 2024, một số quốc gia khác đã vươn lên trên bảng tổng sắp huy chương.</p>
+                            <p class="text-blue-500 text-xs italic border-t border-slate-700/50 pt-3">Data analysis on how Russia's absence reshuffled the medal table at Paris 2024.</p>
                         </div>
                     </a>
-                    <!-- Card 4: CĐV Việt Nam -->
-                    <a href="https://vnexpress.net/cdv-viet-nam-va-chien-thang-tren-khan-dai-world-cup-2023-4632675.html" target="_blank" rel="noopener noreferrer"
-                       class="group flex flex-col rounded-2xl overflow-hidden border border-slate-200 hover:border-blue-300 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-white">
-                        <div class="relative overflow-hidden h-48">
-                            <img src="https://i1-thethao.vnecdn.net/2023/07/23/z4540345787955-7faee18aeafa587-4293-5157-1690097812.jpg?w=0&h=0&q=100&dpr=2&fit=crop&s=GA7AodcArefsiiBqloLEKg"
-                                 alt="CĐV Việt Nam khán đài" loading="lazy"
-                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                            <span class="absolute top-3 left-3 px-2.5 py-1 bg-emerald-600 text-white text-xs font-bold uppercase tracking-wider rounded-full">Góc nhìn</span>
-                        </div>
-                        <div class="p-5 flex flex-col flex-1">
-                            <h4 class="text-base font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors leading-snug">CĐV Việt Nam và chiến thắng trên khán đài World Cup 2023</h4>
-                            <p class="text-slate-500 text-sm leading-relaxed mb-3 flex-1">Sự cuồng nhiệt của hàng nghìn CĐV Việt Nam tại sân Eden Park — lần đầu đội tuyển nữ xuất hiện tại World Cup.</p>
-                            <p class="text-blue-500 text-xs italic border-t border-slate-100 pt-3">On the night Vietnam's fans made more noise than the result.</p>
-                        </div>
-                    </a>
-                    <!-- Card 5: Pickleball bà ngoại -->
+                    <!-- Card 4: Pickleball bà ngoại -->
                     <a href="https://vnexpress.net/niem-dam-me-pickleball-cua-ba-ngoai-viet-kieu-4854023.html" target="_blank" rel="noopener noreferrer"
-                       class="group flex flex-col rounded-2xl overflow-hidden border border-slate-200 hover:border-blue-300 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-white">
+                       class="group flex flex-col rounded-2xl overflow-hidden border border-slate-700 hover:border-blue-300 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-slate-800/60">
                         <div class="relative overflow-hidden h-48">
                             <img src="https://i1-thethao.vnecdn.net/2025/02/26/BA-NGOAI-PICKLEBALL5-JPG-17405-8382-8831-1740511025.jpg?w=0&h=0&q=100&dpr=1&fit=crop&s=_6v1aB_qKbrTBJMUBvDWzQ"
                                  alt="Pickleball bà ngoại" loading="lazy"
@@ -728,18 +779,18 @@
                             <span class="absolute top-3 left-3 px-2.5 py-1 bg-purple-600 text-white text-xs font-bold uppercase tracking-wider rounded-full">Longform</span>
                         </div>
                         <div class="p-5 flex flex-col flex-1">
-                            <h4 class="text-base font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors leading-snug">Niềm đam mê pickleball của 'bà ngoại' Việt kiều</h4>
-                            <p class="text-slate-500 text-sm leading-relaxed mb-3 flex-1">Bà Nguyễn Thị Quỳnh Vân, 65 tuổi, bán hết tài sản ở Mỹ để về Việt Nam truyền cảm hứng pickleball.</p>
-                            <p class="text-blue-500 text-xs italic border-t border-slate-100 pt-3">A 65-year-old sold everything in the US to come home and play pickleball.</p>
+                            <h4 class="text-base font-bold text-slate-50 mb-2 group-hover:text-blue-400 transition-colors leading-snug">Niềm đam mê pickleball của 'bà ngoại' Việt kiều</h4>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-3 flex-1">Bà Nguyễn Thị Quỳnh Vân, 65 tuổi, bán hết tài sản ở Mỹ để về Việt Nam truyền cảm hứng pickleball.</p>
+                            <p class="text-blue-500 text-xs italic border-t border-slate-700/50 pt-3">A 65-year-old sold everything in the US to come home and play pickleball.</p>
                         </div>
                     </a>
                 </div>
 
                 <!-- See all toggle -->
                 <div class="mt-8 text-center">
-                    <button id="toggle-all-articles" onclick="document.getElementById('all-articles-section').classList.toggle('hidden'); this.textContent = this.textContent.includes('Xem') ? 'Thu gọn ↑' : 'Xem tất cả 24 tác phẩm ↓';"
-                            class="inline-flex items-center gap-2 px-6 py-3 bg-slate-900 text-white text-sm font-semibold rounded-full hover:bg-slate-700 transition-all duration-300 hover:-translate-y-0.5 shadow-sm">
-                        Xem tất cả 24 tác phẩm ↓
+                    <button id="toggle-all-articles" onclick="document.getElementById('all-articles-section').classList.toggle('hidden'); this.textContent = this.textContent.includes('Xem') ? 'Thu gọn ↑' : 'Xem thêm tác phẩm ↓';"
+                            class="inline-flex items-center gap-2 px-6 py-3 bg-slate-700 text-white text-sm font-semibold rounded-full hover:bg-slate-600 transition-all duration-300 hover:-translate-y-0.5 shadow-sm">
+                        Xem thêm tác phẩm ↓
                     </button>
                 </div>
             </div>
@@ -748,42 +799,42 @@
             <div id="all-articles-section" class="hidden">
 
             <!-- Filters -->
-            <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-200 mb-8 flex flex-col md:flex-row gap-5">
+            <div class="bg-slate-800/60 p-5 rounded-2xl shadow-sm border border-slate-700 mb-8 flex flex-col md:flex-row gap-5">
                 <div class="w-full md:w-1/3">
-                    <label for="filter-search" class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Tìm kiếm từ khóa</label>
+                    <label for="filter-search" class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Tìm kiếm từ khóa</label>
                     <div class="relative">
                         <input id="filter-search" type="text" placeholder="Vd: Messi, Marathon..."
-                               class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all pl-10">
-                        <svg class="w-4 h-4 text-slate-400 absolute left-3.5 top-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                               class="w-full bg-slate-50 border border-slate-700 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all pl-10">
+                        <svg class="w-4 h-4 text-slate-500 absolute left-3.5 top-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
                     </div>
                 </div>
                 <div class="w-full md:w-1/3">
-                    <label for="filter-chuyen-muc" class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Thể loại báo chí</label>
-                    <select id="filter-chuyen-muc" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all cursor-pointer">
+                    <label for="filter-chuyen-muc" class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Thể loại báo chí</label>
+                    <select id="filter-chuyen-muc" class="w-full bg-slate-50 border border-slate-700 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all cursor-pointer">
                         <option value="all">Tất cả thể loại</option>
                     </select>
                 </div>
                 <div class="w-full md:w-1/3">
-                    <label for="filter-mon-the-thao" class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Môn Thể thao</label>
-                    <select id="filter-mon-the-thao" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all cursor-pointer">
+                    <label for="filter-mon-the-thao" class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Môn Thể thao</label>
+                    <select id="filter-mon-the-thao" class="w-full bg-slate-50 border border-slate-700 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all cursor-pointer">
                         <option value="all">Tất cả môn</option>
                     </select>
                 </div>
             </div>
 
             <div class="flex justify-between items-center mb-6">
-                <p id="result-count" class="text-sm font-semibold text-slate-500"></p>
+                <p id="result-count" class="text-sm font-semibold text-slate-400"></p>
             </div>
 
             <div id="articles-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
 
             <div id="no-results" class="text-center py-20 hidden">
-                <div class="inline-flex justify-center items-center w-16 h-16 rounded-full bg-slate-100 mb-4 text-slate-400">
+                <div class="inline-flex justify-center items-center w-16 h-16 rounded-full bg-slate-700/50 mb-4 text-slate-400">
                     <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                 </div>
-                <p class="text-slate-500 font-medium">Không tìm thấy bài viết nào phù hợp.</p>
+                <p class="text-slate-400 font-medium">Không tìm thấy bài viết nào phù hợp.</p>
                 <button onclick="document.getElementById('filter-search').value=''; document.getElementById('filter-chuyen-muc').value='all'; document.getElementById('filter-mon-the-thao').value='all'; document.getElementById('filter-search').dispatchEvent(new Event('input'));"
-                        class="mt-4 text-blue-600 font-semibold text-sm hover:underline">Xóa bộ lọc</button>
+                        class="mt-4 text-blue-400 font-semibold text-sm hover:underline">Xóa bộ lọc</button>
             </div>
             </div><!-- /all-articles-section -->
         </section>
@@ -811,8 +862,8 @@
                 </div>
             </div>
         </div>
-        <div class="border-t border-slate-800/60 py-6 text-center text-slate-500 text-sm font-medium relative z-10">
-            © 2025 Nguyễn Quang Huy
+        <div class="border-t border-slate-800/60 py-6 text-center text-slate-400 text-sm font-medium relative z-10">
+            © 2026 Nguyễn Quang Huy
         </div>
     </footer>
 
@@ -837,30 +888,21 @@
 
         document.addEventListener('DOMContentLoaded', function () {
             const allArticles = [
+              { "URL": "https://www.aljazeera.com/news/2025/4/19/african-athletes-find-their-feet-in-vietnams-marathon-running-boom", "Chuyên mục": "Longform", "Môn thể thao": "Marathon", "title": "African Athletes Find Their Feet in Vietnam's Marathon Running Boom", "lead": "How East African runners are reshaping Vietnam's marathon circuit — chasing prize money across visa barriers, unpredictable race conditions, and a sport transforming from pastime to livelihood.", "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2025/03/2022-05-19T014807Z_1690558849_UP1EI5J05056U_RTRMADP_3_GAMES-SEA-1743066119.jpg?resize=770%2C513&quality=80" },
               { "URL": "https://vnexpress.net/olympic-thay-doi-the-nao-khi-khong-co-nga-4780611.html", "Chuyên mục": "Báo chí dữ liệu", "Môn thể thao": "Olympic", "title": "Olympic thay đổi thế nào khi không có Nga", "lead": "Khi Nga vắng mặt tại Paris 2024, một số quốc gia khác đã vươn lên trên bảng tổng sắp huy chương.", "imageUrl": "https://i1-thethao.vnecdn.net/2024/08/13/01b4f55c-92a8-450d-9112-13e4b6-7105-8689-1723483021.jpg?w=0&h=0&q=100&dpr=2&fit=crop&s=USO6cfX90_VpNqgz3DiMsQ" },
-              { "URL": "https://vnexpress.net/argentina-croatia-van-co-cua-messi-4547581.html", "Chuyên mục": "Nhận định", "Môn thể thao": "Bóng đá", "title": "Argentina - Croatia: Ván cờ của Messi", "lead": "Cùng Argentina, Lionel Messi bước vào trận bán kết World Cup 2022 đấu Croatia trong tâm thế của một kỳ thủ khi ván cờ vào tàn cuộc.", "imageUrl": "https://i1-thethao.vnecdn.net/2022/12/13/Untitled-6062-1670909515.jpg?w=680&h=0&q=100&dpr=1&fit=crop&s=ZeqzTUiNYOy4En-90shDCw" },
               { "URL": "https://vnexpress.net/phong-trao-chay-bo-cu-huych-cho-marathon-viet-4692301.html", "Chuyên mục": "Báo chí dữ liệu", "Môn thể thao": "Marathon", "title": "Phong trào chạy bộ - cú huých cho marathon Việt", "lead": "Số lượng cũng như thành tích trong các nội dung về chạy bộ tăng vọt trong năm 2023, kéo theo những chuyển biến lớn về mặt xã hội, kinh tế và tiềm năng phát triển ở Việt Nam.", "imageUrl": "https://i1-thethao.vnecdn.net/2023/12/22/z4999836878064-76bc99f326ed8e0-6194-4171-1703258670.jpg?w=0&h=0&q=100&dpr=1&fit=crop&s=t2mrgLJuKp_bcX5jcDxshg" },
-              { "URL": "https://vnexpress.net/cdv-viet-nam-va-chien-thang-tren-khan-dai-world-cup-2023-4632675.html", "Chuyên mục": "Góc nhìn", "Môn thể thao": "Bóng đá", "title": "CĐV Việt Nam và chiến thắng trên khán đài World Cup 2023", "lead": "Sự cuồng nhiệt của hàng nghìn CĐV Việt Nam trên khán đài sân Eden Park tạo điểm nhấn trong lần đầu đội tuyển xuất hiện tại World Cup.", "imageUrl": "https://i1-thethao.vnecdn.net/2023/07/23/z4540345787955-7faee18aeafa587-4293-5157-1690097812.jpg?w=0&h=0&q=100&dpr=2&fit=crop&s=GA7AodcArefsiiBqloLEKg" },
-              { "URL": "https://vnexpress.net/barack-obama-va-thoi-khac-lich-su-cua-bong-chay-cuba-3374257.html", "Chuyên mục": "Góc nhìn", "Môn thể thao": "Bóng chày", "title": "Barack Obama và thời khắc lịch sử của bóng chày Cuba", "lead": "Khi Tổng thống Mỹ cùng lãnh đạo tối cao của nước chủ nhà Raul Castro ngồi xem trận đấu giữa CLB Tampa Bay Rays và đội tuyển Cuba, đó sẽ là bước ngoặt của bóng chày ở đảo quốc thuộc vùng Caribe này.", "imageUrl": "https://i-thethao.vnecdn.net/2016/03/22/Untitled-8-3900-1458639776-7830-1458642802.jpg" },
+              { "URL": "https://vnexpress.net/messi-hon-haaland-105-diem-binh-chon-qua-bong-vang-4672976.html", "Chuyên mục": "Báo chí dữ liệu", "Môn thể thao": "Bóng đá", "title": "Messi hơn Haaland 105 điểm bình chọn Quả Bóng Vàng", "lead": "Lionel Messi áp đảo trong cuộc bình chọn Quả Bóng Vàng 2023 khi nhận 462 điểm, trong khi người đứng thứ hai là Erling Haaland được 357 điểm.", "imageUrl": "https://i1-thethao.vnecdn.net/2023/11/04/007b161a-7fcf-4eab-bf82-baa6e2-4116-7143-1699074840.jpg?w=0&h=0&q=100&dpr=2&fit=crop&s=7WthIJJrZzu3smwmw9VXpA" },
               { "URL": "https://vnexpress.net/giai-ma-thanh-cong-cua-huyen-thoai-esports-faker-4532236.html", "Chuyên mục": "Longform", "Môn thể thao": "eSports", "title": "Giải mã thành công của huyền thoại Esports Faker", "lead": "Nếu có một dẫn chứng hoàn hảo nhất để kêu gọi thay đổi định kiến với Esports, đó chính là sự nghiệp của Lee 'Faker' Sang-hyeok.", "imageUrl": "https://vcdn1-thethao.vnecdn.net/2022/11/05/screenshot20221105at095915-166-5246-4094-1667617234.png?w=1200&h=0&q=100&dpr=1&fit=crop&s=ebZ2YfResKzactwGIyXeHw" },
               { "URL": "https://vnexpress.net/nguyen-dinh-bac-dau-an-nhan-su-dau-tien-cua-hlv-troussier-4700686.html", "Chuyên mục": "Longform", "Môn thể thao": "Bóng đá", "title": "Nguyễn Đình Bắc - dấu ấn nhân sự đầu tiên của HLV Troussier", "lead": "Từng bị nghi ngờ khi được HLV Philippe Troussier triệu tập, tiền vệ sinh năm 2004 Nguyễn Đình Bắc vụt sáng khi Việt Nam gặp Nhật Bản ở Asian Cup 2023.", "imageUrl": "https://i1-thethao.vnecdn.net/2024/01/14/z5070856987083-6a6670c479c9935-6416-7667-1705248845.jpg?w=0&h=0&q=100&dpr=2&fit=crop&s=9ygFC-ec2_qaSddHXm5CAA" },
               { "URL": "https://vnexpress.net/anh-nong-dan-chay-bo-mo-vao-bang-vang-marathon-viet-4810039.html", "Chuyên mục": "Longform", "Môn thể thao": "Marathon", "title": "Anh nông dân chạy bộ mơ vào bảng vàng marathon Việt", "lead": "Từ cánh đồng ngô ở Tuyên Quang, anh nông dân Trần Tư Pháp làm nên kỳ tích khi về nhất cự ly 21km tại Long Biên Marathon.", "imageUrl": "https://i1-thethao.vnecdn.net/2024/10/30/DONG3661-JPG-3076-1730259068.jpg?w=0&h=0&q=100&dpr=2&fit=crop&s=561Z-mXu2Ex5kRP61E_4ZQ" },
               { "URL": "https://vnexpress.net/niem-dam-me-pickleball-cua-ba-ngoai-viet-kieu-4854023.html", "Chuyên mục": "Longform", "Môn thể thao": "Pickleball", "title": "Niềm đam mê pickleball của 'bà ngoại' Việt kiều", "lead": "Đang yên ổn ở Mỹ, bà Nguyễn Thị Quỳnh Vân, 65 tuổi, quyết định bán hết tài sản để về Việt Nam, góp phần truyền cảm hứng cho người thân và bè bạn ở môn pickleball.", "imageUrl": "https://i1-thethao.vnecdn.net/2025/02/26/BA-NGOAI-PICKLEBALL5-JPG-17405-8382-8831-1740511025.jpg?w=0&h=0&q=100&dpr=1&fit=crop&s=_6v1aB_qKbrTBJMUBvDWzQ" },
               { "URL": "https://vnexpress.net/su-co-dua-nguyen-thi-oanh-den-ky-luc-marathon-viet-nam-4817779.html", "Chuyên mục": "Phỏng vấn", "Môn thể thao": "Marathon", "title": "Sự cố đưa Nguyễn Thị Oanh đến kỷ lục marathon Việt Nam", "lead": "Bị hủy nội dung ở giải vô địch tiếp sức quốc gia, Nguyễn Thị Oanh đăng ký chạy marathon phong trào và bất ngờ phá kỷ lục.", "imageUrl": "https://i1-thethao.vnecdn.net/2024/11/20/Screenshot-2024-11-20-at-16-50-1225-8969-1732096608.png?w=0&h=0&q=100&dpr=2&fit=crop&s=sZU7p9nyuBJRGvdjCkabEg" },
               { "URL": "https://vnexpress.net/ong-vu-manh-hai-viet-nam-chua-the-da-kieu-kiem-soat-cua-hlv-troussier-4663676.html", "Chuyên mục": "Phỏng vấn", "Môn thể thao": "Bóng đá", "title": "Ông Vũ Mạnh Hải: 'Việt Nam chưa thể đá kiểu kiểm soát của HLV Troussier'", "lead": "Theo cựu danh thủ Thể Công, tố chất của cầu thủ Việt Nam hiện tại khó đáp ứng yêu cầu chơi kiểm soát của HLV Philippe Troussier, và nên quay về lối đá phòng ngự - phản công thời Park Hang-seo.", "imageUrl": "https://i1-thethao.vnecdn.net/2023/10/12/anh-3-8185-1697089699.jpg?w=0&h=0&q=100&dpr=2&fit=crop&s=MOzOOMNRu96dWNG2FpImPw" },
-              { "URL": "https://vnexpress.net/argentina-phap-dieu-nhay-cuoi-cua-messi-4549647.html", "Chuyên mục": "Nhận định", "Môn thể thao": "Bóng đá", "title": "Argentina - Pháp: Điệu nhảy cuối của Messi", "lead": "Lionel Messi được kỳ vọng sẽ đưa cup vàng thế giới trở lại Nam Mỹ, nhưng anh phải đánh bại ĐKVĐ Pháp trong lần cuối ra sân ở World Cup.", "imageUrl": "https://i1-thethao.vnecdn.net/2022/12/18/Untitled-6393-1671353446.jpg?w=0&h=0&q=100&dpr=2&fit=crop&s=vPFLabwiqj4JRA_ydLk3Qg" },
-              { "URL": "https://vnexpress.net/phap-morocco-trai-bong-giac-mo-4548152.html", "Chuyên mục": "Nhận định", "Môn thể thao": "Bóng đá", "title": "Pháp - Morocco: Trái bóng Giấc Mơ", "lead": "Chiến thắng ở bán kết tối 14/12 sẽ giúp Pháp tiến thêm một bước trên con đường bảo vệ ngôi vương, còn Morocco viết tiếp câu chuyện lịch sử ở World Cup 2022.", "imageUrl": "https://vcdn1-thethao.vnecdn.net/2022/12/14/FRANCEVSMOROCCOscaled-16710121-4134-9224-1671012146.jpg?w=1200&h=0&q=100&dpr=1&fit=crop&s=41_1YXjNhIgrHxfD1WBvWQ" },
-              { "URL": "https://vnexpress.net/croatia-brazil-vu-hoi-cua-sac-mau-4546202.html", "Chuyên mục": "Nhận định", "Môn thể thao": "Bóng đá", "title": "Croatia - Brazil: Vũ hội của sắc màu", "lead": "Điệu Samba vàng xanh của Brazil đối đầu caro trắng đỏ bên phía Croatia hứa hẹn mang đến bữa tiệc bóng đá cống hiến, ở trận đầu tiên của vòng tứ kết World Cup 2022 hôm nay.", "imageUrl": "https://i1-thethao.vnecdn.net/2022/12/09/Croatia-Brazil-settop-jpeg-6571-1670589017.jpg?w=0&h=0&q=100&dpr=2&fit=crop&s=hg7hfJA2mi0ckOXGBB295g" },
-              { "URL": "https://vnexpress.net/ferrari-tu-ban-vao-chan-the-nao-tai-gp-nga-3989294.html", "Chuyên mục": "Bình luận", "Môn thể thao": "F1", "title": "Ferrari tự 'bắn vào chân' thế nào tại GP Nga", "lead": "Dữ liệu radio trong chặng đua cho thấy sự không ăn ý giữa Ferrari, Sebastian Vettel và Charles Leclerc.", "imageUrl": "https://i1-thethao.vnecdn.net/2019/09/30/Untitled-9252-1569804781.jpg?w=0&h=0&q=100&dpr=2&fit=crop&s=GcFDcC6kG2NC4MKxYpOO8w" },
-              { "URL": "https://vnexpress.net/mercedes-vo-dich-f1-sau-chien-thang-o-grand-prix-nhat-ban-3996176.html", "Chuyên mục": "Tường thuật", "Môn thể thao": "F1", "title": "Mercedes vô địch F1 sau chiến thắng ở Grand Prix Nhật Bản", "lead": "Chiến thắng của Valtteri Bottas trên trường đua Suzuka trưa 13/10 giúp Mercedes đăng quang ở hạng mục đội đua năm thứ sáu liên tiếp.", "imageUrl": "https://i1-thethao.vnecdn.net/2019/10/13/Untitled-4893-1570955235.jpg?w=0&h=0&q=100&dpr=2&fit=crop&s=j_Hzm1-5WUjOcl5kkYJa0g" },
+              { "URL": "https://vnexpress.net/cdv-viet-nam-va-chien-thang-tren-khan-dai-world-cup-2023-4632675.html", "Chuyên mục": "Góc nhìn", "Môn thể thao": "Bóng đá", "title": "CĐV Việt Nam và chiến thắng trên khán đài World Cup 2023", "lead": "Sự cuồng nhiệt của hàng nghìn CĐV Việt Nam trên khán đài sân Eden Park tạo điểm nhấn trong lần đầu đội tuyển xuất hiện tại World Cup.", "imageUrl": "https://i1-thethao.vnecdn.net/2023/07/23/z4540345787955-7faee18aeafa587-4293-5157-1690097812.jpg?w=0&h=0&q=100&dpr=2&fit=crop&s=GA7AodcArefsiiBqloLEKg" },
+              { "URL": "https://vnexpress.net/barack-obama-va-thoi-khac-lich-su-cua-bong-chay-cuba-3374257.html", "Chuyên mục": "Góc nhìn", "Môn thể thao": "Bóng chày", "title": "Barack Obama và thời khắc lịch sử của bóng chày Cuba", "lead": "Khi Tổng thống Mỹ cùng lãnh đạo tối cao của nước chủ nhà Raul Castro ngồi xem trận đấu giữa CLB Tampa Bay Rays và đội tuyển Cuba, đó sẽ là bước ngoặt của bóng chày ở đảo quốc thuộc vùng Caribe này.", "imageUrl": "https://i-thethao.vnecdn.net/2016/03/22/Untitled-8-3900-1458639776-7830-1458642802.jpg" },
               { "URL": "https://vnexpress.net/djokovic-khi-nha-vo-dich-bi-tu-choi-4417104.html", "Chuyên mục": "Bình luận", "Môn thể thao": "Tennis", "title": "Djokovic: Khi nhà vô địch bị từ chối", "lead": "Không chỉ lỡ cơ hội giành Grand Slam thứ 21, danh tiếng của Novak Djokovic còn bị tổn hại sau bê bối tại Australia Mở rộng 2022.", "imageUrl": "https://i1-thethao.vnecdn.net/2022/01/17/Untitled-1398-1642371606.jpg?w=0&h=0&q=100&dpr=2&fit=crop&s=RebX63wJAAYa4KF3UklL-A" },
-              { "URL": "https://vnexpress.net/shane-lowry-vo-dich-the-open-2019-3955858.html", "Chuyên mục": "Tường thuật", "Môn thể thao": "Golf", "title": "Shane Lowry vô địch The Open 2019", "lead": "Golfer 32 tuổi giành danh hiệu major đầu tiên với điểm -15 tại sân Portrush, Bắc Ireland.", "imageUrl": "https://i1-thethao.vnecdn.net/2019/07/22/Untitled-8192-1563740896.jpg?w=0&h=0&q=100&dpr=2&fit=crop&s=IEODF59NibTUMm9lvPB49w" },
-              { "URL": "https://vnexpress.net/man-utd-loai-barca-khoi-europa-league-4574255.html", "Chuyên mục": "Tường thuật", "Môn thể thao": "Bóng đá", "title": "Man Utd loại Barca khỏi Europa League", "lead": "Thầy trò Erik ten Hag thắng ngược Barca 2-1 ở lượt về vòng play-off, giành vé vào vòng 1/8 Europa League với tỉ số chung cuộc 4-3.", "imageUrl": "https://i1-thethao.vnecdn.net/2023/02/24/Untitled-4461-1677189935.jpg?w=0&h=0&q=100&dpr=2&fit=crop&s=BNAKVTURNNymb9q9WgDssg" },
-              { "URL": "https://vnexpress.net/newcastle-vs-man-utd-4588562-tong-thuat.html", "Chuyên mục": "Tường thuật", "Môn thể thao": "Bóng đá", "title": "Newcastle giành vị trí thứ ba từ Man Utd", "lead": "Thất bại 0-2 trên sân Newcastle tối 2/4 khiến Man Utd bị chính đối thủ qua mặt sau vòng 29 Ngoại hạng Anh.", "imageUrl": "https://i1-thethao.vnecdn.net/2023/04/03/Untitled-4782-1680457231.jpg?w=0&h=0&q=100&dpr=2&fit=crop&s=vJnUb60GvYbuLkRfuvjvgQ" },
-              { "URL": "https://vnexpress.net/u23-viet-nam-vs-u23-thai-lan-4430709-tong-thuat.html", "Chuyên mục": "Tường thuật", "Môn thể thao": "Bóng đá", "title": "Việt Nam hạ Thái Lan tại giải U23 Đông Nam Á", "lead": "Đội hình chắp vá nhưng Việt Nam vẫn thắng Thái Lan 1-0 nhờ siêu phẩm đá phạt của Trung Thành tối 22/2, để vào bán kết với tư cách đầu bảng C.", "imageUrl": "https://i1-thethao.vnecdn.net/2022/02/22/Untitled-7081-1645538922.jpg?w=0&h=0&q=100&dpr=2&fit=crop&s=bIH3mi_QpsiKwShRD4wWKQ" },
-              { "URL": "https://vnexpress.net/viet-nam-vs-thai-lan-4471332-tong-thuat.html", "Chuyên mục": "Tường thuật", "Môn thể thao": "Bóng đá", "title": "Việt Nam rơi chiến thắng trước Thái Lan", "lead": "Hai lần dẫn bàn nhưng sai lầm ở hàng thủ khiến Việt Nam bị cầm hòa 2-2 ở trận ra quân tại bảng C, U23 châu Á 2022, tối 2/6.", "imageUrl": "https://i1-thethao.vnecdn.net/2022/06/03/Untitled-4696-1654191780.jpg?w=0&h=0&q=100&dpr=2&fit=crop&s=QSSPyLFkRNkEG1jTgTIVLQ" },
-              { "URL": "https://vnexpress.net/anh-vs-dan-mach-4306070-tong-thuat.html", "Chuyên mục": "Tường thuật", "Môn thể thao": "Bóng đá", "title": "Anh vào chung kết Euro gặp Italy", "lead": "Hạ Đan Mạch 2-1 nhờ quả phạt đền tranh cãi trong hiệp phụ tối 7/7, Anh lần đầu tiên trong lịch sử vào chung kết Euro.", "imageUrl": "https://i1-thethao.vnecdn.net/2021/07/08/Untitled-9777-1625699134.jpg?w=0&h=0&q=100&dpr=2&fit=crop&s=xEosTcUsTqYfeM-N3HYuVQ" },
-              { "URL": "https://vnexpress.net/messi-hon-haaland-105-diem-binh-chon-qua-bong-vang-4672976.html", "Chuyên mục": "Báo chí dữ liệu", "Môn thể thao": "Bóng đá", "title": "Messi hơn Haaland 105 điểm bình chọn Quả Bóng Vàng", "lead": "Lionel Messi áp đảo trong cuộc bình chọn Quả Bóng Vàng 2023 khi nhận 462 điểm, trong khi người đứng thứ hai là Erling Haaland được 357 điểm.", "imageUrl": "https://i1-thethao.vnecdn.net/2023/11/04/007b161a-7fcf-4eab-bf82-baa6e2-4116-7143-1699074840.jpg?w=0&h=0&q=100&dpr=2&fit=crop&s=7WthIJJrZzu3smwmw9VXpA" }
+              { "URL": "https://vnexpress.net/ferrari-tu-ban-vao-chan-the-nao-tai-gp-nga-3989294.html", "Chuyên mục": "Bình luận", "Môn thể thao": "F1", "title": "Ferrari tự 'bắn vào chân' thế nào tại GP Nga", "lead": "Dữ liệu radio trong chặng đua cho thấy sự không ăn ý giữa Ferrari, Sebastian Vettel và Charles Leclerc.", "imageUrl": "https://i1-thethao.vnecdn.net/2019/09/30/Untitled-9252-1569804781.jpg?w=0&h=0&q=100&dpr=2&fit=crop&s=GcFDcC6kG2NC4MKxYpOO8w" },
+              { "URL": "https://vnexpress.net/argentina-croatia-van-co-cua-messi-4547581.html", "Chuyên mục": "Nhận định", "Môn thể thao": "Bóng đá", "title": "Argentina - Croatia: Ván cờ của Messi", "lead": "Cùng Argentina, Lionel Messi bước vào trận bán kết World Cup 2022 đấu Croatia trong tâm thế của một kỳ thủ khi ván cờ vào tàn cuộc.", "imageUrl": "https://i1-thethao.vnecdn.net/2022/12/13/Untitled-6062-1670909515.jpg?w=680&h=0&q=100&dpr=1&fit=crop&s=ZeqzTUiNYOy4En-90shDCw" }
             ];
 
             const articlesGrid = document.getElementById('articles-grid');
@@ -889,13 +931,13 @@
                     return;
                 }
                 noResultsMsg.classList.add('hidden');
-                resultCount.innerHTML = `Hiển thị <span class="text-blue-600 font-bold">${data.length}</span> / ${allArticles.length} tác phẩm`;
+                resultCount.innerHTML = `Hiển thị <span class="text-blue-400 font-bold">${data.length}</span> / ${allArticles.length} tác phẩm`;
                 const fallback = 'https://placehold.co/600x400/EFEFEF/94a3b8?text=Image+Not+Found';
                 articlesGrid.innerHTML = data.map(item => {
                     const imgUrl = esc(item.imageUrl || item['Thumb'] || '');
                     return `
                         <a href="${safeUrl(item.URL)}" target="_blank" rel="noopener noreferrer"
-                           class="group flex flex-col bg-white rounded-2xl shadow-sm border border-slate-200 hover-card-lift overflow-hidden h-full">
+                           class="group flex flex-col bg-slate-800/60 rounded-2xl shadow-sm border border-slate-700 hover-card-lift overflow-hidden h-full">
                             <div class="overflow-hidden relative">
                                 <img src="${imgUrl}" alt="${esc(item.title)}" loading="lazy"
                                      class="w-full card-image group-hover:scale-105 transition-transform duration-700 ease-in-out"
@@ -904,12 +946,12 @@
                             </div>
                             <div class="p-6 flex flex-col flex-1">
                                 <div class="flex flex-wrap gap-2 mb-4">
-                                    <span class="text-[10px] font-bold uppercase tracking-wider bg-slate-100 text-slate-600 py-1 px-2.5 rounded-md">${esc(item['Chuyên mục'])}</span>
-                                    <span class="text-[10px] font-bold uppercase tracking-wider bg-blue-50 text-blue-700 py-1 px-2.5 rounded-md">${esc(item['Môn thể thao'])}</span>
+                                    <span class="text-[10px] font-bold uppercase tracking-wider bg-slate-700 text-slate-300 py-1 px-2.5 rounded-md">${esc(item['Chuyên mục'])}</span>
+                                    <span class="text-[10px] font-bold uppercase tracking-wider bg-blue-500/20 text-blue-300 py-1 px-2.5 rounded-md">${esc(item['Môn thể thao'])}</span>
                                 </div>
-                                <h4 class="font-extrabold text-xl mb-3 text-slate-900 group-hover:text-blue-600 transition-colors leading-tight tracking-tight">${esc(item.title)}</h4>
-                                <p class="text-slate-500 text-sm leading-relaxed line-clamp-3 mb-4 flex-1">${esc(item.lead)}</p>
-                                <div class="mt-auto pt-4 border-t border-slate-100 flex items-center text-blue-600 font-semibold text-sm group-hover:translate-x-1 transition-transform">
+                                <h4 class="font-extrabold text-xl mb-3 text-slate-50 group-hover:text-blue-400 transition-colors leading-tight tracking-tight">${esc(item.title)}</h4>
+                                <p class="text-slate-400 text-sm leading-relaxed line-clamp-3 mb-4 flex-1">${esc(item.lead)}</p>
+                                <div class="mt-auto pt-4 border-t border-slate-700/50 flex items-center text-blue-600 font-semibold text-sm group-hover:translate-x-1 transition-transform">
                                     Đọc bài viết
                                     <svg class="w-4 h-4 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                                 </div>
