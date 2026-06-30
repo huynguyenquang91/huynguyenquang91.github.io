@@ -15,7 +15,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #0f172a; }
+        html { background-color: #0f172a; }
+        html[data-theme="light"] { background-color: #f8fafc; }
+        body { font-family: 'Inter', sans-serif; background-color: transparent; }
         h1, h2, h3, h4, h5 { letter-spacing: -0.025em; }
         .section-title {
             position: relative;
@@ -186,6 +188,7 @@
     </style>
 </head>
 <body class="text-slate-100 antialiased selection:bg-blue-700 selection:text-blue-100">
+    <canvas id="particle-canvas" aria-hidden="true" style="position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;"></canvas>
 
     <!-- Header -->
     <header class="glass-nav sticky top-0 z-50 transition-all duration-300">
@@ -949,6 +952,85 @@
     </footer>
 
     <script>
+        // ── Particle Background ──────────────────────────────────────
+        (function () {
+            var canvas = document.getElementById('particle-canvas');
+            if (!canvas) return;
+            var ctx = canvas.getContext('2d');
+            var W, H, particles = [], COUNT = 110;
+
+            function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
+
+            function mkParticle(rndY) {
+                return {
+                    x: Math.random() * (W || 800),
+                    y: rndY ? Math.random() * (H || 600) : (H || 600) + 5,
+                    r: Math.random() * 1.3 + 0.2,
+                    vy: -(Math.random() * 0.22 + 0.04),
+                    vx: (Math.random() - 0.5) * 0.14,
+                    op: Math.random() * 0.55 + 0.15,
+                    ph: Math.random() * Math.PI * 2,
+                    ps: Math.random() * 0.012 + 0.003,
+                    cyan: Math.random() < 0.28
+                };
+            }
+
+            function init() {
+                particles = [];
+                for (var i = 0; i < COUNT; i++) particles.push(mkParticle(true));
+            }
+
+            function draw() {
+                var dark = document.documentElement.getAttribute('data-theme') !== 'light';
+                ctx.clearRect(0, 0, W, H);
+
+                if (dark) {
+                    // Subtle teal atmosphere — bottom-left
+                    var g = ctx.createRadialGradient(W * 0.08, H * 0.88, 0, W * 0.08, H * 0.88, Math.min(W, H) * 0.55);
+                    g.addColorStop(0, 'rgba(6,182,212,0.07)');
+                    g.addColorStop(1, 'rgba(0,0,0,0)');
+                    ctx.fillStyle = g;
+                    ctx.fillRect(0, 0, W, H);
+
+                    // Subtle blue atmosphere — top-right
+                    var g2 = ctx.createRadialGradient(W * 0.92, H * 0.1, 0, W * 0.92, H * 0.1, Math.min(W, H) * 0.4);
+                    g2.addColorStop(0, 'rgba(37,99,235,0.05)');
+                    g2.addColorStop(1, 'rgba(0,0,0,0)');
+                    ctx.fillStyle = g2;
+                    ctx.fillRect(0, 0, W, H);
+                }
+
+                particles.forEach(function (p) {
+                    p.ph += p.ps;
+                    var t = 0.65 + 0.35 * Math.sin(p.ph);
+                    var op = p.op * t * (dark ? 1 : 0.08);
+
+                    ctx.save();
+                    if (dark && p.r > 0.85) {
+                        ctx.shadowBlur = 5;
+                        ctx.shadowColor = p.cyan ? 'rgba(103,232,249,0.55)' : 'rgba(255,255,255,0.35)';
+                    }
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.r, 0, 6.283);
+                    ctx.fillStyle = p.cyan
+                        ? 'rgba(167,243,253,' + op + ')'
+                        : 'rgba(255,255,255,' + op + ')';
+                    ctx.fill();
+                    ctx.restore();
+
+                    p.x += p.vx; p.y += p.vy;
+                    if (p.y < -5) { var n = mkParticle(false); p.x=n.x;p.y=n.y;p.r=n.r;p.vy=n.vy;p.vx=n.vx;p.op=n.op;p.cyan=n.cyan; }
+                    if (p.x < -5) p.x = W + 5;
+                    if (p.x > W + 5) p.x = -5;
+                });
+
+                requestAnimationFrame(draw);
+            }
+
+            window.addEventListener('resize', function () { resize(); init(); });
+            resize(); init(); draw();
+        })();
+
         // ── Theme System ────────────────────────────────────────────
         (function () {
             var ICONS  = { dark: '🌙', light: '☀️' };
