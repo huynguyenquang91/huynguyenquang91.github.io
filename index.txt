@@ -35,7 +35,7 @@
         }
         .card-image { height: 220px; object-fit: cover; }
         .hero-gradient {
-            background: transparent;
+            background: linear-gradient(160deg, rgba(5,13,42,0.90) 0%, rgba(7,15,46,0.82) 40%, rgba(6,10,30,0.70) 100%);
             position: relative; overflow: hidden;
         }
         .hero-gradient::before {
@@ -925,7 +925,7 @@
     </main>
 
     <!-- Footer -->
-    <footer id="contact" class="bg-transparent text-white relative overflow-hidden">
+    <footer id="contact" class="bg-slate-900/85 text-white relative overflow-hidden">
         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-blue-600/20 blur-[120px] rounded-full pointer-events-none"></div>
         <div class="container mx-auto px-6 py-24 relative z-10">
             <div class="max-w-xl mx-auto text-center">
@@ -991,12 +991,6 @@
                 if (!dark) { requestAnimationFrame(draw); return; }
 
                 sweep += 0.0035;
-
-                // ── Dark bg fill (hero + footer area) ───────────────
-                ctx.fillStyle = 'rgba(5,10,30,0.92)';
-                ctx.fillRect(0, 0, W, H * 0.62);          // hero top
-                ctx.fillStyle = 'rgba(5,10,28,0.88)';
-                ctx.fillRect(0, H * 0.82, W, H * 0.18);   // footer bottom
 
                 // ── Atmospheric glows ────────────────────────────────
                 var atmos = [
