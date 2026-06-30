@@ -941,39 +941,37 @@
     <script>
         // ── Theme System ────────────────────────────────────────────
         (function () {
-            var THEMES = ['dark', 'light', 'auto'];
-            var ICONS  = { dark: '🌙', light: '☀️', auto: '⚙️' };
-            var LABELS = { dark: 'Dark mode', light: 'Light mode', auto: 'Auto (system)' };
+            var ICONS  = { dark: '🌙', light: '☀️' };
+            var LABELS = { dark: 'Dark mode', light: 'Light mode' };
 
-            function resolve(pref) {
-                if (pref !== 'auto') return pref;
+            function systemTheme() {
                 return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
             }
 
-            function applyTheme(pref) {
-                document.documentElement.setAttribute('data-theme', resolve(pref));
+            function applyTheme(resolved) {
+                document.documentElement.setAttribute('data-theme', resolved);
                 ['theme-icon','theme-icon-mobile'].forEach(function(id) {
                     var el = document.getElementById(id);
-                    if (el) el.textContent = ICONS[pref];
+                    if (el) el.textContent = ICONS[resolved];
                 });
                 var lbl = document.getElementById('theme-label-mobile');
-                if (lbl) lbl.textContent = LABELS[pref];
+                if (lbl) lbl.textContent = LABELS[resolved];
             }
 
             window.cycleTheme = function () {
-                var curr = localStorage.getItem('theme') || 'dark';
-                var next = THEMES[(THEMES.indexOf(curr) + 1) % THEMES.length];
+                var curr = localStorage.getItem('theme') || systemTheme();
+                var next = curr === 'dark' ? 'light' : 'dark';
                 localStorage.setItem('theme', next);
                 applyTheme(next);
             };
 
-            // Apply immediately (before paint)
-            var saved = localStorage.getItem('theme') || 'dark';
-            applyTheme(saved);
+            // Init: use saved preference or fall back to system (auto, silent)
+            var saved = localStorage.getItem('theme');
+            applyTheme(saved || systemTheme());
 
-            // Re-resolve if system preference changes while in auto mode
+            // Track system changes only when no explicit preference saved
             window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function () {
-                if ((localStorage.getItem('theme') || 'dark') === 'auto') applyTheme('auto');
+                if (!localStorage.getItem('theme')) applyTheme(systemTheme());
             });
         })();
 
