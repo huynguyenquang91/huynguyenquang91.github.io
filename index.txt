@@ -114,6 +114,15 @@
         body::before { left: 0; }
         body::after  { right: 0; }
 
+
+        /* ── Noise / Grain overlay (editorial texture) ── */
+        #grain {
+            position: fixed; inset: 0; z-index: 9997; pointer-events: none;
+            opacity: 0.055;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.78' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            background-size: 180px 180px;
+        }
+        html[data-theme="light"] #grain { opacity: 0.025; }
         /* ── Light Mode ──────────────────────────────────────────── */
         html[data-theme="light"] body {
             background-color: transparent;
@@ -143,7 +152,8 @@
         html[data-theme="light"] .text-red-400   { color: #dc2626 !important; }
         /* Surfaces */
         html[data-theme="light"] .bg-slate-800\/60,
-        html[data-theme="light"] .bg-slate-800\/50 { background-color: white !important; }
+        html[data-theme="light"] .bg-slate-800\/50,
+        html[data-theme="light"] .bg-slate-800\/40 { background-color: white !important; }
         html[data-theme="light"] .bg-slate-800\/30 { background-color: #f1f5f9 !important; }
         html[data-theme="light"] .bg-slate-700     { background-color: #e2e8f0 !important; }
         html[data-theme="light"] .bg-slate-700\/60 { background-color: rgba(203,213,225,0.6) !important; }
@@ -151,6 +161,8 @@
         html[data-theme="light"] .bg-slate-700\/30 { background-color: rgba(203,213,225,0.3) !important; }
         html[data-theme="light"] .hover\:bg-slate-700\/60:hover { background-color: rgba(203,213,225,0.5) !important; }
         html[data-theme="light"] .hover\:bg-slate-800:hover     { background-color: #f1f5f9 !important; }
+        html[data-theme="light"] .hover\:bg-slate-800\/80:hover,
+        html[data-theme="light"] .hover\:bg-slate-800\/90:hover { background-color: #e2e8f0 !important; }
         html[data-theme="light"] .hover\:bg-slate-600:hover     { background-color: #94a3b8 !important; }
         /* Borders */
         html[data-theme="light"] .border-slate-700     { border-color: #cbd5e1 !important; }
@@ -188,6 +200,7 @@
     </style>
 </head>
 <body class="text-slate-100 antialiased selection:bg-blue-700 selection:text-blue-100">
+    <div id="grain" aria-hidden="true"></div>
     <!-- Header -->
     <header class="glass-nav sticky top-0 z-50 transition-all duration-300">
         <div class="container mx-auto px-6 py-4 flex items-center justify-between">
@@ -223,6 +236,7 @@
 
     <!-- Hero -->
     <section id="about" class="hero-gradient text-white py-20 px-6 lg:py-32 relative">
+        <canvas id="hero-stars" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;"></canvas>
         <div class="absolute top-0 -left-4 w-72 h-72 bg-blue-600 rounded-full mix-blend-screen filter blur-[128px] opacity-30"></div>
         <div class="absolute top-0 -right-4 w-72 h-72 bg-cyan-600 rounded-full mix-blend-screen filter blur-[128px] opacity-30"></div>
         <div class="absolute -bottom-8 left-20 w-72 h-72 bg-indigo-600 rounded-full mix-blend-screen filter blur-[128px] opacity-30"></div>
@@ -924,6 +938,7 @@
 
     <!-- Footer -->
     <footer id="contact" class="text-white relative overflow-hidden" style="background-color:#001F3F">
+        <canvas id="footer-particles" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;"></canvas>
         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-blue-600/20 blur-[120px] rounded-full pointer-events-none"></div>
         <div class="container mx-auto px-6 py-24 relative z-10">
             <div class="max-w-xl mx-auto text-center">
@@ -950,6 +965,85 @@
     </footer>
 
     <script>
+        // ── Hero Starfield ───────────────────────────────────────────
+        (function () {
+            var cv = document.getElementById('hero-stars');
+            if (!cv) return;
+            var ctx = cv.getContext('2d'), stars = [];
+
+            function resize() { cv.width = cv.offsetWidth; cv.height = cv.offsetHeight; }
+
+            function init() {
+                stars = [];
+                var W = cv.width, H = cv.height;
+                // Far layer: many dim tiny stars
+                for (var i = 0; i < 130; i++) stars.push({ x:Math.random()*W, y:Math.random()*H, r:Math.random()*0.45+0.1, op:Math.random()*0.35+0.08, ph:Math.random()*6.28, ps:Math.random()*0.007+0.001, glow:false, cyan:false });
+                // Mid layer
+                for (var j = 0; j < 50; j++) stars.push({ x:Math.random()*W, y:Math.random()*H, r:Math.random()*0.65+0.25, op:Math.random()*0.45+0.15, ph:Math.random()*6.28, ps:Math.random()*0.005+0.001, glow:Math.random()<0.2, cyan:Math.random()<0.18 });
+                // Near layer: few bright with glow
+                for (var k = 0; k < 14; k++) stars.push({ x:Math.random()*W, y:Math.random()*H, r:Math.random()*1.1+0.55, op:Math.random()*0.4+0.45, ph:Math.random()*6.28, ps:Math.random()*0.004+0.001, glow:true, cyan:Math.random()<0.35 });
+            }
+
+            function draw() {
+                var W = cv.width, H = cv.height;
+                ctx.clearRect(0, 0, W, H);
+                if (document.documentElement.getAttribute('data-theme') === 'light') { requestAnimationFrame(draw); return; }
+                stars.forEach(function (s) {
+                    s.ph += s.ps;
+                    var op = s.op * (0.45 + 0.55 * Math.sin(s.ph));
+                    ctx.save();
+                    if (s.glow) { ctx.shadowBlur = s.r * 9; ctx.shadowColor = s.cyan ? 'rgba(103,232,249,0.75)' : 'rgba(200,220,255,0.55)'; }
+                    ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, 6.283);
+                    ctx.fillStyle = s.cyan ? 'rgba(167,243,253,'+op+')' : 'rgba(210,225,255,'+op+')';
+                    ctx.fill(); ctx.restore();
+                });
+                requestAnimationFrame(draw);
+            }
+
+            var t; window.addEventListener('resize', function(){ clearTimeout(t); t=setTimeout(function(){resize();init();},200); });
+            resize(); init(); draw();
+        })();
+
+        // ── Footer Particles ─────────────────────────────────────────
+        (function () {
+            var cv = document.getElementById('footer-particles');
+            if (!cv) return;
+            var ctx = cv.getContext('2d'), pts = [];
+
+            function resize() { cv.width = cv.offsetWidth; cv.height = cv.offsetHeight; }
+
+            function mkPt(rndY) {
+                var W=cv.width, H=cv.height;
+                return { x:Math.random()*W, y:rndY?Math.random()*H:H+5,
+                    r:Math.random()*1.8+0.3, vx:(Math.random()-0.5)*0.25, vy:-(Math.random()*0.18+0.04),
+                    op:Math.random()*0.5+0.12, ph:Math.random()*6.28, ps:Math.random()*0.013+0.004, cyan:Math.random()<0.42, glow:Math.random()<0.35 };
+            }
+
+            function init() { pts=[]; for(var i=0;i<40;i++) pts.push(mkPt(true)); }
+
+            function draw() {
+                var W=cv.width, H=cv.height;
+                ctx.clearRect(0,0,W,H);
+                if (document.documentElement.getAttribute('data-theme') === 'light') { requestAnimationFrame(draw); return; }
+                pts.forEach(function(p) {
+                    p.ph+=p.ps;
+                    var op=p.op*(0.55+0.45*Math.sin(p.ph));
+                    ctx.save();
+                    if(p.glow){ ctx.shadowBlur=p.r*7; ctx.shadowColor=p.cyan?'rgba(103,232,249,0.7)':'rgba(200,220,255,0.45)'; }
+                    ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,6.283);
+                    ctx.fillStyle=p.cyan?'rgba(167,243,253,'+op+')':'rgba(210,225,255,'+op+')';
+                    ctx.fill(); ctx.restore();
+                    p.x+=p.vx; p.y+=p.vy;
+                    if(p.y<-5){ var n=mkPt(false); p.x=n.x;p.y=n.y;p.r=n.r;p.vx=n.vx;p.vy=n.vy;p.op=n.op;p.cyan=n.cyan;p.glow=n.glow; }
+                    if(p.x<-5) p.x=W+5; if(p.x>W+5) p.x=-5;
+                });
+                requestAnimationFrame(draw);
+            }
+
+            var t; window.addEventListener('resize',function(){clearTimeout(t);t=setTimeout(function(){resize();init();},200);});
+            resize(); init(); draw();
+        })();
+
         // ── Theme System ────────────────────────────────────────────
         (function () {
             var ICONS  = { dark: '🌙', light: '☀️' };
