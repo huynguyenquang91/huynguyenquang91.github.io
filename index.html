@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="vi" class="scroll-smooth">
+<html lang="vi" class="scroll-smooth" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -111,6 +111,68 @@
         }
         body::before { left: 0; }
         body::after  { right: 0; }
+
+        /* ── Light Mode ──────────────────────────────────────────── */
+        html[data-theme="light"] body {
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+        html[data-theme="light"] body::before,
+        html[data-theme="light"] body::after { opacity: 0.15; }
+        html[data-theme="light"] .glass-nav {
+            background: rgba(255,255,255,0.92) !important;
+            border-bottom: 1px solid rgba(0,0,0,0.07) !important;
+        }
+        html[data-theme="light"] #mobile-nav {
+            background-color: white !important;
+            border-top-color: #f1f5f9 !important;
+        }
+        html[data-theme="light"] #menu-btn span { background-color: #334155 !important; }
+        /* Text */
+        html[data-theme="light"] .text-slate-50  { color: #0f172a !important; }
+        html[data-theme="light"] .text-slate-100 { color: #1e293b !important; }
+        html[data-theme="light"] .text-slate-200 { color: #334155 !important; }
+        html[data-theme="light"] .text-slate-300 { color: #475569 !important; }
+        html[data-theme="light"] .text-slate-400,
+        html[data-theme="light"] .text-slate-500 { color: #64748b !important; }
+        html[data-theme="light"] .text-blue-400  { color: #2563eb !important; }
+        html[data-theme="light"] .text-blue-300  { color: #1d4ed8 !important; }
+        html[data-theme="light"] .text-blue-500  { color: #1d4ed8 !important; }
+        html[data-theme="light"] .text-red-400   { color: #dc2626 !important; }
+        /* Surfaces */
+        html[data-theme="light"] .bg-slate-800\/60,
+        html[data-theme="light"] .bg-slate-800\/50 { background-color: white !important; }
+        html[data-theme="light"] .bg-slate-800\/30 { background-color: #f1f5f9 !important; }
+        html[data-theme="light"] .bg-slate-700     { background-color: #e2e8f0 !important; }
+        html[data-theme="light"] .bg-slate-700\/60 { background-color: rgba(203,213,225,0.6) !important; }
+        html[data-theme="light"] .bg-slate-700\/50 { background-color: rgba(203,213,225,0.5) !important; }
+        html[data-theme="light"] .bg-slate-700\/30 { background-color: rgba(203,213,225,0.3) !important; }
+        html[data-theme="light"] .hover\:bg-slate-700\/60:hover { background-color: rgba(203,213,225,0.5) !important; }
+        html[data-theme="light"] .hover\:bg-slate-800:hover     { background-color: #f1f5f9 !important; }
+        html[data-theme="light"] .hover\:bg-slate-600:hover     { background-color: #94a3b8 !important; }
+        /* Borders */
+        html[data-theme="light"] .border-slate-700     { border-color: #cbd5e1 !important; }
+        html[data-theme="light"] .border-slate-700\/50 { border-color: rgba(203,213,225,0.6) !important; }
+        html[data-theme="light"] .hover\:border-slate-600:hover { border-color: #94a3b8 !important; }
+        /* Badge / tag colors */
+        html[data-theme="light"] .bg-emerald-500\/20  { background-color: #d1fae5 !important; }
+        html[data-theme="light"] .text-emerald-300    { color: #059669 !important; }
+        html[data-theme="light"] .bg-blue-500\/20     { background-color: #dbeafe !important; }
+        html[data-theme="light"] .border-blue-500\/20 { border-color: #bfdbfe !important; }
+        html[data-theme="light"] .bg-amber-500\/20    { background-color: #fef3c7 !important; }
+        html[data-theme="light"] .text-amber-300      { color: #b45309 !important; }
+        html[data-theme="light"] .bg-indigo-500\/20   { background-color: #e0e7ff !important; }
+        html[data-theme="light"] .text-indigo-300     { color: #4338ca !important; }
+        html[data-theme="light"] .bg-purple-500\/20   { background-color: #f3e8ff !important; }
+        html[data-theme="light"] .text-purple-300     { color: #7c3aed !important; }
+        /* Inputs */
+        html[data-theme="light"] input[type="text"],
+        html[data-theme="light"] select {
+            background-color: white !important;
+            border-color: #cbd5e1 !important;
+            color: #0f172a !important;
+        }
+        /* ── ─────────────────────────────────────────────────────── */
     </style>
 </head>
 <body class="text-slate-100 antialiased selection:bg-blue-700 selection:text-blue-100">
@@ -119,9 +181,9 @@
     <header class="glass-nav sticky top-0 z-50 transition-all duration-300">
         <div class="container mx-auto px-6 py-4 flex items-center justify-between">
             <button id="menu-btn" class="order-1 md:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 rounded-full hover:bg-slate-700/60 transition" aria-label="Open menu">
-                <span class="block w-5 h-0.5 bg-slate-800 rounded-full"></span>
-                <span class="block w-5 h-0.5 bg-slate-800 rounded-full"></span>
-                <span class="block w-3 h-0.5 bg-slate-800 rounded-full self-start ml-2.5"></span>
+                <span class="block w-5 h-0.5 bg-slate-200 rounded-full"></span>
+                <span class="block w-5 h-0.5 bg-slate-200 rounded-full"></span>
+                <span class="block w-3 h-0.5 bg-slate-200 rounded-full self-start ml-2.5"></span>
             </button>
             <h1 class="order-2 md:order-1 text-2xl font-extrabold text-slate-50 tracking-tight">Huy Nguyen</h1>
             <nav class="hidden md:flex order-3 space-x-8">
@@ -129,6 +191,10 @@
                 <a href="#marathon" class="text-sm font-semibold text-slate-300 hover:text-blue-400 transition duration-300">Event campaigns</a>
                 <a href="#portfolio" class="text-sm font-semibold text-slate-300 hover:text-blue-400 transition duration-300">Journalism work</a>
                 <a href="#contact" class="text-sm font-semibold text-slate-300 hover:text-blue-400 transition duration-300">Contact me</a>
+                <button id="theme-toggle" onclick="cycleTheme()" aria-label="Toggle theme"
+                        class="ml-2 w-9 h-9 rounded-full hover:bg-slate-700/60 transition flex items-center justify-center text-base" title="Switch theme">
+                    <span id="theme-icon">🌙</span>
+                </button>
             </nav>
         </div>
         <div id="mobile-nav" class="flex-col md:hidden bg-slate-900 border-t border-slate-700/50 px-6 py-4 space-y-4 shadow-lg absolute w-full">
@@ -136,6 +202,11 @@
             <a href="#marathon" class="block text-slate-300 hover:text-blue-400 font-semibold transition">Event campaigns</a>
             <a href="#portfolio" class="block text-slate-300 hover:text-blue-400 font-semibold transition">Journalism work</a>
             <a href="#contact" class="block text-slate-300 hover:text-blue-400 font-semibold transition">Contact me</a>
+            <button onclick="cycleTheme()"
+                    class="flex items-center gap-2 text-slate-300 hover:text-blue-400 font-semibold text-sm transition pt-1">
+                <span id="theme-icon-mobile">🌙</span>
+                <span id="theme-label-mobile">Dark mode</span>
+            </button>
         </div>
     </header>
 
@@ -868,6 +939,44 @@
     </footer>
 
     <script>
+        // ── Theme System ────────────────────────────────────────────
+        (function () {
+            var THEMES = ['dark', 'light', 'auto'];
+            var ICONS  = { dark: '🌙', light: '☀️', auto: '⚙️' };
+            var LABELS = { dark: 'Dark mode', light: 'Light mode', auto: 'Auto (system)' };
+
+            function resolve(pref) {
+                if (pref !== 'auto') return pref;
+                return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+
+            function applyTheme(pref) {
+                document.documentElement.setAttribute('data-theme', resolve(pref));
+                ['theme-icon','theme-icon-mobile'].forEach(function(id) {
+                    var el = document.getElementById(id);
+                    if (el) el.textContent = ICONS[pref];
+                });
+                var lbl = document.getElementById('theme-label-mobile');
+                if (lbl) lbl.textContent = LABELS[pref];
+            }
+
+            window.cycleTheme = function () {
+                var curr = localStorage.getItem('theme') || 'dark';
+                var next = THEMES[(THEMES.indexOf(curr) + 1) % THEMES.length];
+                localStorage.setItem('theme', next);
+                applyTheme(next);
+            };
+
+            // Apply immediately (before paint)
+            var saved = localStorage.getItem('theme') || 'dark';
+            applyTheme(saved);
+
+            // Re-resolve if system preference changes while in auto mode
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function () {
+                if ((localStorage.getItem('theme') || 'dark') === 'auto') applyTheme('auto');
+            });
+        })();
+
         window.addEventListener('scroll', () => {
             document.querySelector('header').classList.toggle('shadow-md', window.scrollY > 20);
         });
