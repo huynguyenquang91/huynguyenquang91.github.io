@@ -950,12 +950,13 @@
 
             function applyTheme(resolved) {
                 document.documentElement.setAttribute('data-theme', resolved);
+                var next = resolved === 'dark' ? 'light' : 'dark';
                 ['theme-icon','theme-icon-mobile'].forEach(function(id) {
                     var el = document.getElementById(id);
-                    if (el) el.textContent = ICONS[resolved];
+                    if (el) el.textContent = ICONS[next];
                 });
                 var lbl = document.getElementById('theme-label-mobile');
-                if (lbl) lbl.textContent = LABELS[resolved];
+                if (lbl) lbl.textContent = LABELS[next];
             }
 
             window.cycleTheme = function () {
