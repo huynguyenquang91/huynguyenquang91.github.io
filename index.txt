@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #040e0b; }
+        body { font-family: 'Inter', sans-serif; background-color: #0f172a; }
         h1, h2, h3, h4, h5 { letter-spacing: -0.025em; }
         .section-title {
             position: relative;
@@ -32,9 +32,30 @@
             border-radius: 2px;
         }
         .card-image { height: 220px; object-fit: cover; }
-<!-- hero css replaced -->
+        .hero-gradient {
+            background: linear-gradient(160deg, #050d2a 0%, #070f2e 40%, #060a1e 100%);
+            position: relative; overflow: hidden;
+        }
+        .hero-gradient::before {
+            content: '';
+            position: absolute;
+            top: -10%; right: -5%;
+            width: 55%; height: 90%;
+            background: radial-gradient(ellipse at 80% 20%, rgba(56,139,255,0.25) 0%, rgba(99,102,241,0.12) 40%, transparent 70%);
+            pointer-events: none;
+        }
+        .hero-gradient::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(118deg, transparent 55%, rgba(80,160,255,0.06) 60%, transparent 65%),
+                linear-gradient(122deg, transparent 50%, rgba(100,180,255,0.05) 56%, transparent 62%),
+                linear-gradient(126deg, transparent 45%, rgba(120,200,255,0.04) 52%, transparent 58%);
+            pointer-events: none;
+        }
         .glass-nav {
-            background: rgba(4, 12, 9, 0.93);
+            background: rgba(15, 23, 42, 0.90);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(255,255,255,0.06);
@@ -71,7 +92,25 @@
         .delay-300 { animation-delay: 300ms; }
         .delay-400 { animation-delay: 400ms; }
         .delay-500 { animation-delay: 500ms; }
-<!-- side css replaced -->
+        body::before, body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            width: 3px;
+            height: 100vh;
+            background: linear-gradient(180deg,
+                transparent 0%,
+                rgba(37,99,235,0.5) 15%,
+                rgba(99,102,241,0.7) 40%,
+                rgba(139,92,246,0.6) 60%,
+                rgba(37,99,235,0.4) 85%,
+                transparent 100%
+            );
+            z-index: 9999;
+            pointer-events: none;
+        }
+        body::before { left: 0; }
+        body::after  { right: 0; }
 
         /* ── Light Mode ──────────────────────────────────────────── */
         html[data-theme="light"] body {
@@ -104,7 +143,6 @@
         html[data-theme="light"] .bg-slate-800\/60,
         html[data-theme="light"] .bg-slate-800\/50 { background-color: white !important; }
         html[data-theme="light"] .bg-slate-800\/30 { background-color: #f1f5f9 !important; }
-        html[data-theme="light"] .bg-slate-800\/40 { background-color: #f8fafc !important; }
         html[data-theme="light"] .bg-slate-700     { background-color: #e2e8f0 !important; }
         html[data-theme="light"] .bg-slate-700\/60 { background-color: rgba(203,213,225,0.6) !important; }
         html[data-theme="light"] .bg-slate-700\/50 { background-color: rgba(203,213,225,0.5) !important; }
@@ -135,762 +173,6 @@
             color: #0f172a !important;
         }
         /* ── ─────────────────────────────────────────────────────── */
-
-        /* ── Neon Sport Hero ──────────────────────────────────────── */
-        .hero-gradient {
-            background: linear-gradient(160deg, #010a08 0%, #021210 45%, #010d0b 100%);
-            position: relative; overflow: hidden;
-        }
-        .hero-gradient::before {
-            content: '';
-            position: absolute;
-            top: -15%; right: -8%;
-            width: 65%; height: 100%;
-            background: radial-gradient(ellipse at 72% 28%,
-                rgba(0,255,195,0.32) 0%,
-                rgba(0,220,200,0.16) 35%,
-                transparent 68%);
-            pointer-events: none;
-        }
-        .hero-gradient::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background:
-                linear-gradient(112deg, transparent 48%, rgba(0,255,195,0.08) 54%, transparent 60%),
-                linear-gradient(118deg, transparent 52%, rgba(0,240,255,0.06) 58%, transparent 64%),
-                linear-gradient(108deg, transparent 44%, rgba(0,255,195,0.05) 50%, transparent 56%);
-            pointer-events: none;
-        }
-        /* Ground glow strip */
-        .hero-ground-glow {
-            position: absolute;
-            bottom: 0; left: 0; right: 0;
-            height: 120px;
-            background: linear-gradient(to top,
-                rgba(0,255,195,0.18) 0%,
-                rgba(0,255,195,0.06) 50%,
-                transparent 100%);
-            pointer-events: none;
-        }
-        /* Particle stars */
-        .hero-particles {
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-            z-index: 1;
-        }
-        .hero-particles::before {
-            content: '';
-            position: absolute;
-            width: 1px; height: 1px;
-            background: transparent;
-            box-shadow: 1142px 84px 0 rgba(200,255,248,0.48),
-            1083px 0px 0 rgba(200,255,248,0.49),
-            1166px 237px 0 rgba(0,229,204,0.49),
-            200px 44px 0 rgba(0,229,204,0.68),
-            769px 101px 0 rgba(200,255,248,0.21),
-            57px 567px 0 rgba(0,229,204,0.69),
-            397px 788px 0 rgba(0,229,204,0.31),
-            466px 804px 0 rgba(200,255,248,0.48),
-            725px 532px 0 rgba(0,229,204,0.6),
-            1118px 202px 0 rgba(0,229,204,0.36),
-            1240px 33px 0 rgba(0,229,204,0.69),
-            1131px 376px 0 rgba(0,229,204,0.79),
-            943px 783px 0 rgba(200,255,248,0.33),
-            1182px 180px 0 rgba(200,255,248,0.36),
-            1088px 818px 0 rgba(200,255,248,0.32),
-            148px 775px 0 rgba(200,255,248,0.4),
-            1202px 29px 0 rgba(200,255,248,0.46),
-            1719px 250px 0 rgba(200,255,248,0.27),
-            1087px 614px 0 rgba(200,255,248,0.25),
-            573px 339px 0 rgba(200,255,248,0.31),
-            1142px 150px 0 rgba(200,255,248,0.36),
-            1155px 653px 0 rgba(0,229,204,0.3),
-            1856px 747px 0 rgba(0,229,204,0.55),
-            785px 845px 0 rgba(200,255,248,0.35),
-            628px 602px 0 rgba(0,229,204,0.55),
-            1174px 417px 0 rgba(0,229,204,0.4),
-            419px 218px 0 rgba(0,229,204,0.62),
-            1750px 586px 0 rgba(0,229,204,0.43),
-            23px 96px 0 rgba(200,255,248,0.26),
-            291px 176px 0 rgba(0,229,204,0.67),
-            531px 698px 0 rgba(0,229,204,0.67),
-            655px 759px 0 rgba(200,255,248,0.25),
-            1803px 234px 0 rgba(200,255,248,0.44),
-            158px 522px 0 rgba(0,229,204,0.42),
-            857px 322px 0 rgba(0,229,204,0.3),
-            1546px 361px 0 rgba(200,255,248,0.31),
-            973px 333px 0 rgba(200,255,248,0.49),
-            1907px 152px 0 rgba(200,255,248,0.42),
-            929px 631px 0 rgba(200,255,248,0.39),
-            854px 339px 0 rgba(200,255,248,0.24),
-            1287px 254px 0 rgba(0,229,204,0.43),
-            232px 342px 0 rgba(0,229,204,0.67),
-            1014px 667px 0 rgba(0,229,204,0.65),
-            1283px 74px 0 rgba(0,229,204,0.39),
-            717px 861px 0 rgba(0,229,204,0.73),
-            14px 598px 0 rgba(0,229,204,0.7),
-            1211px 609px 0 rgba(200,255,248,0.43),
-            461px 694px 0 rgba(200,255,248,0.38),
-            394px 655px 0 rgba(0,229,204,0.63),
-            1140px 598px 0 rgba(200,255,248,0.41),
-            581px 575px 0 rgba(200,255,248,0.4),
-            405px 283px 0 rgba(200,255,248,0.39),
-            1307px 672px 0 rgba(0,229,204,0.48),
-            1544px 544px 0 rgba(200,255,248,0.37),
-            1426px 720px 0 rgba(0,229,204,0.71),
-            1690px 400px 0 rgba(200,255,248,0.48),
-            855px 50px 0 rgba(0,229,204,0.74),
-            1597px 294px 0 rgba(0,229,204,0.71),
-            1869px 537px 0 rgba(200,255,248,0.35),
-            757px 93px 0 rgba(200,255,248,0.23),
-            1468px 375px 0 rgba(0,229,204,0.71),
-            265px 557px 0 rgba(200,255,248,0.47),
-            230px 352px 0 rgba(200,255,248,0.28),
-            1380px 500px 0 rgba(0,229,204,0.66),
-            1544px 324px 0 rgba(200,255,248,0.39),
-            93px 11px 0 rgba(0,229,204,0.78),
-            623px 310px 0 rgba(200,255,248,0.21),
-            1748px 748px 0 rgba(200,255,248,0.47),
-            1119px 338px 0 rgba(200,255,248,0.39),
-            1732px 139px 0 rgba(0,229,204,0.61),
-            480px 271px 0 rgba(0,229,204,0.63),
-            1813px 487px 0 rgba(200,255,248,0.49),
-            412px 242px 0 rgba(0,229,204,0.51),
-            1868px 287px 0 rgba(0,229,204,0.36),
-            568px 842px 0 rgba(200,255,248,0.27),
-            857px 836px 0 rgba(0,229,204,0.49),
-            1285px 721px 0 rgba(0,229,204,0.4),
-            1054px 837px 0 rgba(0,229,204,0.46),
-            1003px 298px 0 rgba(200,255,248,0.2),
-            1831px 306px 0 rgba(0,229,204,0.31),
-            720px 151px 0 rgba(200,255,248,0.29),
-            1628px 646px 0 rgba(0,229,204,0.36),
-            150px 142px 0 rgba(0,229,204,0.37),
-            314px 496px 0 rgba(0,229,204,0.35),
-            105px 208px 0 rgba(0,229,204,0.64),
-            131px 794px 0 rgba(200,255,248,0.26),
-            748px 128px 0 rgba(200,255,248,0.37),
-            848px 508px 0 rgba(0,229,204,0.38),
-            1789px 568px 0 rgba(0,229,204,0.61),
-            623px 551px 0 rgba(0,229,204,0.45),
-            1610px 654px 0 rgba(0,229,204,0.58),
-            753px 445px 0 rgba(0,229,204,0.62),
-            1366px 137px 0 rgba(0,229,204,0.62),
-            1539px 48px 0 rgba(200,255,248,0.29),
-            1338px 141px 0 rgba(0,229,204,0.54),
-            847px 477px 0 rgba(0,229,204,0.5),
-            1688px 329px 0 rgba(200,255,248,0.24),
-            244px 358px 0 rgba(0,229,204,0.76),
-            1715px 116px 0 rgba(200,255,248,0.23),
-            38px 659px 0 rgba(0,229,204,0.43),
-            1717px 890px 0 rgba(200,255,248,0.41),
-            1806px 782px 0 rgba(200,255,248,0.3),
-            9px 464px 0 rgba(0,229,204,0.66),
-            432px 612px 0 rgba(0,229,204,0.47),
-            272px 544px 0 rgba(200,255,248,0.47),
-            1290px 667px 0 rgba(200,255,248,0.47),
-            516px 199px 0 rgba(0,229,204,0.36),
-            946px 725px 0 rgba(0,229,204,0.59),
-            105px 758px 0 rgba(200,255,248,0.46),
-            1315px 831px 0 rgba(0,229,204,0.37),
-            1886px 219px 0 rgba(200,255,248,0.25),
-            1050px 443px 0 rgba(0,229,204,0.5),
-            247px 289px 0 rgba(0,229,204,0.79),
-            392px 601px 0 rgba(0,229,204,0.52),
-            1835px 730px 0 rgba(0,229,204,0.62),
-            293px 119px 0 rgba(0,229,204,0.51),
-            1014px 607px 0 rgba(200,255,248,0.34),
-            257px 815px 0 rgba(200,255,248,0.29),
-            761px 274px 0 rgba(0,229,204,0.64),
-            1081px 588px 0 rgba(0,229,204,0.48),
-            628px 248px 0 rgba(200,255,248,0.33),
-            1149px 702px 0 rgba(0,229,204,0.74),
-            1712px 455px 0 rgba(0,229,204,0.64),
-            1389px 165px 0 rgba(200,255,248,0.21),
-            553px 263px 0 rgba(0,229,204,0.7),
-            432px 307px 0 rgba(200,255,248,0.49),
-            65px 313px 0 rgba(0,229,204,0.43),
-            618px 876px 0 rgba(200,255,248,0.31),
-            224px 788px 0 rgba(200,255,248,0.35),
-            323px 494px 0 rgba(200,255,248,0.33),
-            256px 435px 0 rgba(200,255,248,0.36),
-            1160px 832px 0 rgba(0,229,204,0.64),
-            841px 572px 0 rgba(200,255,248,0.26),
-            1737px 465px 0 rgba(0,229,204,0.7),
-            1386px 8px 0 rgba(200,255,248,0.23),
-            850px 598px 0 rgba(0,229,204,0.64),
-            802px 721px 0 rgba(200,255,248,0.38),
-            1593px 863px 0 rgba(200,255,248,0.4),
-            892px 620px 0 rgba(200,255,248,0.35),
-            1050px 214px 0 rgba(0,229,204,0.57),
-            484px 534px 0 rgba(0,229,204,0.78),
-            943px 861px 0 rgba(0,229,204,0.35),
-            1751px 235px 0 rgba(0,229,204,0.57),
-            678px 480px 0 rgba(200,255,248,0.21),
-            718px 824px 0 rgba(200,255,248,0.42),
-            277px 413px 0 rgba(0,229,204,0.37),
-            528px 196px 0 rgba(200,255,248,0.49),
-            930px 93px 0 rgba(200,255,248,0.42),
-            393px 382px 0 rgba(200,255,248,0.33),
-            1182px 535px 0 rgba(0,229,204,0.68),
-            1036px 247px 0 rgba(200,255,248,0.28),
-            406px 432px 0 rgba(200,255,248,0.4),
-            1099px 673px 0 rgba(0,229,204,0.5),
-            381px 41px 0 rgba(200,255,248,0.25),
-            783px 429px 0 rgba(0,229,204,0.39),
-            71px 556px 0 rgba(0,229,204,0.33),
-            640px 47px 0 rgba(0,229,204,0.75),
-            625px 713px 0 rgba(0,229,204,0.57),
-            684px 482px 0 rgba(200,255,248,0.38),
-            1072px 823px 0 rgba(0,229,204,0.58),
-            771px 621px 0 rgba(200,255,248,0.38),
-            267px 442px 0 rgba(0,229,204,0.52),
-            493px 508px 0 rgba(200,255,248,0.34),
-            155px 363px 0 rgba(0,229,204,0.54),
-            715px 171px 0 rgba(0,229,204,0.48),
-            1213px 64px 0 rgba(0,229,204,0.79),
-            860px 621px 0 rgba(0,229,204,0.58),
-            145px 863px 0 rgba(0,229,204,0.56),
-            102px 117px 0 rgba(200,255,248,0.2),
-            6px 568px 0 rgba(0,229,204,0.35),
-            430px 388px 0 rgba(200,255,248,0.25),
-            883px 219px 0 rgba(0,229,204,0.54),
-            1067px 499px 0 rgba(200,255,248,0.3),
-            432px 370px 0 rgba(200,255,248,0.44),
-            439px 12px 0 rgba(200,255,248,0.39),
-            1673px 345px 0 rgba(0,229,204,0.76),
-            1238px 754px 0 rgba(200,255,248,0.31),
-            898px 612px 0 rgba(200,255,248,0.31),
-            525px 875px 0 rgba(0,229,204,0.6),
-            814px 276px 0 rgba(200,255,248,0.27);
-            animation: twinkle 5s ease-in-out infinite alternate;
-        }
-        .hero-particles::after {
-            content: '';
-            position: absolute;
-            width: 2px; height: 2px;
-            background: transparent;
-            box-shadow: 113px 103px 0 rgba(34,211,238,0.42),
-            912px 410px 0 rgba(200,255,248,0.24),
-            1178px 439px 0 rgba(34,211,238,0.42),
-            1700px 409px 0 rgba(34,211,238,0.5),
-            1208px 36px 0 rgba(200,255,248,0.37),
-            1265px 65px 0 rgba(34,211,238,0.25),
-            368px 307px 0 rgba(200,255,248,0.31),
-            1777px 861px 0 rgba(34,211,238,0.25),
-            497px 139px 0 rgba(200,255,248,0.34),
-            1328px 876px 0 rgba(200,255,248,0.43),
-            890px 498px 0 rgba(34,211,238,0.2),
-            179px 477px 0 rgba(34,211,238,0.51),
-            475px 853px 0 rgba(34,211,238,0.35),
-            863px 745px 0 rgba(200,255,248,0.46),
-            0px 822px 0 rgba(34,211,238,0.39),
-            8px 488px 0 rgba(34,211,238,0.59),
-            175px 581px 0 rgba(34,211,238,0.59),
-            405px 858px 0 rgba(200,255,248,0.42),
-            996px 543px 0 rgba(34,211,238,0.39),
-            173px 252px 0 rgba(34,211,238,0.3),
-            427px 443px 0 rgba(34,211,238,0.58),
-            1306px 3px 0 rgba(200,255,248,0.22),
-            114px 300px 0 rgba(34,211,238,0.27),
-            187px 399px 0 rgba(34,211,238,0.3),
-            1079px 635px 0 rgba(34,211,238,0.29),
-            1221px 439px 0 rgba(34,211,238,0.36),
-            761px 170px 0 rgba(200,255,248,0.38),
-            1216px 308px 0 rgba(34,211,238,0.48),
-            1589px 239px 0 rgba(200,255,248,0.24),
-            1287px 800px 0 rgba(200,255,248,0.34),
-            663px 149px 0 rgba(200,255,248,0.49),
-            1284px 504px 0 rgba(200,255,248,0.34),
-            1595px 299px 0 rgba(34,211,238,0.31),
-            337px 563px 0 rgba(34,211,238,0.55),
-            460px 794px 0 rgba(200,255,248,0.21),
-            327px 731px 0 rgba(200,255,248,0.32),
-            1004px 327px 0 rgba(34,211,238,0.44),
-            421px 708px 0 rgba(200,255,248,0.42),
-            498px 72px 0 rgba(34,211,238,0.21),
-            433px 738px 0 rgba(200,255,248,0.46),
-            809px 760px 0 rgba(34,211,238,0.22),
-            1283px 111px 0 rgba(200,255,248,0.21),
-            1305px 265px 0 rgba(34,211,238,0.28),
-            1245px 197px 0 rgba(34,211,238,0.39),
-            259px 526px 0 rgba(34,211,238,0.41),
-            869px 164px 0 rgba(34,211,238,0.39),
-            332px 199px 0 rgba(34,211,238,0.52),
-            1841px 838px 0 rgba(200,255,248,0.48),
-            436px 679px 0 rgba(34,211,238,0.32),
-            130px 338px 0 rgba(200,255,248,0.48),
-            603px 768px 0 rgba(200,255,248,0.23),
-            1556px 389px 0 rgba(200,255,248,0.24),
-            314px 455px 0 rgba(34,211,238,0.35),
-            326px 460px 0 rgba(34,211,238,0.33),
-            608px 794px 0 rgba(34,211,238,0.3),
-            568px 176px 0 rgba(34,211,238,0.24),
-            801px 583px 0 rgba(200,255,248,0.44),
-            747px 669px 0 rgba(34,211,238,0.36),
-            1276px 833px 0 rgba(34,211,238,0.4),
-            1181px 275px 0 rgba(34,211,238,0.33),
-            27px 337px 0 rgba(34,211,238,0.46),
-            1760px 786px 0 rgba(34,211,238,0.5),
-            1286px 700px 0 rgba(34,211,238,0.55),
-            421px 285px 0 rgba(34,211,238,0.35),
-            1849px 167px 0 rgba(34,211,238,0.4),
-            1856px 132px 0 rgba(34,211,238,0.33),
-            1557px 40px 0 rgba(200,255,248,0.39),
-            65px 822px 0 rgba(34,211,238,0.31),
-            1699px 407px 0 rgba(200,255,248,0.42),
-            467px 585px 0 rgba(34,211,238,0.55),
-            1707px 657px 0 rgba(200,255,248,0.49),
-            858px 661px 0 rgba(34,211,238,0.21),
-            1451px 43px 0 rgba(200,255,248,0.36),
-            1782px 176px 0 rgba(34,211,238,0.56),
-            10px 500px 0 rgba(200,255,248,0.3),
-            1574px 769px 0 rgba(200,255,248,0.38),
-            880px 332px 0 rgba(200,255,248,0.37),
-            1218px 469px 0 rgba(34,211,238,0.25),
-            1666px 202px 0 rgba(34,211,238,0.57),
-            1531px 530px 0 rgba(34,211,238,0.31),
-            1660px 651px 0 rgba(200,255,248,0.47),
-            166px 57px 0 rgba(34,211,238,0.44),
-            174px 290px 0 rgba(34,211,238,0.51),
-            1472px 787px 0 rgba(200,255,248,0.38),
-            1397px 196px 0 rgba(200,255,248,0.41),
-            1021px 769px 0 rgba(200,255,248,0.31),
-            84px 456px 0 rgba(34,211,238,0.52),
-            237px 351px 0 rgba(34,211,238,0.48),
-            1466px 746px 0 rgba(200,255,248,0.38),
-            1108px 689px 0 rgba(200,255,248,0.38);
-            animation: twinkle 7s ease-in-out infinite alternate-reverse;
-        }
-        .hero-glow-dots {
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-            z-index: 1;
-        }
-        .hero-glow-dots::before {
-            content: '';
-            position: absolute;
-            width: 3px; height: 3px;
-            border-radius: 50%;
-            background: transparent;
-            box-shadow: 1427px 846px 12px rgba(34,211,238,0.29),
-            1025px 361px 4px rgba(34,211,238,0.48),
-            1563px 647px 12px rgba(0,229,204,0.78),
-            1195px 97px 12px rgba(0,229,204,0.38),
-            695px 414px 8px rgba(0,229,204,0.68),
-            8px 5px 4px rgba(34,211,238,0.47),
-            591px 555px 12px rgba(34,211,238,0.45),
-            1703px 410px 12px rgba(34,211,238,0.51),
-            628px 244px 4px rgba(0,229,204,0.62),
-            1271px 461px 12px rgba(0,229,204,0.54),
-            1591px 330px 12px rgba(34,211,238,0.2),
-            992px 659px 8px rgba(0,229,204,0.36),
-            829px 156px 4px rgba(34,211,238,0.51),
-            455px 529px 12px rgba(34,211,238,0.21),
-            1718px 306px 12px rgba(34,211,238,0.33),
-            1393px 203px 8px rgba(34,211,238,0.42),
-            96px 733px 12px rgba(34,211,238,0.3),
-            1467px 55px 12px rgba(34,211,238,0.26),
-            67px 832px 12px rgba(0,229,204,0.43),
-            780px 900px 8px rgba(34,211,238,0.34),
-            618px 604px 4px rgba(0,229,204,0.6),
-            1081px 833px 12px rgba(34,211,238,0.45),
-            56px 529px 8px rgba(0,229,204,0.48),
-            1008px 403px 4px rgba(34,211,238,0.41),
-            1386px 668px 12px rgba(0,229,204,0.31),
-            796px 287px 12px rgba(0,229,204,0.5),
-            155px 470px 4px rgba(34,211,238,0.3),
-            176px 716px 4px rgba(0,229,204,0.31),
-            248px 121px 4px rgba(0,229,204,0.61),
-            572px 286px 8px rgba(0,229,204,0.8);
-            animation: twinkle 9s ease-in-out infinite;
-        }
-        @keyframes twinkle {
-            0%   { opacity: 1; }
-            50%  { opacity: 0.4; }
-            100% { opacity: 0.9; }
-        }
-                    10%  { opacity: 1; }
-            85%  { opacity: 1; }
-            100% { transform: translateX(120vw); opacity: 0; }
-        }
-        /* Side gradient → teal */
-        body::before, body::after {
-            background: linear-gradient(180deg,
-                transparent 0%,
-                rgba(0,255,195,0.6) 15%,
-                rgba(0,240,255,0.8) 40%,
-                rgba(0,255,195,0.65) 60%,
-                rgba(0,240,255,0.4) 85%,
-                transparent 100%
-            );
-        }
-        /* ─────────────────────────────────────────────────────────── */
-
-/* Rhythmic dot trains & ambient stars */
-        .hero-trains {
-            position: absolute; inset: 0;
-            pointer-events: none; z-index: 1;
-        }
-        .hero-trains::before {
-            content: '';
-            position: absolute;
-            width: 1px; height: 1px;
-            background: transparent;
-            box-shadow:
-        -80px 264px 0 rgba(0,255,195,0.06),
-        -24px 236px 0 rgba(0,255,195,0.25),
-        31px 209px 0 rgba(0,255,195,0.41),
-        87px 182px 0 rgba(0,255,195,0.54),
-        142px 155px 0 rgba(0,255,195,0.65),
-        198px 128px 0 rgba(0,255,195,0.72),
-        254px 100px 0 rgba(0,255,195,0.77),
-        310px 73px 0 rgba(0,255,195,0.78),
-        365px 46px 0 rgba(0,255,195,0.77),
-        421px 19px 0 rgba(0,255,195,0.72),
-        477px -7px 0 rgba(0,255,195,0.65),
-        532px -34px 0 rgba(0,255,195,0.54),
-        588px -62px 0 rgba(0,255,195,0.41),
-        644px -89px 0 rgba(0,255,195,0.25),
-        700px -116px 0 rgba(0,255,195,0.06),
-        125px 669px 0 rgba(0,255,195,0.06),
-        180px 641px 0 rgba(0,255,195,0.25),
-        236px 614px 0 rgba(0,255,195,0.41),
-        292px 587px 0 rgba(0,255,195,0.54),
-        347px 560px 0 rgba(0,255,195,0.65),
-        403px 533px 0 rgba(0,255,195,0.72),
-        459px 505px 0 rgba(0,255,195,0.77),
-        515px 478px 0 rgba(0,255,195,0.78),
-        570px 451px 0 rgba(0,255,195,0.77),
-        626px 424px 0 rgba(0,255,195,0.72),
-        682px 397px 0 rgba(0,255,195,0.65),
-        737px 370px 0 rgba(0,255,195,0.54),
-        793px 342px 0 rgba(0,255,195,0.41),
-        849px 315px 0 rgba(0,255,195,0.25),
-        905px 288px 0 rgba(0,255,195,0.06),
-        330px 357px 0 rgba(0,255,195,0.06),
-        385px 329px 0 rgba(0,255,195,0.25),
-        441px 302px 0 rgba(0,255,195,0.41),
-        497px 275px 0 rgba(0,255,195,0.54),
-        552px 248px 0 rgba(0,255,195,0.65),
-        608px 221px 0 rgba(0,255,195,0.72),
-        664px 193px 0 rgba(0,255,195,0.77),
-        720px 166px 0 rgba(0,255,195,0.78),
-        775px 139px 0 rgba(0,255,195,0.77),
-        831px 112px 0 rgba(0,255,195,0.72),
-        887px 85px 0 rgba(0,255,195,0.65),
-        942px 58px 0 rgba(0,255,195,0.54),
-        998px 30px 0 rgba(0,255,195,0.41),
-        1054px 3px 0 rgba(0,255,195,0.25),
-        1110px -23px 0 rgba(0,255,195,0.06),
-        535px 721px 0 rgba(0,255,195,0.06),
-        590px 693px 0 rgba(0,255,195,0.25),
-        646px 666px 0 rgba(0,255,195,0.41),
-        702px 639px 0 rgba(0,255,195,0.54),
-        757px 612px 0 rgba(0,255,195,0.65),
-        813px 585px 0 rgba(0,255,195,0.72),
-        869px 557px 0 rgba(0,255,195,0.77),
-        925px 530px 0 rgba(0,255,195,0.78),
-        980px 503px 0 rgba(0,255,195,0.77),
-        1036px 476px 0 rgba(0,255,195,0.72),
-        1092px 449px 0 rgba(0,255,195,0.65),
-        1147px 422px 0 rgba(0,255,195,0.54),
-        1203px 394px 0 rgba(0,255,195,0.41),
-        1259px 367px 0 rgba(0,255,195,0.25),
-        1315px 340px 0 rgba(0,255,195,0.06),
-        740px 180px 0 rgba(0,255,195,0.06),
-        795px 152px 0 rgba(0,255,195,0.25),
-        851px 125px 0 rgba(0,255,195,0.41),
-        907px 98px 0 rgba(0,255,195,0.54),
-        962px 71px 0 rgba(0,255,195,0.65),
-        1018px 44px 0 rgba(0,255,195,0.72),
-        1074px 16px 0 rgba(0,255,195,0.77),
-        1130px -10px 0 rgba(0,255,195,0.78),
-        1185px -37px 0 rgba(0,255,195,0.77),
-        1241px -64px 0 rgba(0,255,195,0.72),
-        1297px -91px 0 rgba(0,255,195,0.65),
-        1352px -118px 0 rgba(0,255,195,0.54),
-        1408px -146px 0 rgba(0,255,195,0.41),
-        1464px -173px 0 rgba(0,255,195,0.25),
-        1520px -200px 0 rgba(0,255,195,0.06),
-        945px 560px 0 rgba(0,255,195,0.06),
-        1000px 532px 0 rgba(0,255,195,0.25),
-        1056px 505px 0 rgba(0,255,195,0.41),
-        1112px 478px 0 rgba(0,255,195,0.54),
-        1167px 451px 0 rgba(0,255,195,0.65),
-        1223px 424px 0 rgba(0,255,195,0.72),
-        1279px 396px 0 rgba(0,255,195,0.77),
-        1335px 369px 0 rgba(0,255,195,0.78),
-        1390px 342px 0 rgba(0,255,195,0.77),
-        1446px 315px 0 rgba(0,255,195,0.72),
-        1502px 288px 0 rgba(0,255,195,0.65),
-        1557px 261px 0 rgba(0,255,195,0.54),
-        1613px 233px 0 rgba(0,255,195,0.41),
-        1669px 206px 0 rgba(0,255,195,0.25),
-        1725px 179px 0 rgba(0,255,195,0.06),
-        1150px 564px 0 rgba(0,255,195,0.06),
-        1205px 536px 0 rgba(0,255,195,0.25),
-        1261px 509px 0 rgba(0,255,195,0.41),
-        1317px 482px 0 rgba(0,255,195,0.54),
-        1372px 455px 0 rgba(0,255,195,0.65),
-        1428px 428px 0 rgba(0,255,195,0.72),
-        1484px 400px 0 rgba(0,255,195,0.77),
-        1540px 373px 0 rgba(0,255,195,0.78),
-        1595px 346px 0 rgba(0,255,195,0.77),
-        1651px 319px 0 rgba(0,255,195,0.72),
-        1707px 292px 0 rgba(0,255,195,0.65),
-        1762px 265px 0 rgba(0,255,195,0.54),
-        1818px 237px 0 rgba(0,255,195,0.41),
-        1874px 210px 0 rgba(0,255,195,0.25),
-        1930px 183px 0 rgba(0,255,195,0.06),
-        1355px 417px 0 rgba(0,255,195,0.06),
-        1410px 389px 0 rgba(0,255,195,0.25),
-        1466px 362px 0 rgba(0,255,195,0.41),
-        1522px 335px 0 rgba(0,255,195,0.54),
-        1577px 308px 0 rgba(0,255,195,0.65),
-        1633px 281px 0 rgba(0,255,195,0.72),
-        1689px 253px 0 rgba(0,255,195,0.77),
-        1745px 226px 0 rgba(0,255,195,0.78),
-        1800px 199px 0 rgba(0,255,195,0.77),
-        1856px 172px 0 rgba(0,255,195,0.72),
-        1912px 145px 0 rgba(0,255,195,0.65),
-        1967px 118px 0 rgba(0,255,195,0.54),
-        2023px 90px 0 rgba(0,255,195,0.41),
-        2079px 63px 0 rgba(0,255,195,0.25),
-        2135px 36px 0 rgba(0,255,195,0.06),
-        1560px 247px 0 rgba(0,255,195,0.06),
-        1615px 219px 0 rgba(0,255,195,0.25),
-        1671px 192px 0 rgba(0,255,195,0.41),
-        1727px 165px 0 rgba(0,255,195,0.54),
-        1782px 138px 0 rgba(0,255,195,0.65),
-        1838px 111px 0 rgba(0,255,195,0.72),
-        1894px 83px 0 rgba(0,255,195,0.77),
-        1950px 56px 0 rgba(0,255,195,0.78),
-        2005px 29px 0 rgba(0,255,195,0.77),
-        2061px 2px 0 rgba(0,255,195,0.72),
-        2117px -24px 0 rgba(0,255,195,0.65),
-        2172px -51px 0 rgba(0,255,195,0.54),
-        2228px -79px 0 rgba(0,255,195,0.41),
-        2284px -106px 0 rgba(0,255,195,0.25),
-        2340px -133px 0 rgba(0,255,195,0.06),
-        1765px 571px 0 rgba(0,255,195,0.06),
-        1820px 543px 0 rgba(0,255,195,0.25),
-        1876px 516px 0 rgba(0,255,195,0.41),
-        1932px 489px 0 rgba(0,255,195,0.54),
-        1987px 462px 0 rgba(0,255,195,0.65),
-        2043px 435px 0 rgba(0,255,195,0.72),
-        2099px 407px 0 rgba(0,255,195,0.77),
-        2155px 380px 0 rgba(0,255,195,0.78),
-        2210px 353px 0 rgba(0,255,195,0.77),
-        2266px 326px 0 rgba(0,255,195,0.72),
-        2322px 299px 0 rgba(0,255,195,0.65),
-        2377px 272px 0 rgba(0,255,195,0.54),
-        2433px 244px 0 rgba(0,255,195,0.41),
-        2489px 217px 0 rgba(0,255,195,0.25),
-        2545px 190px 0 rgba(0,255,195,0.06);
-        }
-        .hero-particles {
-            position: absolute; inset: 0;
-            pointer-events: none; z-index: 1;
-        }
-        .hero-particles::before {
-            content: '';
-            position: absolute;
-            width: 1px; height: 1px;
-            background: transparent;
-            box-shadow:
-        770px 100px 0 rgba(0,255,195,0.09),
-        1961px 384px 0 rgba(0,255,195,0.1),
-        1204px 28px 0 rgba(0,255,195,0.2),
-        1545px 198px 0 rgba(0,255,195,0.25),
-        1400px 233px 0 rgba(180,255,240,0.3),
-        764px 471px 0 rgba(0,255,195,0.16),
-        1169px 113px 0 rgba(0,255,195,0.2),
-        199px 249px 0 rgba(0,255,195,0.21),
-        1556px 139px 0 rgba(0,240,255,0.2),
-        127px 600px 0 rgba(0,240,255,0.18),
-        856px 832px 0 rgba(0,255,195,0.29),
-        1634px 747px 0 rgba(0,240,255,0.15),
-        1038px 818px 0 rgba(0,240,255,0.26),
-        1363px 74px 0 rgba(180,255,240,0.25),
-        833px 670px 0 rgba(0,255,195,0.28),
-        1502px 339px 0 rgba(0,255,195,0.27),
-        655px 232px 0 rgba(180,255,240,0.2),
-        589px 164px 0 rgba(0,240,255,0.27),
-        552px 369px 0 rgba(0,255,195,0.1),
-        1315px 848px 0 rgba(0,240,255,0.14),
-        1105px 653px 0 rgba(0,255,195,0.28),
-        668px 747px 0 rgba(180,255,240,0.29),
-        1611px 603px 0 rgba(180,255,240,0.2),
-        264px 514px 0 rgba(0,240,255,0.28),
-        1002px 252px 0 rgba(0,255,195,0.15),
-        984px 587px 0 rgba(0,255,195,0.17),
-        371px 211px 0 rgba(0,255,195,0.13),
-        1244px 454px 0 rgba(0,255,195,0.27),
-        479px 522px 0 rgba(180,255,240,0.08),
-        838px 200px 0 rgba(0,255,195,0.29),
-        1705px 696px 0 rgba(0,240,255,0.13),
-        481px 698px 0 rgba(0,255,195,0.28),
-        1445px 643px 0 rgba(0,240,255,0.15),
-        258px 404px 0 rgba(0,255,195,0.29),
-        1188px 769px 0 rgba(0,255,195,0.18),
-        108px 522px 0 rgba(180,255,240,0.11),
-        807px 322px 0 rgba(180,255,240,0.26),
-        1291px 602px 0 rgba(0,255,195,0.2),
-        1765px 773px 0 rgba(180,255,240,0.16),
-        1802px 528px 0 rgba(180,255,240,0.16),
-        923px 333px 0 rgba(0,255,195,0.14),
-        1857px 152px 0 rgba(180,255,240,0.15),
-        879px 631px 0 rgba(180,255,240,0.17),
-        804px 339px 0 rgba(180,255,240,0.15),
-        1917px 254px 0 rgba(180,255,240,0.29),
-        268px 263px 0 rgba(0,240,255,0.27),
-        424px 756px 0 rgba(180,255,240,0.11),
-        324px 715px 0 rgba(0,255,195,0.19),
-        158px 187px 0 rgba(180,255,240,0.14),
-        72px 845px 0 rgba(180,255,240,0.08),
-        198px 828px 0 rgba(180,255,240,0.23),
-        1902px 344px 0 rgba(0,255,195,0.25),
-        1339px 268px 0 rgba(0,255,195,0.21),
-        1260px 55px 0 rgba(180,255,240,0.22),
-        1147px 443px 0 rgba(0,240,255,0.24),
-        1100px 272px 0 rgba(0,255,195,0.23),
-        1796px 283px 0 rgba(180,255,240,0.18),
-        1294px 55px 0 rgba(180,255,240,0.16),
-        1468px 840px 0 rgba(180,255,240,0.29),
-        904px 566px 0 rgba(180,255,240,0.11),
-        1239px 101px 0 rgba(0,240,255,0.26),
-        768px 358px 0 rgba(0,255,195,0.17),
-        1745px 798px 0 rgba(0,255,195,0.14),
-        1819px 537px 0 rgba(180,255,240,0.17),
-        707px 93px 0 rgba(0,240,255,0.14),
-        1418px 375px 0 rgba(180,255,240,0.28),
-        6px 840px 0 rgba(180,255,240,0.27),
-        1379px 470px 0 rgba(0,255,195,0.28),
-        655px 263px 0 rgba(180,255,240,0.14),
-        950px 1px 0 rgba(0,240,255,0.24),
-        558px 665px 0 rgba(0,255,195,0.14),
-        1318px 6px 0 rgba(0,240,255,0.29),
-        571px 672px 0 rgba(0,255,195,0.18),
-        1698px 748px 0 rgba(180,255,240,0.16),
-        627px 615px 0 rgba(0,255,195,0.16),
-        1682px 139px 0 rgba(0,255,195,0.11),
-        492px 28px 0 rgba(0,240,255,0.23),
-        912px 189px 0 rgba(180,255,240,0.12),
-        1568px 111px 0 rgba(0,240,255,0.17),
-        251px 121px 0 rgba(0,240,255,0.23),
-        438px 58px 0 rgba(180,255,240,0.17),
-        1084px 136px 0 rgba(180,255,240,0.16),
-        1392px 223px 0 rgba(180,255,240,0.13),
-        1796px 837px 0 rgba(0,240,255,0.11),
-        547px 400px 0 rgba(0,240,255,0.08),
-        228px 23px 0 rgba(0,255,195,0.12),
-        498px 294px 0 rgba(180,255,240,0.26),
-        -19px 129px 0 rgba(0,255,195,0.29),
-        1364px 9px 0 rgba(0,255,195,0.11),
-        943px 779px 0 rgba(180,255,240,0.28),
-        1875px 152px 0 rgba(0,255,195,0.1),
-        366px 770px 0 rgba(180,255,240,0.22),
-        265px 689px 0 rgba(0,240,255,0.1),
-        367px 650px 0 rgba(0,240,255,0.16),
-        1132px 735px 0 rgba(0,255,195,0.17),
-        292px 335px 0 rgba(0,255,195,0.27),
-        1217px 224px 0 rgba(0,255,195,0.15),
-        577px 321px 0 rgba(180,255,240,0.3),
-        270px 580px 0 rgba(0,240,255,0.18),
-        841px 34px 0 rgba(180,255,240,0.22),
-        225px 121px 0 rgba(0,255,195,0.22),
-        1630px 345px 0 rgba(180,255,240,0.15),
-        232px 578px 0 rgba(0,255,195,0.23),
-        924px 518px 0 rgba(180,255,240,0.17),
-        1248px 119px 0 rgba(0,240,255,0.17),
-        873px 131px 0 rgba(0,240,255,0.26),
-        304px 813px 0 rgba(180,255,240,0.26),
-        1274px 597px 0 rgba(180,255,240,0.15),
-        -12px 659px 0 rgba(0,255,195,0.08),
-        1667px 746px 0 rgba(180,255,240,0.15),
-        1756px 782px 0 rgba(0,240,255,0.23),
-        599px 139px 0 rgba(0,240,255,0.29),
-        1007px 72px 0 rgba(0,255,195,0.24),
-        1174px 43px 0 rgba(0,255,195,0.15),
-        1039px 730px 0 rgba(180,255,240,0.19),
-        1240px 667px 0 rgba(180,255,240,0.28),
-        466px 199px 0 rgba(0,255,195,0.22),
-        201px 473px 0 rgba(180,255,240,0.24),
-        1934px 52px 0 rgba(0,240,255,0.24),
-        1727px 817px 0 rgba(0,255,195,0.22),
-        244px 716px 0 rgba(0,240,255,0.28),
-        324px 766px 0 rgba(0,255,195,0.19),
-        762px 496px 0 rgba(0,255,195,0.11),
-        1959px 170px 0 rgba(180,255,240,0.12),
-        1271px 60px 0 rgba(180,255,240,0.18),
-        214px 652px 0 rgba(0,255,195,0.15),
-        154px 429px 0 rgba(180,255,240,0.25),
-        832px 487px 0 rgba(0,240,255,0.19),
-        553px 163px 0 rgba(0,240,255,0.29),
-        67px 693px 0 rgba(180,255,240,0.21),
-        136px 364px 0 rgba(0,255,195,0.26),
-        849px 450px 0 rgba(180,255,240,0.14),
-        425px 163px 0 rgba(0,255,195,0.26),
-        1322px 204px 0 rgba(0,240,255,0.23),
-        31px 276px 0 rgba(0,255,195,0.28),
-        1586px 657px 0 rgba(0,240,255,0.13),
-        1915px 142px 0 rgba(0,255,195,0.09),
-        500px 833px 0 rgba(180,255,240,0.15),
-        1564px 330px 0 rgba(0,255,195,0.16),
-        1527px 664px 0 rgba(180,255,240,0.26);
-            animation: twinkle 6s ease-in-out infinite alternate;
-        }
-        .hero-glow-dots {
-            position: absolute; inset: 0;
-            pointer-events: none; z-index: 1;
-        }
-        .hero-glow-dots::before {
-            content: '';
-            position: absolute;
-            width: 2px; height: 2px;
-            border-radius: 50%;
-            background: transparent;
-            box-shadow:
-        1087px 161px 6px rgba(0,255,195,0.29),
-        183px 128px 6px rgba(0,255,195,0.28),
-        1062px 603px 4px rgba(0,255,195,0.32),
-        1383px 298px 8px rgba(0,255,195,0.43),
-        1185px 368px 6px rgba(0,255,195,0.21),
-        459px 357px 4px rgba(0,255,195,0.35),
-        1055px 404px 6px rgba(0,255,195,0.18),
-        1197px 147px 6px rgba(0,255,195,0.36),
-        1442px 333px 6px rgba(0,255,195,0.33),
-        1334px 446px 6px rgba(0,255,195,0.33),
-        1010px 525px 4px rgba(0,255,195,0.21),
-        1122px 256px 4px rgba(0,255,195,0.22),
-        105px 471px 8px rgba(0,255,195,0.4),
-        1177px 40px 4px rgba(0,255,195,0.18),
-        140px 548px 6px rgba(0,255,195,0.23),
-        971px 44px 6px rgba(0,255,195,0.39),
-        1472px 691px 4px rgba(0,255,195,0.19),
-        272px 412px 4px rgba(0,255,195,0.23),
-        843px 556px 4px rgba(0,255,195,0.29),
-        812px 754px 4px rgba(0,255,195,0.31),
-        764px 593px 6px rgba(0,255,195,0.3),
-        1182px 535px 8px rgba(0,255,195,0.43),
-        1036px 247px 6px rgba(0,255,195,0.26),
-        406px 432px 8px rgba(0,255,195,0.29),
-        1346px 41px 4px rgba(0,255,195,0.27),
-        82px 716px 4px rgba(0,255,195,0.38),
-        1275px 391px 4px rgba(0,255,195,0.28),
-        1690px 35px 4px rgba(0,255,195,0.31);
-            animation: twinkle 9s ease-in-out infinite;
-        }
-        @keyframes twinkle {
-            0%   { opacity: 1; }
-            50%  { opacity: 0.45; }
-            100% { opacity: 0.85; }
-        }
-        /* ─────────────────────────────────────────────────────────── */
     </style>
 </head>
 <body class="text-slate-100 antialiased selection:bg-blue-700 selection:text-blue-100">
@@ -930,24 +212,18 @@
 
     <!-- Hero -->
     <section id="about" class="hero-gradient text-white py-20 px-6 lg:py-32 relative">
-        <div class="absolute top-0 -left-4 w-96 h-96 bg-[#00ff9f] rounded-full mix-blend-screen filter blur-[140px] opacity-30 animate-blob"></div>
-        <div class="absolute top-0 -right-4 w-80 h-80 bg-[#00ffc8] rounded-full mix-blend-screen filter blur-[120px] opacity-25 animate-blob animation-delay-2000"></div>
-        <div class="absolute -bottom-8 left-20 w-96 h-96 bg-[#00e5ff] rounded-full mix-blend-screen filter blur-[160px] opacity-20 animate-blob animation-delay-4000"></div>
-
-        <!-- Neon atmosphere layers -->
-        <div class="hero-trains"></div>
-        <div class="hero-particles"></div>
-        <div class="hero-glow-dots"></div>
-        <div class="hero-ground-glow"></div>
+        <div class="absolute top-0 -left-4 w-72 h-72 bg-blue-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-40 animate-blob"></div>
+        <div class="absolute top-0 -right-4 w-72 h-72 bg-cyan-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-40 animate-blob animation-delay-2000"></div>
+        <div class="absolute -bottom-8 left-20 w-72 h-72 bg-indigo-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-40 animate-blob animation-delay-4000"></div>
 
         <div class="container mx-auto relative z-10">
             <div class="text-center max-w-4xl mx-auto mb-16">
-                <div class="inline-block px-4 py-1.5 rounded-full bg-teal-900/40 border border-teal-600/40 text-teal-300 font-semibold uppercase tracking-widest text-xs mb-6 backdrop-blur-sm animate-fade-up">
+                <div class="inline-block px-4 py-1.5 rounded-full bg-slate-800/50 border border-slate-700 text-blue-300 font-semibold uppercase tracking-widest text-xs mb-6 backdrop-blur-sm animate-fade-up">
                     Nguyễn Quang Huy · Sports Media
                 </div>
 
                 <h2 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight text-white animate-fade-up delay-100 leading-tight pb-2">
-                    My <span class="bg-gradient-to-r from-teal-300 via-cyan-200 to-teal-400 bg-clip-text text-transparent">12-Year</span> Journey <br class="hidden md:block" />in Sports Media
+                    My <span class="bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-500 bg-clip-text text-transparent">12-Year</span> Journey <br class="hidden md:block" />in Sports Media
                 </h2>
 
                 <p class="text-slate-300 text-lg md:text-xl leading-relaxed font-light animate-fade-up delay-200 mt-4 italic max-w-3xl mx-auto">
@@ -967,7 +243,7 @@
                     <p class="text-blue-400 font-bold text-sm tracking-widest uppercase mb-1">2014 — 2015</p>
                     <h3 class="text-xl font-bold text-white mb-1">Marketing Executive</h3>
                     <p class="text-slate-300 font-medium mb-3">MP & Silva</p>
-                    <p class="text-slate-400 text-sm leading-relaxed flex-1">
+                    <p class="text-slate-300 text-sm leading-relaxed flex-1">
                         Joined a world-leading sports rights agency. Learned how broadcast deals are structured, how leagues monetize their product, and how sports is sold before it is ever told.
                     </p>
                     <p class="text-blue-300/70 text-xs italic mt-4 pt-4 border-t border-slate-700/50">
@@ -985,7 +261,7 @@
                     <p class="text-emerald-400 font-bold text-sm tracking-widest uppercase mb-1">2015 — 2025</p>
                     <h3 class="text-xl font-bold text-white mb-1">Sports Journalist</h3>
                     <p class="text-slate-300 font-medium mb-3">VnExpress</p>
-                    <p class="text-slate-400 text-sm leading-relaxed flex-1">
+                    <p class="text-slate-300 text-sm leading-relaxed flex-1">
                         A decade at Vietnam's largest news site. Covered World Cups, Olympics, and local sports across football, F1, tennis, marathon and more — through tactical analysis, data journalism, and longform features.
                     </p>
                     <p class="text-emerald-300/70 text-xs italic mt-4 pt-4 border-t border-slate-700/50">
@@ -1005,12 +281,12 @@
                         <p class="text-cyan-400 font-bold text-sm tracking-widest uppercase">2025 — Present</p>
                         <span class="flex h-2 w-2 relative">
                             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
-                            <span class="relative inline-flex rounded-full h-2 w-2 bg-[#00e5ff]"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
                         </span>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-1">Head of Communications</h3>
                     <p class="text-slate-300 font-medium mb-3">VnExpress Marathon</p>
-                    <p class="text-slate-400 text-sm leading-relaxed flex-1">
+                    <p class="text-slate-300 text-sm leading-relaxed flex-1">
                         Leading strategic communications for Vietnam's largest running series across 11 cities. Orchestrating public relations, high-stakes crisis response, and creative content production for a community of 132k+ athletes.
                     </p>
                     <p class="text-cyan-300/70 text-xs italic mt-4 pt-4 border-t border-slate-700/50">
@@ -1048,28 +324,28 @@
             <!-- Section header + stats -->
             <div class="mb-12">
                 <h3 class="text-4xl font-extrabold text-slate-50 section-title tracking-tight">Marathon Events Communications</h3>
-                <p class="text-slate-400 text-lg leading-relaxed mt-4 mb-8">Four people. Eleven cities. Two years of turning race days into stories that travel far beyond the finish line.</p>
+                <p class="text-slate-300 text-lg leading-relaxed mt-4 mb-8">Four people. Eleven cities. Two years of turning race days into stories that travel far beyond the finish line.</p>
                 <!-- Stats integrated here -->
                 <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
                     <div class="bg-slate-800/60 rounded-2xl border border-slate-700 p-5 text-center shadow-sm">
                         <p class="text-3xl font-extrabold text-blue-600 mb-1">18</p>
-                        <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Events</p>
+                        <p class="text-xs font-semibold text-slate-300 uppercase tracking-wider">Events</p>
                     </div>
                     <div class="bg-slate-800/60 rounded-2xl border border-slate-700 p-5 text-center shadow-sm">
                         <p class="text-3xl font-extrabold text-slate-50 mb-1">11</p>
-                        <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Cities</p>
+                        <p class="text-xs font-semibold text-slate-300 uppercase tracking-wider">Cities</p>
                     </div>
                     <div class="bg-slate-800/60 rounded-2xl border border-slate-700 p-5 text-center shadow-sm">
-                        <p class="text-3xl font-extrabold text-slate-50 mb-1">132k<span class="text-slate-400">+</span></p>
-                        <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Athletes</p>
+                        <p class="text-3xl font-extrabold text-slate-50 mb-1">132k<span class="text-slate-300">+</span></p>
+                        <p class="text-xs font-semibold text-slate-300 uppercase tracking-wider">Athletes</p>
                     </div>
                     <div class="bg-slate-800/60 rounded-2xl border border-slate-700 p-5 text-center shadow-sm">
-                        <p class="text-3xl font-extrabold text-slate-50 mb-1">880<span class="text-slate-400">+</span></p>
-                        <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Articles</p>
+                        <p class="text-3xl font-extrabold text-slate-50 mb-1">880<span class="text-slate-300">+</span></p>
+                        <p class="text-xs font-semibold text-slate-300 uppercase tracking-wider">Articles</p>
                     </div>
                     <div class="bg-slate-800/60 rounded-2xl border border-slate-700 p-5 text-center shadow-sm">
-                        <p class="text-3xl font-extrabold text-blue-600 mb-1">10M<span class="text-slate-400">+</span></p>
-                        <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Content Views</p>
+                        <p class="text-3xl font-extrabold text-blue-600 mb-1">10M<span class="text-slate-300">+</span></p>
+                        <p class="text-xs font-semibold text-slate-300 uppercase tracking-wider">Content Views</p>
                     </div>
                 </div>
             </div>
@@ -1151,8 +427,8 @@
                         </div>
                         <h5 class="text-2xl font-extrabold text-slate-50 mb-2">VM Green Paradise Cần Giờ 2026</h5>
                         <p class="text-sm text-slate-500 mb-5 font-medium">Đối tác: Vinhomes · 5,000 BIB Sold out trong 10 ngày · T5/2026</p>
-                        <div class="bg-slate-800/40 rounded-xl p-5 mb-5 border border-slate-700/50">
-                            <h6 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Chiến lược triển khai</h6>
+                        <div class="bg-slate-50 rounded-xl p-5 mb-5 border border-slate-700/50">
+                            <h6 class="text-xs font-bold uppercase tracking-wider text-slate-300 mb-3">Chiến lược triển khai</h6>
                             <ul class="space-y-2.5 text-sm text-slate-300">
                                 <li class="flex gap-3"><span class="text-blue-500 font-bold shrink-0">01.</span>Xây dựng hành trình nội dung 5 chặng — từ tạo FOMO trước ngày mở bán đến khai thác cảm xúc sau giải — đủ để 5,000 BIB biến mất trong 10 ngày.</li>
                                 <li class="flex gap-3"><span class="text-blue-500 font-bold shrink-0">02.</span>Giữa cơn khủng hoảng thiếu phòng, không giải thích — kể một câu chuyện khác: video "Runner cắm trại" biến điểm yếu thành trải nghiệm người ta muốn thử.</li>
@@ -1160,7 +436,7 @@
                             </ul>
                         </div>
                         <div>
-                            <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Sản phẩm đầu ra</p>
+                            <p class="text-xs font-bold uppercase tracking-wider text-slate-300 mb-3">Sản phẩm đầu ra</p>
                             <div class="flex gap-4 flex-wrap">
                                 <a href="https://vnexpress.net/dan-elite-chay-thu-cung-duong-vm-green-paradise-can-gio-5064762.html" target="_blank" rel="noopener noreferrer"
                                    class="flex items-center gap-3 group border border-slate-700 rounded-lg pr-4 p-1.5 hover:border-blue-400 transition-colors">
@@ -1170,12 +446,12 @@
                                 <a href="https://vnexpress.net/can-gio-xanh-muot-trong-video-vnexpress-marathon-5064678.html" target="_blank" rel="noopener noreferrer"
                                    class="flex items-center gap-3 group border border-slate-700 rounded-lg pr-4 p-1.5 hover:border-blue-400 transition-colors">
                                     <img src="images/vm can gio gif 1.gif" class="w-12 h-12 object-cover rounded-md">
-                                    <div><p class="text-sm font-semibold text-slate-100 group-hover:text-blue-400 transition-colors">Trailer Drone</p><span class="text-xs text-slate-400">20/4/2026</span></div>
+                                    <div><p class="text-sm font-semibold text-slate-100 group-hover:text-blue-400 transition-colors">Trailer Drone</p><span class="text-xs text-slate-300">20/4/2026</span></div>
                                 </a>
                                 <a href="https://vnexpress.net/chay-thu-cung-duong-vm-green-paradise-can-gio-5067395.html" target="_blank" rel="noopener noreferrer"
                                    class="flex items-center gap-3 group border border-slate-700 rounded-lg pr-4 p-1.5 hover:border-blue-400 transition-colors">
                                     <img src="images/vm can gio gif 2.gif" class="w-12 h-12 object-cover rounded-md">
-                                    <div><p class="text-sm font-semibold text-slate-100 group-hover:text-blue-400 transition-colors">Video thử đường</p><span class="text-xs text-slate-400">26/4/2026</span></div>
+                                    <div><p class="text-sm font-semibold text-slate-100 group-hover:text-blue-400 transition-colors">Video thử đường</p><span class="text-xs text-slate-300">26/4/2026</span></div>
                                 </a>
                             </div>
                         </div>
@@ -1193,7 +469,7 @@
                         </div>
                         <h5 class="text-xl font-bold text-slate-50 mb-1">VM Volvo All-Star 2025</h5>
                         <p class="text-xs text-slate-500 mb-4 font-medium pb-4 border-b border-slate-700/50">Giải marathon áp chuẩn đầu vào đầu tiên Việt Nam · T4/2025</p>
-                        <ul class="space-y-3 text-sm text-slate-400 flex-1">
+                        <ul class="space-y-3 text-sm text-slate-300 flex-1">
                             <li class="flex items-start gap-2">
                                 <svg class="w-4 h-4 text-emerald-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                                 <span>Vượt khỏi khuôn khổ thể thao, đây là câu chuyện về những con người đặt cược tất cả vào một giải đua ở đất khách. Tuyến bài VĐV Kenya mưu sinh tại Việt Nam chạm 148k views.</span>
@@ -1208,7 +484,7 @@
                             </li>
                         </ul>
                         <div class="mt-4 pt-4 border-t border-slate-700/50">
-                            <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Sản phẩm đầu ra</p>
+                            <p class="text-xs font-bold uppercase tracking-wider text-slate-300 mb-3">Sản phẩm đầu ra</p>
                             <div class="flex flex-wrap gap-3">
                                 <a href="https://vnexpress.net/runner-kenya-doi-doi-nho-tien-thuong-tu-chay-bo-o-viet-nam-4873616.html" target="_blank" rel="noopener noreferrer"
                                    class="flex items-center gap-3 group border border-slate-700 rounded-lg pr-4 p-1.5 hover:border-blue-400 transition-colors min-w-0">
@@ -1217,7 +493,7 @@
                                 </a>
                                 <div class="flex items-center gap-3 border border-slate-700 rounded-lg pr-4 p-1.5 min-w-0">
                                     <img src="images/xe volvo dua don vdv gif.gif" class="w-12 h-12 object-cover rounded-md shrink-0">
-                                    <div class="min-w-0"><p class="text-sm font-semibold text-slate-200">Soft PR Volvo</p><span class="text-xs text-slate-400">Xe đưa đón VĐV</span></div>
+                                    <div class="min-w-0"><p class="text-sm font-semibold text-slate-200">Soft PR Volvo</p><span class="text-xs text-slate-300">Xe đưa đón VĐV</span></div>
                                 </div>
                                 <div class="flex items-center gap-3 border border-slate-700 rounded-lg pr-4 p-1.5 min-w-0">
                                     <img src="images/volvo google trend.jpg" class="w-12 h-12 object-cover rounded-md shrink-0">
@@ -1235,7 +511,7 @@
                         </div>
                         <h5 class="text-xl font-bold text-slate-50 mb-1">VM Hanoi Midnight 2025 by PUMA</h5>
                         <p class="text-xs text-slate-500 mb-4 font-medium pb-4 border-b border-slate-700/50">Chiến dịch PUMA "Go Wild" · T11/2025</p>
-                        <ul class="space-y-3 text-sm text-slate-400 flex-1">
+                        <ul class="space-y-3 text-sm text-slate-300 flex-1">
                             <li class="flex items-start gap-2">
                                 <svg class="w-4 h-4 text-indigo-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                                 <span><span class="font-semibold text-slate-200">★ Sáng kiến: Mở tác nghiệp cho media tự do</span> — fanpage, photographer, content creator độc lập. Tạo ra 2.5M reach từ 5 đơn vị. Riêng VNRUN đạt 2M views/3 ngày (tương đương 100–150tr VND booking truyền thống).</span>
@@ -1272,7 +548,7 @@
                             <div class="flex-1">
                                 <span class="inline-block px-3 py-1 bg-indigo-500/20 text-indigo-300 text-xs font-bold uppercase tracking-widest rounded-md mb-4">Innovation</span>
                                 <h5 class="text-2xl font-extrabold text-slate-50 mb-4">Kết hợp Thể thao chuyên nghiệp & Truyền hình Thực tế</h5>
-                                <div class="space-y-3 text-base text-slate-400 leading-relaxed">
+                                <div class="space-y-3 text-base text-slate-300 leading-relaxed">
                                     <p><span class="font-semibold text-slate-200">Thực trạng:</span> Một khán giả trẻ mở livestream marathon lên, rồi tắt sau 3 phút. Camera cố định. Bình luận viên đọc kết quả. Tất cả đọng lại chỉ là hình ảnh của 8–10 runner thành tích cao.</p>
                                     <p><span class="font-semibold text-slate-200">Số liệu:</span> Nhóm 18–34 tuổi của VM tăng gấp đôi trong 2 năm — chiếm 32% khán giả. Đây là nhóm tăng trưởng nhanh nhất, và cũng là nhóm ít kiên nhẫn nhất với nội dung nhàm.</p>
                                     <p><span class="font-semibold text-slate-200">Bài toán:</span> Làm sao giữ họ ở lại màn hình — không phải vì kết quả, mà vì câu chuyện đang diễn ra ngay lúc đó? Và làm thế nào để nội dung livestream tiếp tục được chia sẻ trên mạng xã hội thay vì dừng lại sau cuộc đua?</p>
@@ -1395,13 +671,13 @@
                             </div>
                             <h4 class="text-lg font-bold text-white leading-snug">Áp lực dư luận: Khi video VĐV gục ngã gây tranh cãi</h4>
                         </div>
-                        <div class="p-6 flex-1 bg-slate-800/40 relative">
+                        <div class="p-6 flex-1 bg-slate-50 relative">
                             <div class="absolute left-10 top-6 bottom-6 w-px bg-slate-200"></div>
                             <div class="space-y-6 relative">
                                 <div class="flex gap-4">
                                     <div class="w-8 h-8 rounded-full bg-slate-700 border-2 border-slate-500 flex items-center justify-center shrink-0 shadow-sm z-10"><span class="w-2.5 h-2.5 rounded-full bg-slate-400"></span></div>
                                     <div>
-                                        <p class="text-xs font-bold text-slate-400 uppercase mb-1">Sự cố</p>
+                                        <p class="text-xs font-bold text-slate-300 uppercase mb-1">Sự cố</p>
                                         <p class="text-sm text-slate-300">VĐV Yến Thư gục ngã cách đích 50m. Video lan truyền, cộng đồng mạng tạo sức ép yêu cầu BTC xóa clip để "bảo vệ hình ảnh môn thể thao".</p>
                                     </div>
                                 </div>
@@ -1440,13 +716,13 @@
                             </div>
                             <h4 class="text-lg font-bold text-white leading-snug">Fake news: Bảo vệ uy tín giải đấu trên mặt báo</h4>
                         </div>
-                        <div class="p-6 flex-1 bg-slate-800/40 relative">
+                        <div class="p-6 flex-1 bg-slate-50 relative">
                             <div class="absolute left-10 top-6 bottom-6 w-px bg-slate-200"></div>
                             <div class="space-y-6 relative">
                                 <div class="flex gap-4">
                                     <div class="w-8 h-8 rounded-full bg-slate-700 border-2 border-slate-500 flex items-center justify-center shrink-0 shadow-sm z-10"><span class="w-2.5 h-2.5 rounded-full bg-slate-400"></span></div>
                                     <div>
-                                        <p class="text-xs font-bold text-slate-400 uppercase mb-1">Sự cố Kỷ lục</p>
+                                        <p class="text-xs font-bold text-slate-300 uppercase mb-1">Sự cố Kỷ lục</p>
                                         <p class="text-sm text-slate-300">Hồng Lệ phá kỷ lục Quốc gia nhưng không được công nhận do sự kiện thiếu giám sát trực tiếp từ Liên đoàn Điền kinh (dù đã có chứng nhận đường chạy).</p>
                                     </div>
                                 </div>
@@ -1477,8 +753,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="px-6 pb-6 pt-2 bg-slate-800/40">
-                            <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Bài viết</p>
+                        <div class="px-6 pb-6 pt-2 bg-slate-50">
+                            <p class="text-xs font-bold uppercase tracking-wider text-slate-300 mb-3">Bài viết</p>
                             <div class="flex flex-col gap-2">
                                 <a href="https://vnexpress.net/ket-qua-vnexpress-marathon-all-star-2026-5015458-tong-thuat.html" target="_blank" rel="noopener noreferrer"
                                    class="flex items-center gap-3 group border border-slate-700 rounded-lg p-1.5 pr-3 hover:border-blue-400 bg-slate-700/60 transition-colors">
@@ -1507,7 +783,7 @@
         <section id="portfolio" class="mb-10 mt-32">
             <div class="max-w-2xl mb-10">
                 <h3 class="text-4xl font-extrabold text-slate-50 section-title tracking-tight">Journalism Work</h3>
-                <p class="text-slate-400 text-lg leading-relaxed">A decade of longform features, data journalism, and tactical analysis at VnExpress — Vietnam's largest news site.</p>
+                <p class="text-slate-300 text-lg leading-relaxed">A decade of longform features, data journalism, and tactical analysis at VnExpress — Vietnam's largest news site.</p>
             </div>
 
             <!-- Featured Articles -->
@@ -1530,7 +806,7 @@
                                 <span class="px-2.5 py-1 bg-slate-700 text-slate-300 text-xs font-bold uppercase tracking-wider rounded-full">International</span>
                             </div>
                             <h4 class="text-xl font-bold text-slate-50 mb-3 group-hover:text-red-400 transition-colors leading-snug">African Athletes Find Their Feet in Vietnam's Marathon Running Boom</h4>
-                            <p class="text-slate-400 text-sm leading-relaxed mb-4">How East African runners are reshaping Vietnam's marathon circuit — chasing prize money across visa barriers, unpredictable race conditions, and a sport transforming from pastime to livelihood.</p>
+                            <p class="text-slate-300 text-sm leading-relaxed mb-4">How East African runners are reshaping Vietnam's marathon circuit — chasing prize money across visa barriers, unpredictable race conditions, and a sport transforming from pastime to livelihood.</p>
                             <p class="text-red-400 text-xs font-semibold">Published April 2025 · Al Jazeera English →</p>
                         </div>
                     </a>
@@ -1545,7 +821,7 @@
                         </div>
                         <div class="p-5 flex flex-col flex-1">
                             <h4 class="text-base font-bold text-slate-50 mb-2 group-hover:text-blue-400 transition-colors leading-snug">Giải mã thành công của huyền thoại Esports Faker</h4>
-                            <p class="text-slate-400 text-sm leading-relaxed mb-3 flex-1">Nếu có một dẫn chứng hoàn hảo nhất để kêu gọi thay đổi định kiến với Esports, đó chính là sự nghiệp của Faker.</p>
+                            <p class="text-slate-300 text-sm leading-relaxed mb-3 flex-1">Nếu có một dẫn chứng hoàn hảo nhất để kêu gọi thay đổi định kiến với Esports, đó chính là sự nghiệp của Faker.</p>
                             <p class="text-blue-500 text-xs italic border-t border-slate-700/50 pt-3">A career portrait of esports' greatest player — and the case for taking the genre seriously.</p>
                         </div>
                     </a>
@@ -1560,7 +836,7 @@
                         </div>
                         <div class="p-5 flex flex-col flex-1">
                             <h4 class="text-base font-bold text-slate-50 mb-2 group-hover:text-blue-400 transition-colors leading-snug">Olympic thay đổi thế nào khi không có Nga</h4>
-                            <p class="text-slate-400 text-sm leading-relaxed mb-3 flex-1">Khi Nga vắng mặt tại Paris 2024, một số quốc gia khác đã vươn lên trên bảng tổng sắp huy chương.</p>
+                            <p class="text-slate-300 text-sm leading-relaxed mb-3 flex-1">Khi Nga vắng mặt tại Paris 2024, một số quốc gia khác đã vươn lên trên bảng tổng sắp huy chương.</p>
                             <p class="text-blue-500 text-xs italic border-t border-slate-700/50 pt-3">Data analysis on how Russia's absence reshuffled the medal table at Paris 2024.</p>
                         </div>
                     </a>
@@ -1575,7 +851,7 @@
                         </div>
                         <div class="p-5 flex flex-col flex-1">
                             <h4 class="text-base font-bold text-slate-50 mb-2 group-hover:text-blue-400 transition-colors leading-snug">Niềm đam mê pickleball của 'bà ngoại' Việt kiều</h4>
-                            <p class="text-slate-400 text-sm leading-relaxed mb-3 flex-1">Bà Nguyễn Thị Quỳnh Vân, 65 tuổi, bán hết tài sản ở Mỹ để về Việt Nam truyền cảm hứng pickleball.</p>
+                            <p class="text-slate-300 text-sm leading-relaxed mb-3 flex-1">Bà Nguyễn Thị Quỳnh Vân, 65 tuổi, bán hết tài sản ở Mỹ để về Việt Nam truyền cảm hứng pickleball.</p>
                             <p class="text-blue-500 text-xs italic border-t border-slate-700/50 pt-3">A 65-year-old sold everything in the US to come home and play pickleball.</p>
                         </div>
                     </a>
@@ -1596,38 +872,38 @@
             <!-- Filters -->
             <div class="bg-slate-800/60 p-5 rounded-2xl shadow-sm border border-slate-700 mb-8 flex flex-col md:flex-row gap-5">
                 <div class="w-full md:w-1/3">
-                    <label for="filter-search" class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Tìm kiếm từ khóa</label>
+                    <label for="filter-search" class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Tìm kiếm từ khóa</label>
                     <div class="relative">
                         <input id="filter-search" type="text" placeholder="Vd: Messi, Marathon..."
-                               class="w-full bg-slate-800/40 border border-slate-700 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all pl-10">
+                               class="w-full bg-slate-50 border border-slate-700 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all pl-10">
                         <svg class="w-4 h-4 text-slate-500 absolute left-3.5 top-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
                     </div>
                 </div>
                 <div class="w-full md:w-1/3">
-                    <label for="filter-chuyen-muc" class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Thể loại báo chí</label>
-                    <select id="filter-chuyen-muc" class="w-full bg-slate-800/40 border border-slate-700 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all cursor-pointer">
+                    <label for="filter-chuyen-muc" class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Thể loại báo chí</label>
+                    <select id="filter-chuyen-muc" class="w-full bg-slate-50 border border-slate-700 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all cursor-pointer">
                         <option value="all">Tất cả thể loại</option>
                     </select>
                 </div>
                 <div class="w-full md:w-1/3">
-                    <label for="filter-mon-the-thao" class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Môn Thể thao</label>
-                    <select id="filter-mon-the-thao" class="w-full bg-slate-800/40 border border-slate-700 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all cursor-pointer">
+                    <label for="filter-mon-the-thao" class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Môn Thể thao</label>
+                    <select id="filter-mon-the-thao" class="w-full bg-slate-50 border border-slate-700 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all cursor-pointer">
                         <option value="all">Tất cả môn</option>
                     </select>
                 </div>
             </div>
 
             <div class="flex justify-between items-center mb-6">
-                <p id="result-count" class="text-sm font-semibold text-slate-400"></p>
+                <p id="result-count" class="text-sm font-semibold text-slate-300"></p>
             </div>
 
             <div id="articles-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
 
             <div id="no-results" class="text-center py-20 hidden">
-                <div class="inline-flex justify-center items-center w-16 h-16 rounded-full bg-slate-700/50 mb-4 text-slate-400">
+                <div class="inline-flex justify-center items-center w-16 h-16 rounded-full bg-slate-700/50 mb-4 text-slate-300">
                     <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                 </div>
-                <p class="text-slate-400 font-medium">Không tìm thấy bài viết nào phù hợp.</p>
+                <p class="text-slate-300 font-medium">Không tìm thấy bài viết nào phù hợp.</p>
                 <button onclick="document.getElementById('filter-search').value=''; document.getElementById('filter-chuyen-muc').value='all'; document.getElementById('filter-mon-the-thao').value='all'; document.getElementById('filter-search').dispatchEvent(new Event('input'));"
                         class="mt-4 text-blue-400 font-semibold text-sm hover:underline">Xóa bộ lọc</button>
             </div>
@@ -1642,7 +918,7 @@
             <div class="max-w-xl mx-auto text-center">
                 <span class="inline-block px-3 py-1 bg-white/10 text-slate-300 text-xs font-bold uppercase tracking-widest rounded-full mb-6 border border-white/10">Open to work</span>
                 <h3 class="text-4xl font-extrabold mb-4 tracking-tight">Let's Connect</h3>
-                <p class="text-slate-400 text-lg mb-10 leading-relaxed">Open to sharing expertise, exploring new opportunities, and collaborating on projects in sports media and communications.</p>
+                <p class="text-slate-300 text-lg mb-10 leading-relaxed">Open to sharing expertise, exploring new opportunities, and collaborating on projects in sports media and communications.</p>
                 <div class="flex justify-center items-center gap-5 flex-wrap">
                     <a href="mailto:huynguyendl2110@gmail.com"
                        class="inline-flex items-center gap-2.5 bg-blue-600 hover:bg-blue-500 text-white font-semibold py-3.5 px-8 rounded-full transition duration-300 shadow-lg shadow-blue-900/50 hover:-translate-y-1">
@@ -1657,7 +933,7 @@
                 </div>
             </div>
         </div>
-        <div class="border-t border-slate-800/60 py-6 text-center text-slate-400 text-sm font-medium relative z-10">
+        <div class="border-t border-slate-800/60 py-6 text-center text-slate-300 text-sm font-medium relative z-10">
             © 2026 Nguyễn Quang Huy
         </div>
     </footer>
@@ -1782,7 +1058,7 @@
                                     <span class="text-[10px] font-bold uppercase tracking-wider bg-blue-500/20 text-blue-300 py-1 px-2.5 rounded-md">${esc(item['Môn thể thao'])}</span>
                                 </div>
                                 <h4 class="font-extrabold text-xl mb-3 text-slate-50 group-hover:text-blue-400 transition-colors leading-tight tracking-tight">${esc(item.title)}</h4>
-                                <p class="text-slate-400 text-sm leading-relaxed line-clamp-3 mb-4 flex-1">${esc(item.lead)}</p>
+                                <p class="text-slate-300 text-sm leading-relaxed line-clamp-3 mb-4 flex-1">${esc(item.lead)}</p>
                                 <div class="mt-auto pt-4 border-t border-slate-700/50 flex items-center text-blue-600 font-semibold text-sm group-hover:translate-x-1 transition-transform">
                                     Đọc bài viết
                                     <svg class="w-4 h-4 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
@@ -1869,11 +1145,11 @@
             document.getElementById('modal-body').innerHTML = `
                 <p style="color:${d.accent}" class="text-xs font-bold uppercase tracking-widest mb-1">${esc(d.period)}</p>
                 <h2 class="text-2xl font-extrabold text-white mb-1">${esc(d.title)}</h2>
-                <p class="text-slate-400 font-medium mb-6">${esc(d.company)}</p>
+                <p class="text-slate-300 font-medium mb-6">${esc(d.company)}</p>
                 ${d.sections.map(s => `
                 <div class="mb-5">
                     <h3 class="text-sm font-bold text-slate-300 uppercase tracking-wider mb-1">${esc(s.heading)}</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">${esc(s.body)}</p>
+                    <p class="text-slate-300 text-sm leading-relaxed">${esc(s.body)}</p>
                 </div>`).join('')}
                 <blockquote class="mt-6 pt-5 border-t border-slate-700/50 text-slate-300 italic text-sm leading-relaxed">${esc(d.quote)}</blockquote>
             `;
