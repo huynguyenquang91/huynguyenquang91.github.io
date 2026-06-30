@@ -965,6 +965,76 @@
     </footer>
 
     <script>
+        // ── Light Trails / Speed Streaks ─────────────────────────────
+        (function () {
+            var cv = document.createElement('canvas');
+            cv.id = 'light-trails';
+            cv.setAttribute('aria-hidden', 'true');
+            cv.style.cssText = 'position:fixed;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;opacity:0;transition:opacity 0.4s;';
+            document.body.appendChild(cv);
+            var ctx = cv.getContext('2d'), trails = [];
+
+            function resize() { cv.width = window.innerWidth; cv.height = window.innerHeight; }
+
+            function mkTrail(spreadX) {
+                var H = cv.height, W = cv.width;
+                var spd = Math.random() * 9 + 4;
+                var ang = (Math.random() - 0.5) * 0.18;
+                var len = Math.random() * 260 + 70;
+                var thk = Math.random() * 1.8 + 0.25;
+                var isCyan = Math.random() < 0.3;
+                var isWhite = !isCyan && Math.random() < 0.4;
+                var col = isCyan ? [167,243,253] : isWhite ? [235,245,255] : [160,200,255];
+                return {
+                    x: spreadX ? Math.random() * W : -len - 10,
+                    y: Math.random() * H,
+                    vx: spd * Math.cos(ang), vy: spd * Math.sin(ang),
+                    len: len, thk: thk, col: col,
+                    op: Math.random() * 0.55 + 0.3, ang: ang
+                };
+            }
+
+            function init() {
+                trails = [];
+                for (var i = 0; i < 20; i++) trails.push(mkTrail(true));
+            }
+
+            function draw() {
+                var W = cv.width, H = cv.height;
+                ctx.clearRect(0, 0, W, H);
+                var isLight = document.documentElement.getAttribute('data-theme') === 'light';
+                cv.style.opacity = isLight ? '0' : '0.22';
+                if (!isLight) {
+                    trails.forEach(function (t) {
+                        var ex = t.x - Math.cos(t.ang) * t.len;
+                        var ey = t.y - Math.sin(t.ang) * t.len;
+                        var g = ctx.createLinearGradient(t.x, t.y, ex, ey);
+                        var c = t.col;
+                        g.addColorStop(0,   'rgba('+c[0]+','+c[1]+','+c[2]+','+t.op+')');
+                        g.addColorStop(0.25,'rgba('+c[0]+','+c[1]+','+c[2]+','+(t.op*0.45)+')');
+                        g.addColorStop(1,   'rgba('+c[0]+','+c[1]+','+c[2]+',0)');
+                        ctx.save();
+                        ctx.shadowBlur = t.thk * 10;
+                        ctx.shadowColor = 'rgba('+c[0]+','+c[1]+','+c[2]+',0.55)';
+                        ctx.beginPath(); ctx.moveTo(t.x, t.y); ctx.lineTo(ex, ey);
+                        ctx.strokeStyle = g; ctx.lineWidth = t.thk; ctx.lineCap = 'round';
+                        ctx.stroke(); ctx.restore();
+                        t.x += t.vx; t.y += t.vy;
+                        if (t.x > W + t.len + 10) {
+                            var n = mkTrail(false);
+                            Object.assign(t, n);
+                        }
+                    });
+                }
+                requestAnimationFrame(draw);
+            }
+
+            var rt; window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(function () { resize(); init(); }, 200); });
+            resize(); init();
+            // slight delay so page loads first
+            setTimeout(function () { draw(); }, 300);
+        })();
+
         // ── Hero Starfield ───────────────────────────────────────────
         (function () {
             var cv = document.getElementById('hero-stars');
