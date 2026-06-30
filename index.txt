@@ -143,6 +143,7 @@
         html[data-theme="light"] .bg-slate-800\/60,
         html[data-theme="light"] .bg-slate-800\/50 { background-color: white !important; }
         html[data-theme="light"] .bg-slate-800\/30 { background-color: #f1f5f9 !important; }
+        html[data-theme="light"] .bg-slate-800\/40 { background-color: #f8fafc !important; }
         html[data-theme="light"] .bg-slate-700     { background-color: #e2e8f0 !important; }
         html[data-theme="light"] .bg-slate-700\/60 { background-color: rgba(203,213,225,0.6) !important; }
         html[data-theme="light"] .bg-slate-700\/50 { background-color: rgba(203,213,225,0.5) !important; }
@@ -427,7 +428,7 @@
                         </div>
                         <h5 class="text-2xl font-extrabold text-slate-50 mb-2">VM Green Paradise Cần Giờ 2026</h5>
                         <p class="text-sm text-slate-500 mb-5 font-medium">Đối tác: Vinhomes · 5,000 BIB Sold out trong 10 ngày · T5/2026</p>
-                        <div class="bg-slate-50 rounded-xl p-5 mb-5 border border-slate-700/50">
+                        <div class="bg-slate-800/40 rounded-xl p-5 mb-5 border border-slate-700/50">
                             <h6 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Chiến lược triển khai</h6>
                             <ul class="space-y-2.5 text-sm text-slate-300">
                                 <li class="flex gap-3"><span class="text-blue-500 font-bold shrink-0">01.</span>Xây dựng hành trình nội dung 5 chặng — từ tạo FOMO trước ngày mở bán đến khai thác cảm xúc sau giải — đủ để 5,000 BIB biến mất trong 10 ngày.</li>
@@ -671,7 +672,7 @@
                             </div>
                             <h4 class="text-lg font-bold text-white leading-snug">Áp lực dư luận: Khi video VĐV gục ngã gây tranh cãi</h4>
                         </div>
-                        <div class="p-6 flex-1 bg-slate-50 relative">
+                        <div class="p-6 flex-1 bg-slate-800/40 relative">
                             <div class="absolute left-10 top-6 bottom-6 w-px bg-slate-200"></div>
                             <div class="space-y-6 relative">
                                 <div class="flex gap-4">
@@ -716,7 +717,7 @@
                             </div>
                             <h4 class="text-lg font-bold text-white leading-snug">Fake news: Bảo vệ uy tín giải đấu trên mặt báo</h4>
                         </div>
-                        <div class="p-6 flex-1 bg-slate-50 relative">
+                        <div class="p-6 flex-1 bg-slate-800/40 relative">
                             <div class="absolute left-10 top-6 bottom-6 w-px bg-slate-200"></div>
                             <div class="space-y-6 relative">
                                 <div class="flex gap-4">
@@ -753,7 +754,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="px-6 pb-6 pt-2 bg-slate-50">
+                        <div class="px-6 pb-6 pt-2 bg-slate-800/40">
                             <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Bài viết</p>
                             <div class="flex flex-col gap-2">
                                 <a href="https://vnexpress.net/ket-qua-vnexpress-marathon-all-star-2026-5015458-tong-thuat.html" target="_blank" rel="noopener noreferrer"
@@ -875,19 +876,19 @@
                     <label for="filter-search" class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Tìm kiếm từ khóa</label>
                     <div class="relative">
                         <input id="filter-search" type="text" placeholder="Vd: Messi, Marathon..."
-                               class="w-full bg-slate-50 border border-slate-700 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all pl-10">
+                               class="w-full bg-slate-800/40 border border-slate-700 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all pl-10">
                         <svg class="w-4 h-4 text-slate-500 absolute left-3.5 top-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
                     </div>
                 </div>
                 <div class="w-full md:w-1/3">
                     <label for="filter-chuyen-muc" class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Thể loại báo chí</label>
-                    <select id="filter-chuyen-muc" class="w-full bg-slate-50 border border-slate-700 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all cursor-pointer">
+                    <select id="filter-chuyen-muc" class="w-full bg-slate-800/40 border border-slate-700 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all cursor-pointer">
                         <option value="all">Tất cả thể loại</option>
                     </select>
                 </div>
                 <div class="w-full md:w-1/3">
                     <label for="filter-mon-the-thao" class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Môn Thể thao</label>
-                    <select id="filter-mon-the-thao" class="w-full bg-slate-50 border border-slate-700 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all cursor-pointer">
+                    <select id="filter-mon-the-thao" class="w-full bg-slate-800/40 border border-slate-700 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all cursor-pointer">
                         <option value="all">Tất cả môn</option>
                     </select>
                 </div>
