@@ -252,7 +252,7 @@
                 </h2>
 
                 <p class="text-slate-300 text-lg md:text-xl leading-relaxed font-light animate-fade-up delay-200 mt-4 italic max-w-3xl mx-auto">
-                    "I started with the broadcast rights for the World Cup and Premier League. Then spent a decade writing about the raw human stories of sports. Now, I design the strategy for 132,000 marathon runners — and still pick up the pen when a story demands it."
+                    "I started with the broadcast rights for the World Cup and Premier League. Then spent a decade writing about the raw human stories of sports. Now, I design the strategy for 132,000 marathon runners, and still pick up the pen when a story demands it."
                 </p>
             </div>
 
@@ -287,10 +287,10 @@
                     <h3 class="text-xl font-bold text-white mb-1">Sports Journalist</h3>
                     <p class="text-slate-300 font-medium mb-3">VnExpress</p>
                     <p class="text-slate-300 text-sm leading-relaxed flex-1">
-                        A decade at Vietnam's largest news site. Covered World Cups, Olympics, and local sports across football, F1, tennis, marathon and more — through tactical analysis, data journalism, and longform features.
+                        A decade at Vietnam's largest news site. Covered World Cups, Olympics, and local sports across football, F1, tennis, marathon and more, through tactical analysis, data journalism, and longform features.
                     </p>
                     <p class="text-emerald-300/70 text-xs italic mt-4 pt-4 border-t border-slate-700/50">
-                        "Ten years of bylines. And a growing conviction that I wanted to build the story — not just write it." →
+                        "Ten years of bylines. And a growing conviction that I wanted to build the story, not just write it." →
                     </p>
                     <p class="text-emerald-400/60 text-xs mt-3 font-semibold tracking-wide">Read full story →</p>
                 </div>
@@ -455,9 +455,9 @@
                         <div class="bg-slate-900/40 rounded-xl p-5 mb-5 border border-slate-700/50">
                             <h6 class="text-xs font-bold uppercase tracking-wider text-slate-300 mb-3">Chiến lược triển khai</h6>
                             <ul class="space-y-2.5 text-sm text-slate-300">
-                                <li class="flex gap-3"><span class="text-blue-500 font-bold shrink-0">01.</span>Xây dựng hành trình nội dung 5 chặng — từ tạo FOMO trước ngày mở bán đến khai thác cảm xúc sau giải — đủ để 5,000 BIB biến mất trong 10 ngày.</li>
-                                <li class="flex gap-3"><span class="text-blue-500 font-bold shrink-0">02.</span>Giữa cơn khủng hoảng thiếu phòng, không giải thích — kể một câu chuyện khác: video "Runner cắm trại" biến điểm yếu thành trải nghiệm người ta muốn thử.</li>
-                                <li class="flex gap-3"><span class="text-blue-500 font-bold shrink-0">03.</span>Cần Giờ không chỉ là địa điểm. "Xuyên rừng — chạm biển" là tuyên ngôn định vị — và nó làm cho giải này trở thành độc nhất trong toàn hệ thống VM.</li>
+                                <li class="flex gap-3"><span class="text-blue-500 font-bold shrink-0">01.</span>Xây dựng hành trình nội dung 5 chặng, từ tạo FOMO trước ngày mở bán đến khai thác cảm xúc sau giải, đủ để 5,000 BIB biến mất trong 10 ngày.</li>
+                                <li class="flex gap-3"><span class="text-blue-500 font-bold shrink-0">02.</span>Giữa cơn khủng hoảng thiếu phòng, không giải thích, kể một câu chuyện khác: video "Runner cắm trại" biến điểm yếu thành trải nghiệm người ta muốn thử.</li>
+                                <li class="flex gap-3"><span class="text-blue-500 font-bold shrink-0">03.</span>Cần Giờ không chỉ là địa điểm. "Xuyên rừng, chạm biển" là tuyên ngôn định vị, và nó làm cho giải này trở thành độc nhất trong toàn hệ thống VM.</li>
                             </ul>
                         </div>
                         <div>
@@ -501,11 +501,11 @@
                             </li>
                             <li class="flex items-start gap-2">
                                 <svg class="w-4 h-4 text-emerald-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                                Người đọc thấy câu chuyện về VĐV và chiếc xe đưa họ đến vạch xuất phát. Không ai cảm thấy đang đọc quảng cáo — nhưng Volvo vẫn xuất hiện đúng lúc, đúng chỗ.
+                                Người đọc thấy câu chuyện về VĐV và chiếc xe đưa họ đến vạch xuất phát. Không ai cảm thấy đang đọc quảng cáo, nhưng Volvo vẫn xuất hiện đúng lúc, đúng chỗ.
                             </li>
                             <li class="flex items-start gap-2">
                                 <svg class="w-4 h-4 text-emerald-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                                Volvo trở thành Breakout topic #1 trên Google Trends khi tìm "VnExpress Marathon" — 5 tháng sau sự kiện.
+                                Volvo trở thành Breakout topic #1 trên Google Trends khi tìm "VnExpress Marathon", 5 tháng sau sự kiện.
                             </li>
                         </ul>
                         <div class="mt-4 pt-4 border-t border-slate-700/50">
@@ -539,15 +539,15 @@
                         <ul class="space-y-3 text-sm text-slate-300 flex-1">
                             <li class="flex items-start gap-2">
                                 <svg class="w-4 h-4 text-indigo-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                                <span><span class="font-semibold text-slate-200">★ Sáng kiến: Mở tác nghiệp cho media tự do</span> — fanpage, photographer, content creator độc lập. Tạo ra 2.5M reach từ 5 đơn vị. Riêng VNRUN đạt 2M views/3 ngày (tương đương 100–150tr VND booking truyền thống).</span>
+                                <span><span class="font-semibold text-slate-200">★ Sáng kiến: Mở tác nghiệp cho media tự do</span>, fanpage, photographer, content creator độc lập. Tạo ra 2.5M reach từ 5 đơn vị. Riêng VNRUN đạt 2M views/3 ngày (tương đương 100–150tr VND booking truyền thống).</span>
                             </li>
                             <li class="flex items-start gap-2">
                                 <svg class="w-4 h-4 text-indigo-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                                Bốn tầng nội dung — từ thông tin đối tác đến văn hoá đêm Hà Nội, từ kỹ năng chạy bộ đến những con người truyền cảm hứng — để không bao giờ chỉ nói về một giải đua.
+                                Bốn tầng nội dung, từ thông tin đối tác đến văn hoá đêm Hà Nội, từ kỹ năng chạy bộ đến những con người truyền cảm hứng, để không bao giờ chỉ nói về một giải đua.
                             </li>
                             <li class="flex items-start gap-2">
                                 <svg class="w-4 h-4 text-indigo-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                                Truyền tải thông điệp 'Chạy vì niềm vui' — song hành slogan "Go Wild Hanoi" của PUMA đến cộng đồng runner.
+                                Truyền tải thông điệp 'Chạy vì niềm vui', song hành slogan "Go Wild Hanoi" của PUMA đến cộng đồng runner.
                             </li>
                         </ul>
                         <div class="mt-4 relative rounded-xl overflow-hidden h-36">
@@ -575,9 +575,9 @@
                                 <h5 class="text-2xl font-extrabold text-slate-50 mb-4">Kết hợp Thể thao chuyên nghiệp & Truyền hình Thực tế</h5>
                                 <div class="space-y-3 text-base text-slate-300 leading-relaxed">
                                     <p><span class="font-semibold text-slate-200">Thực trạng:</span> Một khán giả trẻ mở livestream marathon lên, rồi tắt sau 3 phút. Camera cố định. Bình luận viên đọc kết quả. Tất cả đọng lại chỉ là hình ảnh của 8–10 runner thành tích cao.</p>
-                                    <p><span class="font-semibold text-slate-200">Số liệu:</span> Nhóm 18–34 tuổi của VM tăng gấp đôi trong 2 năm — chiếm 32% khán giả. Đây là nhóm tăng trưởng nhanh nhất, và cũng là nhóm ít kiên nhẫn nhất với nội dung nhàm.</p>
-                                    <p><span class="font-semibold text-slate-200">Bài toán:</span> Làm sao giữ họ ở lại màn hình — không phải vì kết quả, mà vì câu chuyện đang diễn ra ngay lúc đó? Và làm thế nào để nội dung livestream tiếp tục được chia sẻ trên mạng xã hội thay vì dừng lại sau cuộc đua?</p>
-                                    <p><span class="font-semibold text-indigo-700">Giải pháp:</span> Livestream Hybrid đặt góc máy direct cạnh góc máy tracking, bình luận viên chuyên môn cạnh host hiện trường — giúp người xem tiếp nhận cuộc đua toàn cảnh hơn, với nhịp độ nhanh hơn. Một ekíp bằng nửa truyền hình thông thường — sản phẩm phủ đồng thời VnExpress, VnE Go, Facebook và TikTok.</p>
+                                    <p><span class="font-semibold text-slate-200">Số liệu:</span> Nhóm 18–34 tuổi của VM tăng gấp đôi trong 2 năm, chiếm 32% khán giả. Đây là nhóm tăng trưởng nhanh nhất, và cũng là nhóm ít kiên nhẫn nhất với nội dung nhàm.</p>
+                                    <p><span class="font-semibold text-slate-200">Bài toán:</span> Làm sao giữ họ ở lại màn hình, không phải vì kết quả, mà vì câu chuyện đang diễn ra ngay lúc đó? Và làm thế nào để nội dung livestream tiếp tục được chia sẻ trên mạng xã hội thay vì dừng lại sau cuộc đua?</p>
+                                    <p><span class="font-semibold text-indigo-700">Giải pháp:</span> Livestream Hybrid đặt góc máy direct cạnh góc máy tracking, bình luận viên chuyên môn cạnh host hiện trường, giúp người xem tiếp nhận cuộc đua toàn cảnh hơn, với nhịp độ nhanh hơn. Một ekíp bằng nửa truyền hình thông thường, sản phẩm phủ đồng thời VnExpress, VnE Go, Facebook và TikTok.</p>
                                 </div>
                             </div>
                             <div class="md:w-72 shrink-0 flex flex-col gap-3">
@@ -710,7 +710,7 @@
                                     <div class="w-8 h-8 rounded-full bg-blue-900/40 border-2 border-blue-500 flex items-center justify-center shrink-0 shadow-sm z-10"><span class="w-2.5 h-2.5 rounded-full bg-blue-500"></span></div>
                                     <div>
                                         <p class="text-xs font-bold text-blue-500 uppercase mb-1">Quyết định báo chí</p>
-                                        <p class="text-sm text-slate-300 font-medium">Bảo vệ quan điểm giữ lại video trên trang chủ. Lập luận: Đây không phải tiêu cực — mà là minh chứng cho tinh thần thi đấu quả cảm. Xóa clip là chối bỏ sự thật.</p>
+                                        <p class="text-sm text-slate-300 font-medium">Bảo vệ quan điểm giữ lại video trên trang chủ. Lập luận: Đây không phải tiêu cực, mà là minh chứng cho tinh thần thi đấu quả cảm. Xóa clip là chối bỏ sự thật.</p>
                                     </div>
                                 </div>
                                 <div class="flex gap-4">
@@ -755,7 +755,7 @@
                                     <div class="w-8 h-8 rounded-full bg-amber-900/40 border-2 border-amber-500 flex items-center justify-center shrink-0 shadow-sm z-10"><span class="text-amber-500 font-bold text-lg leading-none mt-[-2px]">!</span></div>
                                     <div>
                                         <p class="text-xs font-bold text-amber-600 uppercase mb-1">Tin giả xuất hiện</p>
-                                        <p class="text-sm text-slate-300">Một số tờ báo lớn đánh đồng việc thiếu giám sát bằng "Đường chạy VM chưa được đo đạc/chứng nhận" — trực tiếp tấn công uy tín kỹ thuật của giải đấu.</p>
+                                        <p class="text-sm text-slate-300">Một số tờ báo lớn đánh đồng việc thiếu giám sát bằng "Đường chạy VM chưa được đo đạc/chứng nhận", trực tiếp tấn công uy tín kỹ thuật của giải đấu.</p>
                                     </div>
                                 </div>
                                 <div class="flex gap-4">
@@ -773,7 +773,7 @@
                                     </div>
                                     <div>
                                         <p class="text-xs font-bold text-emerald-500 uppercase mb-1">Ghi nhận nỗ lực VĐV</p>
-                                        <p class="text-sm text-slate-300">Tiếp tục đưa tin về thành tích của Hồng Lệ — không né tránh, không tranh cãi. Dùng ngôn ngữ "tạo mốc mới", "vượt kỷ lục quốc gia" để ghi nhận nỗ lực VĐV mà không kéo lại tranh cãi về công nhận chính thức.</p>
+                                        <p class="text-sm text-slate-300">Tiếp tục đưa tin về thành tích của Hồng Lệ, không né tránh, không tranh cãi. Dùng ngôn ngữ "tạo mốc mới", "vượt kỷ lục quốc gia" để ghi nhận nỗ lực VĐV mà không kéo lại tranh cãi về công nhận chính thức.</p>
                                     </div>
                                 </div>
                             </div>
@@ -808,14 +808,14 @@
         <section id="portfolio" class="mb-10 mt-32">
             <div class="max-w-2xl mb-10">
                 <h3 class="text-4xl font-extrabold text-slate-50 section-title tracking-tight">Journalism Work</h3>
-                <p class="text-slate-300 text-lg leading-relaxed">A decade of longform features, data journalism, and tactical analysis at VnExpress — Vietnam's largest news site.</p>
+                <p class="text-slate-300 text-lg leading-relaxed">A decade of longform features, data journalism, and tactical analysis at VnExpress, Vietnam's largest news site.</p>
             </div>
 
             <!-- Featured Articles -->
             <div class="mb-14">
                 <p class="text-xs font-bold text-blue-400 uppercase tracking-widest mb-6">Signature Works</p>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-                    <!-- Card 1: Al Jazeera — full-width hero -->
+                    <!-- Card 1: Al Jazeera, full-width hero -->
                     <a href="https://www.aljazeera.com/news/2025/4/19/african-athletes-find-their-feet-in-vietnams-marathon-running-boom" target="_blank" rel="noopener noreferrer"
                        class="group md:col-span-3 flex flex-col md:flex-row rounded-2xl overflow-hidden border border-slate-700 hover:border-red-300 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-slate-800/60">
                         <div class="relative overflow-hidden md:w-2/5 h-56 md:h-auto shrink-0">
@@ -831,7 +831,7 @@
                                 <span class="px-2.5 py-1 bg-slate-700 text-slate-300 text-xs font-bold uppercase tracking-wider rounded-full">International</span>
                             </div>
                             <h4 class="text-xl font-bold text-slate-50 mb-3 group-hover:text-red-400 transition-colors leading-snug">African Athletes Find Their Feet in Vietnam's Marathon Running Boom</h4>
-                            <p class="text-slate-300 text-sm leading-relaxed mb-4">How East African runners are reshaping Vietnam's marathon circuit — chasing prize money across visa barriers, unpredictable race conditions, and a sport transforming from pastime to livelihood.</p>
+                            <p class="text-slate-300 text-sm leading-relaxed mb-4">How East African runners are reshaping Vietnam's marathon circuit, chasing prize money across visa barriers, unpredictable race conditions, and a sport transforming from pastime to livelihood.</p>
                             <p class="text-red-400 text-xs font-semibold">Published April 2025 · Al Jazeera English →</p>
                         </div>
                     </a>
@@ -847,7 +847,7 @@
                         <div class="p-5 flex flex-col flex-1">
                             <h4 class="text-base font-bold text-slate-50 mb-2 group-hover:text-blue-400 transition-colors leading-snug">Giải mã thành công của huyền thoại Esports Faker</h4>
                             <p class="text-slate-300 text-sm leading-relaxed mb-3 flex-1">Nếu có một dẫn chứng hoàn hảo nhất để kêu gọi thay đổi định kiến với Esports, đó chính là sự nghiệp của Faker.</p>
-                            <p class="text-blue-500 text-xs italic border-t border-slate-700/50 pt-3">A career portrait of esports' greatest player — and the case for taking the genre seriously.</p>
+                            <p class="text-blue-500 text-xs italic border-t border-slate-700/50 pt-3">A career portrait of esports' greatest player, and the case for taking the genre seriously.</p>
                         </div>
                     </a>
                     <!-- Card 3: Olympic/Nga -->
@@ -1101,7 +1101,7 @@
 
         document.addEventListener('DOMContentLoaded', function () {
             const allArticles = [
-              { "URL": "https://www.aljazeera.com/news/2025/4/19/african-athletes-find-their-feet-in-vietnams-marathon-running-boom", "Chuyên mục": "Longform", "Môn thể thao": "Marathon", "title": "African Athletes Find Their Feet in Vietnam's Marathon Running Boom", "lead": "How East African runners are reshaping Vietnam's marathon circuit — chasing prize money across visa barriers, unpredictable race conditions, and a sport transforming from pastime to livelihood.", "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2025/03/2022-05-19T014807Z_1690558849_UP1EI5J05056U_RTRMADP_3_GAMES-SEA-1743066119.jpg?resize=770%2C513&quality=80" },
+              { "URL": "https://www.aljazeera.com/news/2025/4/19/african-athletes-find-their-feet-in-vietnams-marathon-running-boom", "Chuyên mục": "Longform", "Môn thể thao": "Marathon", "title": "African Athletes Find Their Feet in Vietnam's Marathon Running Boom", "lead": "How East African runners are reshaping Vietnam's marathon circuit, chasing prize money across visa barriers, unpredictable race conditions, and a sport transforming from pastime to livelihood.", "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2025/03/2022-05-19T014807Z_1690558849_UP1EI5J05056U_RTRMADP_3_GAMES-SEA-1743066119.jpg?resize=770%2C513&quality=80" },
               { "URL": "https://vnexpress.net/olympic-thay-doi-the-nao-khi-khong-co-nga-4780611.html", "Chuyên mục": "Báo chí dữ liệu", "Môn thể thao": "Olympic", "title": "Olympic thay đổi thế nào khi không có Nga", "lead": "Khi Nga vắng mặt tại Paris 2024, một số quốc gia khác đã vươn lên trên bảng tổng sắp huy chương.", "imageUrl": "https://i1-thethao.vnecdn.net/2024/08/13/01b4f55c-92a8-450d-9112-13e4b6-7105-8689-1723483021.jpg?w=0&h=0&q=100&dpr=2&fit=crop&s=USO6cfX90_VpNqgz3DiMsQ" },
               { "URL": "https://vnexpress.net/phong-trao-chay-bo-cu-huych-cho-marathon-viet-4692301.html", "Chuyên mục": "Báo chí dữ liệu", "Môn thể thao": "Marathon", "title": "Phong trào chạy bộ - cú huých cho marathon Việt", "lead": "Số lượng cũng như thành tích trong các nội dung về chạy bộ tăng vọt trong năm 2023, kéo theo những chuyển biến lớn về mặt xã hội, kinh tế và tiềm năng phát triển ở Việt Nam.", "imageUrl": "https://i1-thethao.vnecdn.net/2023/12/22/z4999836878064-76bc99f326ed8e0-6194-4171-1703258670.jpg?w=0&h=0&q=100&dpr=1&fit=crop&s=t2mrgLJuKp_bcX5jcDxshg" },
               { "URL": "https://vnexpress.net/messi-hon-haaland-105-diem-binh-chon-qua-bong-vang-4672976.html", "Chuyên mục": "Báo chí dữ liệu", "Môn thể thao": "Bóng đá", "title": "Messi hơn Haaland 105 điểm bình chọn Quả Bóng Vàng", "lead": "Lionel Messi áp đảo trong cuộc bình chọn Quả Bóng Vàng 2023 khi nhận 462 điểm, trong khi người đứng thứ hai là Erling Haaland được 357 điểm.", "imageUrl": "https://i1-thethao.vnecdn.net/2023/11/04/007b161a-7fcf-4eab-bf82-baa6e2-4116-7143-1699074840.jpg?w=0&h=0&q=100&dpr=2&fit=crop&s=7WthIJJrZzu3smwmw9VXpA" },
@@ -1202,10 +1202,10 @@
                 title: 'Marketing Executive',
                 company: 'MP & Silva · Hanoi',
                 sections: [
-                    { heading: 'How it started', body: 'I joined MP&Silva fresh from university after winning the Play For Change "19 by 19" scholarship — one of 19 young sports media professionals selected across Vietnam. The role was a crash course in the commercial architecture of global sport.' },
-                    { heading: 'What I learned', body: 'How broadcast deals for the Premier League and World Cup are structured, negotiated, and sold to broadcasters across Southeast Asia. Sport isn\'t just played — it\'s packaged, priced, and distributed. Understanding this gave me a framework for everything that followed.' },
-                    { heading: 'Context', body: 'It started with a 2-month internship in MP&Silva\'s Singapore office in 2013. Back in Hanoi from 2014, I worked directly with Vietnam\'s biggest TV broadcasters — VTV for the 2014 World Cup, K+ for Premier League rights. MP&Silva was at its peak globally. (It collapsed in 2018.)' },
-                    { heading: 'Why I left', body: 'The commercial side was fascinating — but I kept wanting to know the stories behind the numbers. One year in, I walked into a newsroom.' }
+                    { heading: 'How it started', body: 'I joined MP&Silva fresh from university after winning the Play For Change "19 by 19" scholarship, one of 19 young sports media professionals selected across Vietnam. The role was a crash course in the commercial architecture of global sport.' },
+                    { heading: 'What I learned', body: 'How broadcast deals for the Premier League and World Cup are structured, negotiated, and sold to broadcasters across Southeast Asia. Sport isn\'t just played, it\'s packaged, priced, and distributed. Understanding this gave me a framework for everything that followed.' },
+                    { heading: 'Context', body: 'It started with a 2-month internship in MP&Silva\'s Singapore office in 2013. Back in Hanoi from 2014, I worked directly with Vietnam\'s biggest TV broadcasters, VTV for the 2014 World Cup, K+ for Premier League rights. MP&Silva was at its peak globally. (It collapsed in 2018.)' },
+                    { heading: 'Why I left', body: 'The commercial side was fascinating, but I kept wanting to know the stories behind the numbers. One year in, I walked into a newsroom.' }
                 ],
                 quote: '"One year in, I realized I didn\'t want to sell the stories. I wanted to tell them."'
             },
@@ -1219,10 +1219,10 @@
                 sections: [
                     { heading: 'A decade at the desk', body: 'Ten years at VnExpress, Vietnam\'s largest news site with 30M+ monthly readers. Started with match reports. Built toward longform features, data journalism, and deep-dive profiles.' },
                     { heading: 'What I covered', body: 'World Cups (Russia 2018, Qatar 2022), Olympics (Tokyo 2021, Paris 2024), SEA Games on the ground in Philippines 2019, esports, F1, tennis, marathon. Every beat, every format.' },
-                    { heading: 'The craft', body: 'Match reports evolved into tactical analysis, then data visualization, then longform narratives. Eventually: in-person interviews with international athletes — Kenyan elite runners, esports legends, Olympic medallists.' },
+                    { heading: 'The craft', body: 'Match reports evolved into tactical analysis, then data visualization, then longform narratives. Eventually: in-person interviews with international athletes, Kenyan elite runners, esports legends, Olympic medallists.' },
                     { heading: 'Scale', body: '776k views on a single campaign series. 3.17M views on marathon content. Multiple features picked up across VnExpress\'s network of 30M readers.' }
                 ],
-                quote: '"Ten years of bylines. And a growing conviction that I wanted to build the story — not just write it."'
+                quote: '"Ten years of bylines. And a growing conviction that I wanted to build the story, not just write it."'
             },
             era3: {
                 img: 'images/vm-hcm-midnight-2023.jpg',
@@ -1233,9 +1233,9 @@
                 company: 'VnExpress Marathon · Vietnam',
                 sections: [
                     { heading: 'The integration', body: 'Stepped into leading communications for Vietnam\'s largest running series. A team of 4. A national series spanning 11 cities and 132,000+ athletes. The journalist\'s instinct now runs the strategy.' },
-                    { heading: 'What I do', body: 'PR strategy, media partnerships, sponsor communications, creative content production — and crisis management when it counts. Every event is a story. Every campaign is a deadline.' },
+                    { heading: 'What I do', body: 'PR strategy, media partnerships, sponsor communications, creative content production, and crisis management when it counts. Every event is a story. Every campaign is a deadline.' },
                     { heading: 'Key moments', body: 'Shut down a viral misinformation campaign about a fallen runner in hours. Challenged and corrected fake news targeting athlete Hong Lệ\'s national record. Built a hybrid livestream model that drove 3.17M views. Designed the Cần Giờ wilderness campaign from zero.' },
-                    { heading: 'By the numbers', body: '18 events · 11 cities · 132,000+ athletes · 9.44 billion VND media value — produced by a team of three in two years.' }
+                    { heading: 'By the numbers', body: '18 events · 11 cities · 132,000+ athletes · 9.44 billion VND media value, produced by a team of three in two years.' }
                 ],
                 quote: '"From reporting on other people\'s milestones to building the starting lines where thousands more run their own."'
             }
